@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="shareView">
+            <rect key="frame" x="0.0" y="0.0" width="346" height="373"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TEo-bf-8q1">
+                    <rect key="frame" x="50" y="35" width="246" height="246"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="TEo-bf-8q1" secondAttribute="height" multiplier="1:1" id="7zA-xk-hQb"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="转入地址" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjU-qi-oWw">
+                    <rect key="frame" x="15" y="296" width="316" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="PjU-qi-oWw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="6eJ-jg-ded"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PjU-qi-oWw" secondAttribute="trailing" constant="15" id="EcG-JC-swE"/>
+                <constraint firstItem="PjU-qi-oWw" firstAttribute="top" secondItem="TEo-bf-8q1" secondAttribute="bottom" constant="15" id="LwM-fU-fsO"/>
+                <constraint firstItem="TEo-bf-8q1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="QO4-F1-sZa"/>
+                <constraint firstItem="TEo-bf-8q1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="35" id="WND-kf-m6i"/>
+                <constraint firstItem="TEo-bf-8q1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yvC-Wq-xaY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addressLabel" destination="PjU-qi-oWw" id="Kke-69-pi1"/>
+                <outlet property="ercodeImageV" destination="TEo-bf-8q1" id="lkl-F3-2QW"/>
+            </connections>
+            <point key="canvasLocation" x="-81.599999999999994" y="-420.53973013493254"/>
+        </view>
+    </objects>
+</document>

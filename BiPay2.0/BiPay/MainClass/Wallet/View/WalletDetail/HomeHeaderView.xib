@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="272"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walletbackView" translatesAutoresizingMaskIntoConstraints="NO" id="fKU-Es-Yij">
+                    <rect key="frame" x="15" y="10" width="457" height="202"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fKU-Es-Yij" secondAttribute="height" multiplier="697:308" id="H35-wk-qx9"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总资产(CNY)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeL-90-0AF">
+                    <rect key="frame" x="35" y="72" width="88" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.47843137250000001" green="0.52549019610000003" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUA-rO-4mS">
+                    <rect key="frame" x="35" y="100" width="417" height="42"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                    <color key="textColor" red="0.019607843140000001" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-dU-cbo">
+                    <rect key="frame" x="427" y="68.5" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="KDa-Vz-YsW"/>
+                        <constraint firstAttribute="width" secondItem="lLa-dU-cbo" secondAttribute="height" multiplier="1:1" id="XIU-ae-90S"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" backgroundImage="opeEyes">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="selected" backgroundImage="closeEyes">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1e-P0-JdU">
+                    <rect key="frame" x="445" y="232" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="22" id="M9P-oT-6EY"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="首页添加04"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="添加资产" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdh-hj-RXb">
+                    <rect key="frame" x="369.5" y="233" width="65.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.47843137250000001" green="0.52549019610000003" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Q1e-P0-JdU" firstAttribute="centerY" secondItem="Jdh-hj-RXb" secondAttribute="centerY" id="8Z4-RQ-H4v"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Q1e-P0-JdU" secondAttribute="trailing" constant="20" id="HFQ-Fv-37h"/>
+                <constraint firstItem="lLa-dU-cbo" firstAttribute="trailing" secondItem="DUA-rO-4mS" secondAttribute="trailing" id="Xnz-ap-6qu"/>
+                <constraint firstItem="lLa-dU-cbo" firstAttribute="centerY" secondItem="zeL-90-0AF" secondAttribute="centerY" id="XrF-nc-lDX"/>
+                <constraint firstItem="Q1e-P0-JdU" firstAttribute="width" secondItem="Q1e-P0-JdU" secondAttribute="height" multiplier="1:1" id="ejC-z6-373"/>
+                <constraint firstItem="Q1e-P0-JdU" firstAttribute="leading" secondItem="Jdh-hj-RXb" secondAttribute="trailing" constant="10" id="gbv-zo-TI2"/>
+                <constraint firstItem="fKU-Es-Yij" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="gpq-PX-Y9u"/>
+                <constraint firstItem="fKU-Es-Yij" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="jPB-wq-1z9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lLa-dU-cbo" secondAttribute="trailing" constant="35" id="jzx-H9-MGy"/>
+                <constraint firstItem="DUA-rO-4mS" firstAttribute="top" secondItem="zeL-90-0AF" secondAttribute="bottom" constant="10" id="neQ-qG-0q4"/>
+                <constraint firstItem="DUA-rO-4mS" firstAttribute="leading" secondItem="zeL-90-0AF" secondAttribute="leading" id="oX2-ur-602"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fKU-Es-Yij" secondAttribute="trailing" constant="15" id="qCD-Yb-hvd"/>
+                <constraint firstItem="Q1e-P0-JdU" firstAttribute="top" secondItem="fKU-Es-Yij" secondAttribute="bottom" constant="20" id="sAF-cU-vYr"/>
+                <constraint firstItem="DUA-rO-4mS" firstAttribute="centerY" secondItem="fKU-Es-Yij" secondAttribute="centerY" constant="10" id="x6C-D1-uF0"/>
+                <constraint firstItem="DUA-rO-4mS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="35" id="zKk-Bu-QQK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addAssetBtn" destination="Q1e-P0-JdU" id="HEG-6p-gZw"/>
+                <outlet property="assetLabel" destination="Jdh-hj-RXb" id="zgZ-9B-Fnd"/>
+                <outlet property="eyeBtn" destination="lLa-dU-cbo" id="zKs-e6-0BF"/>
+                <outlet property="headerImageV" destination="fKU-Es-Yij" id="Jm0-Ea-Kst"/>
+                <outlet property="nameLabel" destination="zeL-90-0AF" id="s8z-dt-Qdo"/>
+                <outlet property="totalLabel" destination="DUA-rO-4mS" id="Kgo-6i-7vt"/>
+            </connections>
+            <point key="canvasLocation" x="191.19999999999999" y="15.292353823088456"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeEyes" width="40" height="40"/>
+        <image name="opeEyes" width="20" height="20"/>
+        <image name="walletbackView" width="348" height="154"/>
+        <image name="首页添加04" width="21" height="21"/>
+    </resources>
+</document>

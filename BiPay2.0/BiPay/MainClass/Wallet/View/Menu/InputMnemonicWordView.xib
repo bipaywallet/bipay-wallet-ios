@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="InputMnemonicWordView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wLs-je-BcN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgc-FE-x2d">
+                    <rect key="frame" x="3" y="7" width="369" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qgc-FE-x2d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="K2F-g4-Qxe"/>
+                <constraint firstItem="qgc-FE-x2d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="3" id="LI4-cO-9us"/>
+                <constraint firstItem="wLs-je-BcN" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="M7O-3d-8zU"/>
+                <constraint firstAttribute="bottom" secondItem="wLs-je-BcN" secondAttribute="bottom" id="SMJ-DW-efk"/>
+                <constraint firstItem="wLs-je-BcN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UIC-Vb-zyn"/>
+                <constraint firstAttribute="trailing" secondItem="qgc-FE-x2d" secondAttribute="trailing" constant="3" id="gd0-Mf-9OF"/>
+                <constraint firstItem="wLs-je-BcN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ofj-tu-jo1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="placeholder" destination="qgc-FE-x2d" id="la2-sv-oG4"/>
+                <outlet property="textView" destination="wLs-je-BcN" id="tP4-Jd-GAg"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="133.5"/>
+        </view>
+    </objects>
+</document>

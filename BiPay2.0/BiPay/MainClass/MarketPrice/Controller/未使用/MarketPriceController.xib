@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarketPriceController">
+            <connections>
+                <outlet property="aNewsPriceLab" destination="Afi-tB-lBG" id="tYv-Aa-lkh"/>
+                <outlet property="assetNameLab" destination="BEg-Iq-U4y" id="ShX-Pf-HBX"/>
+                <outlet property="view" destination="FqB-gi-f2a" id="Yes-g5-Bvv"/>
+                <outlet property="zhangdieLab" destination="hYw-QJ-pha" id="kua-ie-Qnv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="FqB-gi-f2a">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWz-vR-tSd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="资产名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEg-Iq-U4y">
+                            <rect key="frame" x="15" y="7" width="54" height="16"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最新价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afi-tB-lBG">
+                            <rect key="frame" x="167.5" y="7" width="40" height="16"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="涨跌幅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYw-QJ-pha">
+                            <rect key="frame" x="320" y="7" width="40" height="16"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Afi-tB-lBG" firstAttribute="centerX" secondItem="EWz-vR-tSd" secondAttribute="centerX" id="6o6-pn-NAb"/>
+                        <constraint firstAttribute="trailing" secondItem="hYw-QJ-pha" secondAttribute="trailing" constant="15" id="AxH-dW-Rrc"/>
+                        <constraint firstItem="Afi-tB-lBG" firstAttribute="centerY" secondItem="EWz-vR-tSd" secondAttribute="centerY" id="KlR-AE-oI4"/>
+                        <constraint firstAttribute="height" constant="30" id="SNY-cw-oiP"/>
+                        <constraint firstItem="hYw-QJ-pha" firstAttribute="top" secondItem="BEg-Iq-U4y" secondAttribute="top" id="aA9-rp-15N"/>
+                        <constraint firstItem="hYw-QJ-pha" firstAttribute="bottom" secondItem="BEg-Iq-U4y" secondAttribute="bottom" id="hJh-OO-bvo"/>
+                        <constraint firstItem="Afi-tB-lBG" firstAttribute="top" secondItem="BEg-Iq-U4y" secondAttribute="top" id="ojI-9m-v9F"/>
+                        <constraint firstItem="BEg-Iq-U4y" firstAttribute="leading" secondItem="EWz-vR-tSd" secondAttribute="leading" constant="15" id="txC-hG-HxQ"/>
+                        <constraint firstItem="Afi-tB-lBG" firstAttribute="bottom" secondItem="BEg-Iq-U4y" secondAttribute="bottom" id="w8D-xJ-DYw"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EWz-vR-tSd" secondAttribute="trailing" id="5ds-xe-pc5"/>
+                <constraint firstItem="EWz-vR-tSd" firstAttribute="leading" secondItem="FqB-gi-f2a" secondAttribute="leading" id="AVG-R1-fMq"/>
+                <constraint firstItem="EWz-vR-tSd" firstAttribute="top" secondItem="FqB-gi-f2a" secondAttribute="top" id="n5A-ow-Afv"/>
+            </constraints>
+            <point key="canvasLocation" x="34" y="-101"/>
+        </view>
+    </objects>
+</document>

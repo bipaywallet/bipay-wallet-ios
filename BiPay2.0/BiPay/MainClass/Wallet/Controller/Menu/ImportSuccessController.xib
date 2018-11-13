@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImportSuccessController">
+            <connections>
+                <outlet property="successLab" destination="yH0-Ce-eN2" id="LqX-XS-JCw"/>
+                <outlet property="useBtn" destination="5Sd-ew-zWA" id="IfE-uz-wcz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backup" translatesAutoresizingMaskIntoConstraints="NO" id="wfU-5J-aPR">
+                    <rect key="frame" x="147.5" y="104" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wfU-5J-aPR" secondAttribute="height" multiplier="1:1" id="mEf-fq-Pzy"/>
+                        <constraint firstAttribute="width" constant="80" id="uSU-I0-Q84"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="钱包创建成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yH0-Ce-eN2">
+                    <rect key="frame" x="138.5" y="204" width="98" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sd-ew-zWA">
+                    <rect key="frame" x="35" y="373.5" width="305" height="40"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.63529411759999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="OPi-0d-lkn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="立即使用" backgroundImage="btnBackground">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="Touse:" destination="-1" eventType="touchUpInside" id="BAV-US-HNq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5Sd-ew-zWA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="5h5-hJ-N3A"/>
+                <constraint firstItem="5Sd-ew-zWA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="60" id="CVe-cE-b4I"/>
+                <constraint firstItem="yH0-Ce-eN2" firstAttribute="top" secondItem="wfU-5J-aPR" secondAttribute="bottom" constant="20" id="Xcv-FB-hdJ"/>
+                <constraint firstItem="wfU-5J-aPR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aYd-Zn-Ve2"/>
+                <constraint firstAttribute="trailing" secondItem="5Sd-ew-zWA" secondAttribute="trailing" constant="35" id="fXg-9f-oKQ"/>
+                <constraint firstItem="yH0-Ce-eN2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="frd-Be-lFn"/>
+                <constraint firstItem="5Sd-ew-zWA" firstAttribute="top" secondItem="yH0-Ce-eN2" secondAttribute="bottom" constant="150" id="vxk-gI-AwG"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backup" width="177" height="176"/>
+        <image name="btnBackground" width="187" height="49"/>
+    </resources>
+</document>

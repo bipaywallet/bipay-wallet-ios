@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AddContactViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="484" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib1-ej-2lw">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="X2C-r0-lFy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="BTC">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downMore_white" translatesAutoresizingMaskIntoConstraints="NO" id="KcN-ls-313">
+                    <rect key="frame" x="55" y="20.5" width="7" height="7"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KcN-ls-313" secondAttribute="height" multiplier="1:1" id="IFQ-po-5fY"/>
+                        <constraint firstAttribute="width" constant="7" id="k2z-2n-ZIb"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-aj-yOL">
+                    <rect key="frame" x="72" y="0.0" width="364" height="48"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-sk-dev">
+                    <rect key="frame" x="446" y="14" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="2bq-0q-Rnd"/>
+                        <constraint firstAttribute="width" secondItem="MOF-sk-dev" secondAttribute="height" multiplier="1:1" id="ssk-8B-3I3"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="add_address_white"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.086274509799999996" green="0.094117647060000004" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KcN-ls-313" firstAttribute="leading" secondItem="Ib1-ej-2lw" secondAttribute="trailing" constant="5" id="790-eE-YJn"/>
+                <constraint firstItem="lCi-aj-yOL" firstAttribute="leading" secondItem="KcN-ls-313" secondAttribute="trailing" constant="10" id="7fs-Kg-LoA"/>
+                <constraint firstItem="MOF-sk-dev" firstAttribute="centerY" secondItem="Ib1-ej-2lw" secondAttribute="centerY" id="Ey2-bT-38D"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="lCi-aj-yOL" secondAttribute="bottom" id="FUs-tt-qOZ"/>
+                <constraint firstItem="lCi-aj-yOL" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GJ8-qb-6K8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MOF-sk-dev" secondAttribute="trailing" constant="18" id="HbI-77-2ba"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ib1-ej-2lw" secondAttribute="bottom" id="KXr-Vd-vIZ"/>
+                <constraint firstItem="Ib1-ej-2lw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Pd8-Dv-x0W"/>
+                <constraint firstItem="Ib1-ej-2lw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ajN-U5-Dgy"/>
+                <constraint firstItem="KcN-ls-313" firstAttribute="centerY" secondItem="Ib1-ej-2lw" secondAttribute="centerY" id="q02-rX-gAU"/>
+                <constraint firstItem="MOF-sk-dev" firstAttribute="leading" secondItem="lCi-aj-yOL" secondAttribute="trailing" constant="10" id="scr-Mz-WVx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="addBtn" destination="MOF-sk-dev" id="rp3-xS-5po"/>
+                <outlet property="selectBtn" destination="Ib1-ej-2lw" id="TlR-NH-4Bn"/>
+                <outlet property="textField" destination="lCi-aj-yOL" id="Reg-IH-a0k"/>
+            </connections>
+            <point key="canvasLocation" x="-184" y="-45"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_address_white" width="40" height="40"/>
+        <image name="downMore_white" width="15" height="14"/>
+    </resources>
+</document>

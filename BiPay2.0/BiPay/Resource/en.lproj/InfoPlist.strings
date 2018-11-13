@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  BiPay
+
+  Created by zsm on 2018/9/19.
+  Copyright © 2018年 zjs. All rights reserved.
+*/
+
+NSPhotoLibraryUsageDescription = "BiPay Wallet Used to open photos";
+NSPhotoLibraryAddUsageDescription = "BiPay Wallet Used to open photos";
+NSCameraUsageDescription = "BiPay Wallet Used to open camera";
+

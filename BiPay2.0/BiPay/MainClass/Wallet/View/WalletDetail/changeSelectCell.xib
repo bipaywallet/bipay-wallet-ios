@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="59" id="KGk-i7-Jjw" customClass="changeSelectCell">
+            <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="334" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BTC" translatesAutoresizingMaskIntoConstraints="NO" id="7Dk-gw-Hzy">
+                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="6cf-91-Skb"/>
+                            <constraint firstAttribute="width" secondItem="7Dk-gw-Hzy" secondAttribute="height" multiplier="1:1" id="lVY-0C-nUc"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmY-7A-Wfo">
+                        <rect key="frame" x="50" y="6.5" width="29" height="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcZ-eL-1uK">
+                        <rect key="frame" x="50" y="28.5" width="39" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="changeSelected" translatesAutoresizingMaskIntoConstraints="NO" id="6hd-nv-kMQ">
+                        <rect key="frame" x="299" y="12.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="6hd-nv-kMQ" secondAttribute="height" multiplier="1:1" id="YKy-6g-k94"/>
+                            <constraint firstAttribute="width" constant="25" id="qFX-c3-6ti"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YmY-7A-Wfo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-10" id="4Z1-kn-qiE"/>
+                    <constraint firstItem="6hd-nv-kMQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4jW-bP-vz0"/>
+                    <constraint firstItem="7Dk-gw-Hzy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="87y-Uu-6jx"/>
+                    <constraint firstAttribute="trailing" secondItem="6hd-nv-kMQ" secondAttribute="trailing" constant="10" id="AaL-Wb-ZdS"/>
+                    <constraint firstItem="XcZ-eL-1uK" firstAttribute="leading" secondItem="YmY-7A-Wfo" secondAttribute="leading" id="NLd-a1-VKR"/>
+                    <constraint firstItem="YmY-7A-Wfo" firstAttribute="leading" secondItem="7Dk-gw-Hzy" secondAttribute="trailing" constant="10" id="QNH-wS-0LL"/>
+                    <constraint firstItem="7Dk-gw-Hzy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="U4K-kw-2CU"/>
+                    <constraint firstItem="XcZ-eL-1uK" firstAttribute="top" secondItem="YmY-7A-Wfo" secondAttribute="bottom" constant="5" id="ln8-dX-UL0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="fullNameLabel" destination="XcZ-eL-1uK" id="0Ni-Fq-An1"/>
+                <outlet property="headIcon" destination="7Dk-gw-Hzy" id="dc5-QM-cp4"/>
+                <outlet property="nameLabel" destination="YmY-7A-Wfo" id="Opb-hL-f4R"/>
+                <outlet property="selectedImage" destination="6hd-nv-kMQ" id="USu-T1-hFp"/>
+            </connections>
+            <point key="canvasLocation" x="68.799999999999997" y="87.256371814092958"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="BTC" width="80" height="80"/>
+        <image name="changeSelected" width="45" height="45"/>
+    </resources>
+</document>

@@ -1,0 +1,288 @@
+/* 
+  Language.strings
+  BiPay
+
+  Created by sunliang on 2018/9/11.
+  Copyright © 2018年 zjs. All rights reserved.
+*/
+
+"projectName" = "币付钱包";
+"wallet" = "钱包";
+"market" = "行情";
+"fastNews" = "快讯";
+"mine" = "设置";
+"noNetworkStatus" = "网络异常，请检查网络";
+"warmTip" = "温馨提示";
+
+//提示
+"pleaseInstallqq" = "请安装QQ";
+"pleaseInstallWechat" = "请安装微信";
+"mnemonicTips" = "助记词顺序验证正确，钱包创建成功后，币付钱包将移除该助记词，且不进行存储或备份，请自主妥善保管.";
+"backWalletTips" = "创建钱包过程中返回，该钱包需要重新创建";
+"mnemonicErroTip" = "您输入的助记词不正确";
+"pleaseInputmnemonic" = "请输入助记词";
+"remarkmnemonic" = "备份助记词";
+"copymnemonic" = "抄写下你的钱包助记词";//
+"copymnemonicTip" = "可点击右上角“English”和“中文”切换你擅长的助记词，助记词用于恢复钱包或重置钱包密码，将它准确的抄写到纸上，并存在只有你知道的安全的地方";
+"next" = "下一步";
+"confirmmnemonic" = "确认你的钱包助记词";
+"pleaseSortmnemonicTip" = "请确认您的备份助记词，并按照正确顺序点击填入";
+"scanQRCode" = "扫描二维码，下载App";
+//钱包
+"totalAssets" = "总资产";
+"switchWallet" = "切换钱包";
+"walletSuccess" = "钱包创建成功";
+"backupWallet" = "备份钱包";
+"Immediateuse" = "立即使用";
+"walletFail" = "创建失败";
+"copy" = "复制";
+"copyed" = "已复制";
+"save" = "保存";
+"safetyWarning" = "安全警告：私钥未经加密，导出存在风险，请谨慎导出，复制完成建议物理方式保管，并保管到只有你自己知道的地方";
+"transfer" = "转账";
+"collection" = "收款";
+"scanTips" = "将取景框对准二维码即可自动扫描";
+"richscan" = "扫一扫";
+"creatWallet" = "创建钱包";
+"leadinWallet" = "导入钱包";
+"addProperty" = "添加资产";
+"Recent" = "最近交易";
+"outAddress" = "转出地址";
+"inAddress" = "转入地址";
+"blockHeight"= "区块高度";
+"dealNum" = "交易号";
+"dealTime"= "交易时间";
+"copySuccess" = "复制成功";
+"copyFail" = "复制失败";
+"Etherenm" = "Etherenm系-ERC20标准";
+//修改密码
+"changePassword" = "修改密码";
+"pleaseOriginalPwd" = "请输入原密码";
+"pleaseNewPwd" = "请输入新密码";
+"need6Pwd" = "必须为六位数字密码";
+
+//转账
+"Immediatelytransfer" = "立即转账";
+"completed" = "已到账";
+"waitConfirm" = "确认中";
+"transferMoney" = "转账金额";
+"slow" = "慢";
+"fast" = "快";
+"normal" = "正常";
+"fee" = "矿工费";
+"pleaseInputTransferAddress" = "请输入您要转入的地址";
+"pleaseSelectTransferAddress" = "请选择转账地址";
+"computationalanomaly" = "计算异常";
+"balancelack" = "余额不足";
+"coinErro" = "币种不正确";
+"addressErro" = "该地址不合法";
+"pleaseInputTransfer" = "请输入转账金额";
+"pleaseSelectFee" = "请选择手续费";
+"Feelimit" = "转出金额必须大于0";
+"shouxuFeelimit" = "手续费必须大于0";
+"shouxuFeebuzu" = "手续费不足";
+"forbidTransfer" = "不能向自己地址转账";
+"currentAddress" = "当前地址：";
+"see" = "查看";
+"TransferAmount" = "转入金额";
+//收款
+"collectCode" = "收款码";
+"collectAddress" = "收款地址";
+"copyAddress" = "复制地址";
+"saveImg" = "保存图片";
+
+//
+"changewalletName" = "修改名称";
+"exportKey" = "导出私钥";
+"pswTip" = "密码提示";
+"deleteWallet" = "删除钱包";
+"delete" = "删除";
+"save" = "保存";
+//快讯
+
+"share" = "分享";
+"open" = "展开";
+"close" = "收起";
+
+//设置
+"setting" = "设置";
+"contanctMan" = "联系人";
+"dealRecord" = "交易记录";
+"packetManage" = "钱包列表";
+
+//快讯
+"friendCircle" = "朋友圈";
+"weChatFriend" = "微信好友";
+"detail" = "详情";
+"has" = "有";
+"newKx" = "条新快讯";
+//详情
+"assetName" = "资产名称";
+"newPrice" = "最新价";
+"applies" = "涨跌幅";
+
+"marketDetail" = "行情详情";
+"dealDetail" = "交易详情";
+"msgDetail" = "消息详情";
+
+//相册
+"album" = "相册";
+"photoRightTips" = "请到手机系统的\n【设置】->【隐私】->【相册】\n对该App开启相册的访问权限";
+"cameraRightTips" = "请到手机系统的\n【设置】->【隐私】->【相机】\n对该App开启相机的访问权限";
+"photoNoRight" = "相册读取权限未开启";
+"cameraNoRight" = "相机权限未开启";
+"noReadCode" = "图片中未识别到二维码";
+
+//联系人
+"createContanct" = "新建联系人";
+"addContanct" = "添加联系人";
+"deleteContanct" = "删除联系人";
+"editContanct" = "编辑联系人";
+"noContanct" = "您账号暂无联系人，请添加联系人吧！";
+"selectContanct" = "选择联系人";
+"creatingCantact" = "联系人创建中...";
+//添加币种
+"pleaseSelectCoin" = "请选择添加的币种";
+
+"name" = "姓名";
+"receivedWalletAddress" = "收款人钱包地址";
+"mobilePhoneOption" = "手机号（非必填）";
+"emailOption" = "邮箱    （非必填）";
+"remarkOption" = "备注    （非必填）";
+"pleaseInputName" = "请输入联系人姓名";
+"namesame" = "联系人名称不能重复";
+"emailFormat" = "邮箱格式不正确";
+"mobileFormat" = "手机号格式不正确";
+"changing" = "修改中...";
+"pleaseImputReAddress" = "请输入联系人收款地址";
+"okDeleteContact" = "确定删除该联系人";
+"deleting" = "删除中...";
+"deleteWalletTips" = "删除钱包后信息将不存在";
+"pwdErro" = "密码输入不正确";
+"oldpwdErro" = "原密码输入不正确";
+
+//钱包管理
+"createPacket" = "创建钱包";
+"importPacket" = "导入钱包";
+"noWallet" = "暂无钱包";
+"msgCenter" = "消息中心";
+"sysSetting" = "系统设置";
+"helpCenter" = "帮助中心";
+"help" = "帮助";
+"aboutUs" = "关于我们";
+"versionUpdate" = "版本更新";
+"updated" = "已更新到最新版本";
+"Pursemanagement" = "钱包管理";
+//创建钱包
+"pleaseImputPacketName" = "请输入钱包名称";
+"pleaseImput6Pwd" = "请输入六位数字密码";
+"pleaseInputPayPwd" = "请输入六位支付密码";
+"pleaseImput6newPwd" = "请输入六位数字新密码";
+"pwdLengthErro" = "密码长度不正确";
+"pleaseReImputPwd" = "请再次输入密码";
+"twoImputPwdNoSame" = "两次输入密码不一致";
+"pleaseAgreeService" = "请先同意服务及隐私条款";
+"pleaseAddTheAsset" = "请先在该钱包中添加此资产";
+"packetNameNoSame" = "该钱包名称已存在";
+"serviceAndPrivacy" = "服务及隐私条款";
+"agreeServiceLab" = "点击创建钱包即表示接受币付的";
+"startImportLabTip" = "点击开始导入即表示接受币付的";
+"pleaseOkPwd" = "请确认密码";
+"pwdTipMsg" = "密码提示信息（非必填）";
+
+//导入钱包
+"packetExist" = "该钱包已经存在";
+"walletGeneration" = "钱包生成中...";
+"walletGenerationFail" = "钱包创建失败";
+"walletGenerationFailimport" = "导入钱包失败";
+"pleaseInputMemoryWord" = "请输入助记词,并使用空格分隔";
+"pleasePrivateKey" = "币付钱包App当前仅支持从币付App导出的钱包私钥，其它系统钱包私钥暂不支持，请谨慎导入";
+"pleaseEnterPrivateKey" = "请输入私钥";
+"illegalPrivateKey" = "非法的私钥";
+"illegalMnemonicWords" = "非法的助记词";
+"mnemonicwordsnotformatted" = "助记词格式不正确";
+"importwalletSuccess" = "钱包导入成功";
+"mnemonicword" = "助记词";
+"privateKey" = "私钥";
+"mainPrivateKey" = "主私钥";
+"startImport" = "开始导入";
+"remark" = "留言";
+//消息中心
+"msgNotification" = "消息通知";
+"allRead" = "全部已读";
+"noMsg" = "暂无消息";
+"nodata" = "暂无数据";
+"notransation" = "暂无交易记录";
+"nochangelly" = "暂无兑换记录";
+"confirm" = "确定";
+"cancel" = "取消";
+
+//行情
+"addmarket" = "添加行情";
+
+
+"Sunday" = "周日";
+"Monday" = "周一";
+"Tuesday" = "周二";
+"Wednesday" = "周三";
+"Thursday" = "周四";
+"Friday" = "周五";
+"Saturday" = "周六";
+
+//消息中心
+"msgTitleTip" = "这是一条来自官方的公告，请务必仔细阅读！";
+"saveFail" = "保存失败";
+"saveSuccess" = "保存成功";
+"dealNoConfirmed" = "你有一笔交易还未确认,请稍后再试!";
+"responseErro" = "解析异常";
+
+//系统设置
+"chinese" = "简体中文";
+"selectLanguage" = "语言设置";
+"selectCoin" = "货币设置";
+"systemSetting" = "系统设置";
+//关于我们
+"produce" = "币付钱包是一款移动端数字资产钱包，专注于多链多币种管理，为用户提供安全、简单、易用的数字资产管理服务。";
+//协议内容
+"protocolContent" = "尊敬的用户：\n\n感谢您选择Bipay服务,在使用Bipay（以下简称“Bipay” 或“本软件”）之前，请认真阅读《Bipay服务协议》及后文提到的相关协议，尤其是本协议规定的“免责及责任限制”等条款将以加粗的形式体现，确保您充分理解本协议中各条款，并自主考虑风险。\n\n一、 关于本协议的确认与接纳\n\n1. 您下载Bipay软件并创建或导入钱包，即视为您已经充分阅读并接受本协议全部条款，本协议立即生效，对双方具有约束力。\n\n2. 如果您未满18周岁，或者是无民事行为能力人或限制民事行为能力人，请在父母或监护人指导下使用Bipay。\n\n二、 定义1. Bipay：基于区块链技术开发一款多币种钱包管理软件。\n\n2. 用户：\n\n（1）用户必须是具备完全民事行为能力的自然人；\n\n（2）若您为18周岁以下的未成年人使用Bipay服务，需要在您父母或监护人的指导下使用Bipay。无民事行为能力人使用Bipay或限制民事行为能力人超过其民事权利或行为能力范围从事交易的，造成的一切后果，Bipay有权要求您及您的父母或监护人负责。\n\n3. 创建或导入钱包：指您使用Bipay，确认履行本协议并创建或导入钱包的过程。\n\n4. 钱包密码：指您在创建Bipay钱包过程中，软件操作界面提示您填写的密码，该密码用于支付时确认，一旦丢失你需要借助登录密码重置新密码。\n\n5. 私钥：由256位随机字符构成，是用户拥有并使用数字代币的核心。\n\n6. 公钥：由私钥借助密码学原理单向推导生成，并用以生成区块链数字钱包地址，数字钱包地址即为公开收款地址。\n\n7. 登录密码：由随机算法生成的18位字母或数字组成，方便用户备份保管。\n\n三、 服务内容\n\n1. 创建或导入钱包。对Bipay支持的数字代币，您可以使用Bipay生成新钱包或导入相关区块链系统的其它钱包工具生成的兼容钱包。\n\n2. 转账、收款。您可以使用Bipay的转账、收款功能进行数字代币的管理，即运用私钥进行电子签名，对相关区块链的账本进行修改。转账是指付款方利用收款方的区块链地址进行转账操作，实际的转账、收款行为均在相关区块链系统（而非Bipay）发生。\n\n3. 行情查看。您可以使用Bipay查看所提供的数字代币汇率价格。Bipay通过抓取相应的数字代币汇率信息并展示在行情版块。\n\n4. 交易记录。我们将通过区块链系统拷贝您全部或部分的交易记录。但交易记录以区块链系统的记载为准。\n\n5. 暂停服务。您知悉基于区块链系统交易“不可撤销”的属性，我们不能为您暂停或撤销转账交易等操作，但在一定情况下，我们可以暂停或者限制某位用户对Bipay软件的操作。\n\n四、 免责声明\n\n1. Bipay将在现有技术水平条件下尽可能采取合理的安全措施来保护您的个人信息，以避免信息的泄露、篡改或者毁损。系统利用无线方式传输数据，因此，无法确保通过无线网络传输数据的隐私性和安全性。\n\n五、 其他\n\n1. 如您是中华人民共和国以外的用户，您需全面了解并遵守您所在司法辖区与使用融识服务所有相关法律、法规及规则。\n\n2. 您在使用Bipay服务过程中，如遇到任何有关个人信息使用的问题，您可以通过在Bipay提交反馈等方式联系我们。\n\n3. 本政策的任何译文版本仅为方便用户而提供，无意对本政策的条款进行修改。如果本政策的中文版本与非中文版本之间存在冲突，应以中文版本为准。\n\n本政策未尽事宜，您需遵守Bipay不时更新的公告及相关规则。";
+//兑币
+"buy" = "买入";
+"sell" = "卖出";
+"quantity" = "输入数量";
+"exchange" = "兑换";
+"exchangeRate" = "汇率";
+"serviceCharge" = "手续费";
+"minimum" = "最小卖出量";
+"between" = "同币种间不可兑换";
+"minimumselling" = "卖出数量不能小于最小卖出量";
+"Currencyquery" = "币种查询中...";
+"search" = "搜索";
+"changeinfo" = "兑换服务由Changelly平台提供支持，实时兑换汇率取决于国内外各大交易多的相对价格。兑换服务所得币数量会根据实时价格而有所波动。每笔兑换Changelly会收取0.5%的手续费，且交易一旦上链后还需支持矿工费，请以最终收到的数额为准。";
+"history" = "兑换历史";
+"Sendaddress" = "发送地址";
+"Receivingaddress" = "接收地址";
+"Inexchange" = "兑换中";
+"Exchangesuccess" = "兑换成功";
+"Exchangefail" = "兑换失败";
+"Typetransaction" = "交易类型";
+"Reminder" = "温馨提示";
+"knowBtn" = "我知道了";
+"Confirmationexchange" = "确认兑换";
+"Remarkssee" = "备注 (仅本人可见)";
+"confirmBtn" = "确认";
+"Addressverification" = "地址校验中...";
+"verificationfail" = "地址校验失败，请返回重试！";
+"Addressfail" = "转账地址获取错误,请返回重试";
+"ShareApp" = "分享App";
+"Confirmationtransfer" = "确认转账";
+"Transfersuccess" = "转账成功";
+"Exchangesuccess" = "兑换成功";
+"Refreshingdata" = "正在刷新数据中...";
+"Pullrefresh" = "下拉可以刷新";
+"Releaserefresh" = "松开立即刷新";
+"Transactionquery" = "交易查询";
+"pullmore" = "上拉可以加载更多";
+"Releasemore" = "松开立即加载更多";
+"loadingmore" = "正在加载更多的数据...";
+"walletContain" = "内含";
+"currencyCount" = "个币种";

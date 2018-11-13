@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvs-Ft-t25">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noblance" translatesAutoresizingMaskIntoConstraints="NO" id="rbn-pz-ans">
+                            <rect key="frame" x="137.5" y="261.5" width="100" height="84"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="SHm-s9-wwc"/>
+                                <constraint firstAttribute="width" secondItem="rbn-pz-ans" secondAttribute="height" multiplier="94:79" id="gpk-zS-p49"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还没添加资产呢,快去添加资产吧" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8N-V8-El5">
+                            <rect key="frame" x="77.5" y="360.5" width="220" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="220" id="wnM-Ll-ONk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="rbn-pz-ans" firstAttribute="centerX" secondItem="Yvs-Ft-t25" secondAttribute="centerX" id="2Ra-gf-34p"/>
+                        <constraint firstItem="rbn-pz-ans" firstAttribute="centerY" secondItem="Yvs-Ft-t25" secondAttribute="centerY" constant="-30" id="VS5-gQ-5xY"/>
+                        <constraint firstItem="P8N-V8-El5" firstAttribute="centerX" secondItem="rbn-pz-ans" secondAttribute="centerX" id="bkE-59-AEK"/>
+                        <constraint firstItem="P8N-V8-El5" firstAttribute="top" secondItem="rbn-pz-ans" secondAttribute="bottom" constant="15" id="j9U-Ih-pKk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Yvs-Ft-t25" secondAttribute="trailing" id="NP3-P4-wNh"/>
+                <constraint firstItem="Yvs-Ft-t25" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="W6J-GW-Lz3"/>
+                <constraint firstItem="Yvs-Ft-t25" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="g7o-N3-clR"/>
+                <constraint firstItem="Yvs-Ft-t25" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qaq-m0-kQK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="noblance" width="188" height="158"/>
+    </resources>
+</document>

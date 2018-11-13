@@ -1,0 +1,19 @@
+inhibit_all_warnings!
+
+target 'BiPay' do
+pod 'SDCycleScrollView'
+pod 'IQKeyboardManager'
+pod 'SVProgressHUD'
+pod 'AFNetworking'
+pod 'BRPickerView'
+pod 'MJExtension'
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'Masonry'
+pod 'Toast'
+pod 'mob_sharesdk'
+pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'
+pod 'UMengAnalytics-NO-IDFA'
+pod 'UMCSecurityPlugins'
+pod 'BGFMDB'
+end

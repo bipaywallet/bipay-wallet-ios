@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmMnemonicController">
+            <connections>
+                <outlet property="bgView" destination="i5M-Pr-FkT" id="BL8-Y4-LmV"/>
+                <outlet property="bg_scrollView" destination="qsJ-1k-4z8" id="0gF-u0-qp9"/>
+                <outlet property="confirmContainer" destination="cOU-1j-Aqx" id="NpR-J2-pCD"/>
+                <outlet property="heightConstant" destination="TMS-Qe-0Wo" id="HD9-WV-dvG"/>
+                <outlet property="mnemonicContainer" destination="frl-OQ-wzP" id="u1p-xY-YTX"/>
+                <outlet property="nextStepBtn" destination="BQn-gY-05C" id="8l5-iL-IZs"/>
+                <outlet property="tipsContent" destination="fjB-4M-09v" id="2Ln-d8-31F"/>
+                <outlet property="tipsTitle" destination="PpE-oa-WNg" id="BqP-zG-6nD"/>
+                <outlet property="view" destination="hYJ-SG-QCF" id="pzT-Et-rS5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpE-oa-WNg">
+                    <rect key="frame" x="10" y="30" width="355" height="24"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjB-4M-09v">
+                    <rect key="frame" x="10" y="74" width="355" height="20"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Label">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" size="14" name="PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frl-OQ-wzP">
+                    <rect key="frame" x="10" y="134" width="355" height="180"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="Zdy-gm-8Pf"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOU-1j-Aqx">
+                    <rect key="frame" x="10" y="324" width="355" height="180"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="TMS-Qe-0Wo"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQn-gY-05C">
+                    <rect key="frame" x="10" y="534" width="355" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="JWa-qB-Gne"/>
+                    </constraints>
+                    <state key="normal" title="确认" backgroundImage="btnBackground">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="nextStep:" destination="-1" eventType="touchUpInside" id="zdb-Xm-rNQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="BQn-gY-05C" secondAttribute="trailing" constant="10" id="5cy-mr-9Ml"/>
+                <constraint firstItem="BQn-gY-05C" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="95N-Jz-fak"/>
+                <constraint firstItem="frl-OQ-wzP" firstAttribute="top" secondItem="fjB-4M-09v" secondAttribute="bottom" constant="40" id="BBl-BQ-DlL"/>
+                <constraint firstItem="frl-OQ-wzP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="KHy-8u-F3m"/>
+                <constraint firstAttribute="trailing" secondItem="cOU-1j-Aqx" secondAttribute="trailing" constant="10" id="Rah-z9-qa8"/>
+                <constraint firstAttribute="trailing" secondItem="frl-OQ-wzP" secondAttribute="trailing" constant="10" id="TRa-M7-hGu"/>
+                <constraint firstItem="PpE-oa-WNg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="clX-6A-mgy"/>
+                <constraint firstAttribute="trailing" secondItem="fjB-4M-09v" secondAttribute="trailing" constant="10" id="ec8-7e-FPL"/>
+                <constraint firstAttribute="trailing" secondItem="PpE-oa-WNg" secondAttribute="trailing" constant="10" id="feM-54-hzN"/>
+                <constraint firstItem="PpE-oa-WNg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="l0o-LZ-UaB"/>
+                <constraint firstItem="BQn-gY-05C" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="q7S-qu-ncb"/>
+                <constraint firstItem="fjB-4M-09v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="q8d-kb-8U2"/>
+                <constraint firstItem="cOU-1j-Aqx" firstAttribute="top" secondItem="frl-OQ-wzP" secondAttribute="bottom" constant="10" id="rgl-zE-w6l"/>
+                <constraint firstItem="cOU-1j-Aqx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="vnZ-Tt-vJb"/>
+                <constraint firstItem="BQn-gY-05C" firstAttribute="top" secondItem="cOU-1j-Aqx" secondAttribute="bottom" constant="30" id="wzz-8p-nRt"/>
+                <constraint firstItem="fjB-4M-09v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="xNT-nV-sDI"/>
+                <constraint firstItem="fjB-4M-09v" firstAttribute="top" secondItem="PpE-oa-WNg" secondAttribute="bottom" constant="20" id="zqS-0X-GNC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-26" y="-69"/>
+        </view>
+        <view contentMode="scaleToFill" id="hYJ-SG-QCF">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsJ-1k-4z8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qsJ-1k-4z8" secondAttribute="trailing" id="Fgo-DT-4nd"/>
+                <constraint firstItem="qsJ-1k-4z8" firstAttribute="leading" secondItem="hYJ-SG-QCF" secondAttribute="leading" id="IOg-G9-ber"/>
+                <constraint firstItem="qsJ-1k-4z8" firstAttribute="top" secondItem="hYJ-SG-QCF" secondAttribute="top" id="KIL-UX-MZ1"/>
+                <constraint firstAttribute="bottom" secondItem="qsJ-1k-4z8" secondAttribute="bottom" id="nS3-Br-FZr"/>
+            </constraints>
+            <point key="canvasLocation" x="-574" y="-70"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btnBackground" width="187" height="49"/>
+    </resources>
+</document>

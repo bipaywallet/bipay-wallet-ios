@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ContactViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYV-T5-US3">
+                    <rect key="frame" x="54" y="18.5" width="15.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sba-XH-fqy">
+                    <rect key="frame" x="10" y="12" width="34" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="sba-XH-fqy" secondAttribute="height" multiplier="1:1" id="Bs5-Xw-yl3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXh-r0-XQE">
+                    <rect key="frame" x="415" y="19" width="20" height="20"/>
+                    <color key="backgroundColor" red="0.72156862749999995" green="0.61568627450000002" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wXh-r0-XQE" secondAttribute="height" multiplier="1:1" id="2Ve-Cf-et7"/>
+                        <constraint firstAttribute="width" constant="20" id="gIv-5X-Msy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="AYV-T5-US3" firstAttribute="leading" secondItem="sba-XH-fqy" secondAttribute="trailing" constant="10" id="6yB-fy-TgU"/>
+                <constraint firstItem="sba-XH-fqy" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="9tE-Vd-95Q"/>
+                <constraint firstItem="wXh-r0-XQE" firstAttribute="centerY" secondItem="sba-XH-fqy" secondAttribute="centerY" id="DdK-Fr-e8O"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sba-XH-fqy" secondAttribute="bottom" constant="12" id="JQ2-uc-1Hz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wXh-r0-XQE" secondAttribute="trailing" constant="10" id="Rga-MD-nOy"/>
+                <constraint firstItem="sba-XH-fqy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="oSu-zh-v7e"/>
+                <constraint firstItem="AYV-T5-US3" firstAttribute="centerY" secondItem="sba-XH-fqy" secondAttribute="centerY" id="tLi-o7-bht"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="coinCount" destination="wXh-r0-XQE" id="tx8-mL-Ry1"/>
+                <outlet property="nameLabel" destination="sba-XH-fqy" id="vP6-fV-fAd"/>
+                <outlet property="userName" destination="AYV-T5-US3" id="Kme-WO-lwO"/>
+            </connections>
+            <point key="canvasLocation" x="141.5" y="-296"/>
+        </view>
+    </objects>
+</document>

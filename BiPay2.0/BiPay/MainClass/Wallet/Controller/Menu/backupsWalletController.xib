@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="backupsWalletController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backup" translatesAutoresizingMaskIntoConstraints="NO" id="NYS-lT-zpz">
+                    <rect key="frame" x="147.5" y="110" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NYS-lT-zpz" secondAttribute="height" multiplier="1:1" id="bu8-eP-4px"/>
+                        <constraint firstAttribute="width" constant="80" id="dOg-4y-F50"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCP-1N-Kd5">
+                    <rect key="frame" x="146.5" y="200" width="82" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最后一步：立即备份您的钱包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-YW-LrK">
+                    <rect key="frame" x="88" y="229" width="199" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5B-62-pHM">
+                    <rect key="frame" x="20" y="297" width="335" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="RyB-D0-NwG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="备份钱包" backgroundImage="btnBackground">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="backup:" destination="-1" eventType="touchUpInside" id="Ojd-bb-nWA"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备份钱包：导出【助记词】并抄写到安全的地方，千万不要保存在网络上，然后尝试转入，转出小额资产开始使用。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-1Q-Hhz">
+                    <rect key="frame" x="20" y="362" width="335" height="50.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="L4a-YW-LrK" firstAttribute="top" secondItem="FCP-1N-Kd5" secondAttribute="bottom" constant="5" id="0Eu-o8-OYh"/>
+                <constraint firstItem="NYS-lT-zpz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Jko-F6-xqP"/>
+                <constraint firstAttribute="trailing" secondItem="A5B-62-pHM" secondAttribute="trailing" constant="20" id="O3e-Fb-X1g"/>
+                <constraint firstItem="A5B-62-pHM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="SZL-rp-71A"/>
+                <constraint firstItem="6C1-1Q-Hhz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="XiK-o6-9Je"/>
+                <constraint firstItem="FCP-1N-Kd5" firstAttribute="top" secondItem="NYS-lT-zpz" secondAttribute="bottom" constant="10" id="Z1C-s3-idk"/>
+                <constraint firstItem="L4a-YW-LrK" firstAttribute="centerX" secondItem="FCP-1N-Kd5" secondAttribute="centerX" id="bIA-xf-EQD"/>
+                <constraint firstItem="A5B-62-pHM" firstAttribute="top" secondItem="L4a-YW-LrK" secondAttribute="bottom" constant="50" id="bIh-Nf-aNO"/>
+                <constraint firstItem="NYS-lT-zpz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="kAF-ZY-Ayn"/>
+                <constraint firstItem="FCP-1N-Kd5" firstAttribute="centerX" secondItem="NYS-lT-zpz" secondAttribute="centerX" id="r7R-KE-u4R"/>
+                <constraint firstAttribute="trailing" secondItem="6C1-1Q-Hhz" secondAttribute="trailing" constant="20" id="ycg-jL-csj"/>
+                <constraint firstItem="6C1-1Q-Hhz" firstAttribute="top" secondItem="A5B-62-pHM" secondAttribute="bottom" constant="20" id="zlK-yF-0tG"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backup" width="177" height="176"/>
+        <image name="btnBackground" width="187" height="49"/>
+    </resources>
+</document>
