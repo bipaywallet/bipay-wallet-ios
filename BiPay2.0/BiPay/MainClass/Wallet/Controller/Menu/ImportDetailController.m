@@ -14,6 +14,7 @@
 #import "TradeModel.h"
 #import "TransferModel.h"
 #import "changeModel.h"
+#import "TextFieldView.h"
 @interface ImportDetailController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIView *textViewBackView;
 @property (weak, nonatomic) IBOutlet UIView *secondLineView;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *forthLineView;
 @property (nonatomic,retain)NSString *CountType;
 @property (nonatomic,strong)InputMnemonicWordView *mnemonicView;
+@property (nonatomic,strong)TextFieldView *textFieldView;
 @property(nonatomic,strong)walletModel*wallet;//检测出来的已存在的相同的钱包
 @end
 
@@ -72,21 +74,24 @@
     [self.userTerms setTitleColor:ServiceBtnTitleColor forState:UIControlStateNormal];
     [self.userTerms setTitle:[NSString stringWithFormat:@"《%@》",LocalizationKey(@"serviceAndPrivacy")] forState:UIControlStateNormal];
     [self.leadInBtn setTitle:LocalizationKey(@"startImport") forState:UIControlStateNormal];
-    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    _mnemonicView = [[NSBundle mainBundle] loadNibNamed:@"InputMnemonicWordView" owner:nil options:nil].firstObject;
-    _mnemonicView.frame = _mnemonicContainer.bounds;
-    _mnemonicView.textView.textColor = TFTextColor;
-    _mnemonicView.backgroundColor=CellBackColor;
-    _mnemonicView.placeholder.textColor = TVPlaceHolderColor;
-    [_mnemonicContainer addSubview:_mnemonicView];
+   
     NSNotificationCenter * center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(notice) name:@"hiddenAction" object:nil];
     if ([_CountType isEqualToString:@"help"]) {
-        self.mnemonicView.placeholder.text=LocalizationKey(@"pleaseInputMemoryWord");
+        _textFieldView = [[NSBundle mainBundle] loadNibNamed:@"TextFieldView" owner:nil options:nil].firstObject;
+        _textFieldView.frame = _mnemonicContainer.bounds;
+        _textFieldView.backgroundColor=CellBackColor;
+        [_mnemonicContainer addSubview:_textFieldView];
     }
     if ([_CountType isEqualToString:@"key"]) {
+        _mnemonicView = [[NSBundle mainBundle] loadNibNamed:@"InputMnemonicWordView" owner:nil options:nil].firstObject;
+        _mnemonicView.frame = _mnemonicContainer.bounds;
+        _mnemonicView.textView.textColor = TFTextColor;
+        _mnemonicView.backgroundColor=CellBackColor;
+        _mnemonicView.placeholder.textColor = TVPlaceHolderColor;
+        [_mnemonicContainer addSubview:_mnemonicView];
         self.mnemonicView.placeholder.text=LocalizationKey(@"pleasePrivateKey");
     }
     CGRect rect = self.bgview.frame;
@@ -113,6 +118,7 @@
 //去除输入框
 -(void)notice{
     
+    [self.view endEditing:YES];
     [_mnemonicView.textView resignFirstResponder];
     
 }
@@ -120,18 +126,18 @@
 //开始导入
 - (IBAction)beginImport:(UIButton *)sender {
     if ([_CountType isEqualToString:@"help"]) {
-        if ([NSString stringIsNull:self.mnemonicView.textView.text]) {
-            [self.view makeToast:LocalizationKey(@"pleaseInputMemoryWord") duration:1.5 position:CSToastPositionCenter];
+        if ([NSString stringIsNull:[self.textFieldView checkstring:self.view]]) {
+           // [self.view makeToast:LocalizationKey(@"pleaseInputMemoryWord") duration:1.5 position:CSToastPositionCenter];
             return ;
         }
-         NSArray *array = [self.mnemonicView.textView.text componentsSeparatedByString:@" "];
+        
+         NSArray *array = [[self.textFieldView checkstring:self.view] componentsSeparatedByString:@" "];
         if (array.count!=12) {
             [self.view makeToast:LocalizationKey(@"mnemonicwordsnotformatted") duration:1.5 position:CSToastPositionCenter];
             return ;
         }
-        
 
-        NSString *seedString = [BiPayObject getSeedWithMnemonic:self.mnemonicView.textView.text];
+        NSString *seedString = [BiPayObject getSeedWithMnemonic:[self.textFieldView checkstring:self.view]];
         if ([seedString isEqualToString:@""]) {
             [self.view makeToast:LocalizationKey(@"illegalMnemonicWords") duration:1.5 position:CSToastPositionCenter];
             return ;
@@ -197,10 +203,10 @@
         }
         walletModel*wallet=[[walletModel alloc]init];
         wallet.name=self.nameTF.text;
-        wallet.password= self.confirmPassword.text;
+        //wallet.password= self.confirmPassword.text;
         wallet.tips=self.passwordPrompt.text;
         wallet.isHide=@"0";
-        NSString* sed = [BiPayObject getSeedWithMnemonic:self.mnemonicView.textView.text];
+        NSString* sed = [BiPayObject getSeedWithMnemonic:[self.textFieldView checkstring:self.view]];
         NSString* masterKey = [BiPayObject getMasterKey:sed];
         wallet.mnemonics=@"";
         wallet.password= [AESCrypt encrypt:masterKey password:self.confirmPassword.text];
@@ -349,7 +355,7 @@
 -(BOOL)checkBTCIsSame:(BOOL)isMastkey{
     NSString*address;
     if (!isMastkey) {//助记词生成钱包
-       address = [BiPayObject createWalletWithMnemonic:self.mnemonicView.textView.text coinType:0 addressprefix:0];
+       address = [BiPayObject createWalletWithMnemonic:[self.textFieldView checkstring:self.view] coinType:0 addressprefix:0];
     }else{ //私钥生成钱包
        address = [BiPayObject createWalletWithPrivateKey:self.mnemonicView.textView.text coinType:0 addressprefix:0];
         

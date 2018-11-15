@@ -28,6 +28,7 @@
 "confirmmnemonic" = "确认你的钱包助记词";
 "pleaseSortmnemonicTip" = "请确认您的备份助记词，并按照正确顺序点击填入";
 "scanQRCode" = "扫描二维码，下载App";
+"Notespace" = "注：助记词，按空格键切换到下个输入框";
 //钱包
 "totalAssets" = "总资产";
 "switchWallet" = "切换钱包";

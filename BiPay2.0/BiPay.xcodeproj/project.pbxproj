@@ -148,6 +148,9 @@
 		D21596DE20DD02A400D61191 /* CALayer+color.m in Sources */ = {isa = PBXBuildFile; fileRef = D21596DD20DD02A300D61191 /* CALayer+color.m */; };
 		D21596E220DD09DA00D61191 /* AddMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D21596E020DD09DA00D61191 /* AddMoneyCell.m */; };
 		D21596E320DD09DA00D61191 /* AddMoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21596E120DD09DA00D61191 /* AddMoneyCell.xib */; };
+		D215B5CB219D10E400927990 /* YNTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D215B5C9219D10E400927990 /* YNTextField.m */; };
+		D215B5CF219D118B00927990 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D215B5CC219D118B00927990 /* TextFieldView.xib */; };
+		D215B5D0219D118B00927990 /* TextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = D215B5CD219D118B00927990 /* TextFieldView.m */; };
 		D2163366210C16AD001C15BC /* CNScollPositionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2163365210C16AD001C15BC /* CNScollPositionView.m */; };
 		D216336A210C40F1001C15BC /* MarketPriceController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2163369210C40F1001C15BC /* MarketPriceController.xib */; };
 		D22125A420F60CDC00942308 /* marketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D22125A120F60CDB00942308 /* marketCell.xib */; };
@@ -544,6 +547,11 @@
 		D21596DF20DD09DA00D61191 /* AddMoneyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMoneyCell.h; sourceTree = "<group>"; };
 		D21596E020DD09DA00D61191 /* AddMoneyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMoneyCell.m; sourceTree = "<group>"; };
 		D21596E120DD09DA00D61191 /* AddMoneyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMoneyCell.xib; sourceTree = "<group>"; };
+		D215B5C9219D10E400927990 /* YNTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNTextField.m; sourceTree = "<group>"; };
+		D215B5CA219D10E400927990 /* YNTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNTextField.h; sourceTree = "<group>"; };
+		D215B5CC219D118B00927990 /* TextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
+		D215B5CD219D118B00927990 /* TextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldView.m; sourceTree = "<group>"; };
+		D215B5CE219D118B00927990 /* TextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldView.h; sourceTree = "<group>"; };
 		D2163364210C16AD001C15BC /* CNScollPositionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNScollPositionView.h; sourceTree = "<group>"; };
 		D2163365210C16AD001C15BC /* CNScollPositionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNScollPositionView.m; sourceTree = "<group>"; };
 		D2163369210C40F1001C15BC /* MarketPriceController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketPriceController.xib; sourceTree = "<group>"; };
@@ -1082,6 +1090,8 @@
 				D2256123211AE7B3002412AF /* NSString+LCJudgeNumber.m */,
 				D2E4DD28212CF8DE001AE806 /* shareManger.h */,
 				D2E4DD29212CF8DE001AE806 /* shareManger.m */,
+				D215B5CA219D10E400927990 /* YNTextField.h */,
+				D215B5C9219D10E400927990 /* YNTextField.m */,
 				701962EC20D3520D00A35200 /* Fundation (Category) */,
 				701962D320D3508000A35200 /* UIKit (Category) */,
 			);
@@ -1308,6 +1318,9 @@
 				6B199646215E393E0099000A /* RightSubCell.h */,
 				6B199647215E393E0099000A /* RightSubCell.m */,
 				6B199648215E393E0099000A /* RightSubCell.xib */,
+				D215B5CE219D118B00927990 /* TextFieldView.h */,
+				D215B5CD219D118B00927990 /* TextFieldView.m */,
+				D215B5CC219D118B00927990 /* TextFieldView.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1962,6 +1975,7 @@
 				D2EBC59421816A8700D1B27F /* changeDetailController.xib in Resources */,
 				D2B06BF4218022BF0048F9BA /* confirmExchangeController.xib in Resources */,
 				D216336A210C40F1001C15BC /* MarketPriceController.xib in Resources */,
+				D215B5CF219D118B00927990 /* TextFieldView.xib in Resources */,
 				701962C420D34E0500A35200 /* Assets.xcassets in Resources */,
 				880928812117E2D400DE4FB7 /* MnemonicViewCell.xib in Resources */,
 				D21596C220DCD1F700D61191 /* KlineViewController.xib in Resources */,
@@ -2093,6 +2107,7 @@
 				70C776F320D366D7007C3F39 /* BaseView.m in Sources */,
 				D2AD1467211C2B0300CDAEE2 /* TradeModel.m in Sources */,
 				8863623020EB234C00863694 /* MD5.m in Sources */,
+				D215B5D0219D118B00927990 /* TextFieldView.m in Sources */,
 				D21596C120DCD1F700D61191 /* KlineViewController.m in Sources */,
 				701962F520D3530100A35200 /* BaseController.m in Sources */,
 				701962E420D3508000A35200 /* UIView+DNFrame.m in Sources */,
@@ -2194,6 +2209,7 @@
 				D2163366210C16AD001C15BC /* CNScollPositionView.m in Sources */,
 				704A9A0120D8CE9B0038F70C /* SettingDetailController.m in Sources */,
 				D2EBC57F2181541400D1B27F /* changeHistoryController.m in Sources */,
+				D215B5CB219D10E400927990 /* YNTextField.m in Sources */,
 				8863622F20EB234C00863694 /* keychianTool.m in Sources */,
 				D256CD13215DD91500C77117 /* HeadView.m in Sources */,
 				8863625120EB59B700863694 /* WLWebProgressLayer.m in Sources */,

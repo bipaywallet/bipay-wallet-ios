@@ -46,7 +46,7 @@
 "namesame" = "The contact name cannot be repeated";
 "emailFormat" = "Incorrect email format";
 "mobileFormat" = "Incorrect format of mobile phone number";
-
+"Notespace" = "Note: mnemonic words, press the space bar to switch to the next input box";
 //添加币种
 "pleaseSelectCoin" = "Please select the currency to add";
 
