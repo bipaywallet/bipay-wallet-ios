@@ -1696,9 +1696,9 @@
 			children = (
 				D2F00F652137FAFE00738C86 /* coins.h */,
 				D2D5AF89217DCBF300354E10 /* bipaydll.h */,
+				D26FB01D21952C1300D66437 /* libbipay.dylib */,
 				6B1ADC7D2159D40700946FCC /* BiPayObject.h */,
 				6B1ADC7E2159D40700946FCC /* BiPayObject.mm */,
-				D26FB01D21952C1300D66437 /* libbipay.dylib */,
 			);
 			path = bipaySDK;
 			sourceTree = "<group>";

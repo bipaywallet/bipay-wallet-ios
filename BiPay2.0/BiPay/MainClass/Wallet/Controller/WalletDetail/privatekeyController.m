@@ -126,7 +126,7 @@
     }else{
         
         coinModel*coin=self.coinArray[alertPasswordView.tag-1];
-        NSString*wifiStr=[BiPayObject exportWalletWithPrivateKey:decryptStr coinType:coin.cointype Priveprefix:coin.Priveprefix];
+        NSString*wifiStr=[BiPayObject exportWalletWithPrivateKey:decryptStr coinType:coin.cointype privePrefix:coin.Priveprefix];
         //导出私钥
         [self showKeystore:wifiStr withtitle:[NSString stringWithFormat:@"%@ %@",coin.brand,LocalizationKey(@"privateKey")]];
     }

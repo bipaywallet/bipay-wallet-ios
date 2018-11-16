@@ -4,7 +4,9 @@
 #include <cstdint>
 #include <map>
 #include <initializer_list>
-
+/*
+ coinType
+ */
 namespace bipay {
 namespace coin {
 
@@ -292,5 +294,25 @@ const static size_t kUSD = 91927009; //kUSD
 
 }
 }
+
+/*
+ 币种私钥前缀和地址前缀
+ 
+ | 币种  |  私钥前缀 | 地址前缀 |
+ |  ----| -----  | ------ |
+ |BTC   |   128    |   0     |
+ |BCH   |   128    |   0     |
+ |DVC   |   176    |   30    |
+ |DSH   |   207    |   75    |
+ |DOGE  |   176    |   30    |
+ |LTC   |   176    |   48    |
+ |QTUM  |   128    |   58    |
+ |USDT  |   128    |   0     |
+ |XNE   |   176    |   75    |
+ |ZEC   |   238    |   128   |
+ 
+ 
+ 
+ */
 #endif // ! COINS_H
 

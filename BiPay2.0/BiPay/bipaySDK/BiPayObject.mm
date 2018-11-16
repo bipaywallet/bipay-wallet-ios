@@ -10,30 +10,30 @@
 
 @implementation BiPayObject
 //MARK:--由助记词创建钱包
-+ (NSString *)createWalletWithMnemonic:(NSString *)mnemonicStr coinType:(int)coinType addressprefix:(int)addressprefix {
++ (NSString *)createWalletWithMnemonic:(NSString *)mnemonicStr coinType:(int)coinType addressPrefix:(int)addressPrefix {
     NSString * mnemonic = [self getSeedWithMnemonic:mnemonicStr];
     NSString * masterKey = [self getMasterKey:mnemonic];
-    NSString * exprivKey = [self getExPrivKey:masterKey coinType:coinType];
+    NSString * exprivKey = [self getCoinMasterKey:masterKey coinType:coinType];
     NSString * getSubKey = [self getSubPrivKey:exprivKey index:2^31];
-    NSString * getWalletAddress= [self getCoinAddress:getSubKey coinType:coinType Addressprefix:addressprefix];
+    NSString * getWalletAddress= [self getCoinAddress:getSubKey coinType:coinType addressPrefix:addressPrefix];
     return getWalletAddress;
 }
 
 //MARK:--由私钥创建钱包
-+ (NSString *)createWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType addressprefix:(int)addressprefix{
++ (NSString *)createWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType addressPrefix:(int)addressPrefix{
     
-    NSString * exprivKey = [self getExPrivKey:privateKey coinType:coinType];
+    NSString * exprivKey = [self getCoinMasterKey:privateKey coinType:coinType];
     NSString * getSubKey = [self getSubPrivKey:exprivKey index:2^31];
-    NSString * getWalletAddress= [self getCoinAddress:getSubKey coinType:coinType Addressprefix:addressprefix];
+    NSString * getWalletAddress= [self getCoinAddress:getSubKey coinType:coinType addressPrefix:addressPrefix];
     return getWalletAddress;
 }
 
 //MARK:--导出私钥
-+ (NSString *)exportWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType Priveprefix:(int)Priveprefix{
++ (NSString *)exportWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType privePrefix:(int)privePrefix{
     
-    NSString * exprivKey = [self getExPrivKey:privateKey coinType:coinType];
+    NSString * exprivKey = [self getCoinMasterKey:privateKey coinType:coinType];
     NSString * getSubKey = [self getSubPrivKey:exprivKey index:2^31];
-    NSString * getPrivKey = [self getSignaturePrivKey:getSubKey coinType:coinType Priveprefix:Priveprefix];
+    NSString * getPrivKey = [self getSignaturePrivKey:getSubKey coinType:coinType privePrefix:privePrefix];
     return getPrivKey;
 }
 
@@ -92,13 +92,13 @@
  * 以WIF形式导出密钥
  */
 //BIPAY_DLL char* GetExportedPrivKey(const char* privkey, int coin_type, int prefix);
-+ (NSString *)getSignaturePrivKey:(NSString *)subPrivKey coinType:(int)coinType Priveprefix:(int)Priveprefix;
++ (NSString *)getSignaturePrivKey:(NSString *)subPrivKey coinType:(int)coinType privePrefix:(int)privePrefix;
 {
     const char *pConstChar = [subPrivKey UTF8String];
-    char *privrKey= GetExportedPrivKey(pConstChar,coinType,Priveprefix);
-    if (privrKey) {
+    char *priveKey= GetExportedPrivKey(pConstChar,coinType,privePrefix);
+    if (priveKey) {
         
-        return [[NSString alloc] initWithUTF8String:privrKey];
+        return [[NSString alloc] initWithUTF8String:priveKey];
     }else{
         
         NSString *erroDes = @"检查 privkey 是否错误";
@@ -111,7 +111,7 @@
  *  根据主私钥获取对应币种的私钥,获取私钥以xprv序列化格式
  */
 //BIPAY_DLL char* GetCoinMasterKey(const char* master_key, int coin_type);
-+ (NSString *)getExPrivKey:(NSString *)master_key coinType:(int)coinType{
++ (NSString *)getCoinMasterKey:(NSString *)master_key coinType:(int)coinType{
     const char *pConstChar = [master_key UTF8String];
     char *privrKey= GetCoinMasterKey(pConstChar,coinType);
     
@@ -127,9 +127,9 @@
 }
 
 //BIPAY_DLL  char* GetAddressUsePrivkey(const char* privkey, int coin_type, int prefix);
-+ (NSString *)getCoinAddress:(NSString *)privkey coinType:(int)coinType Addressprefix:(int)addressprefix{
++ (NSString *)getCoinAddress:(NSString *)privkey coinType:(int)coinType addressPrefix:(int)addressPrefix{
     const char *pConstChar = [privkey UTF8String];
-    char *address= GetAddressUsePrivkey(pConstChar,coinType,addressprefix);
+    char *address= GetAddressUsePrivkey(pConstChar,coinType,addressPrefix);
     
     if(address){
         return [[NSString alloc] initWithUTF8String:address];
@@ -144,9 +144,9 @@
 }
 
 //BIPAY_DLL char* GetAddressUsePublicKey(const char* pubkey, int coin_type, int prefix);
-+ (NSString *)getCoinAddressByPub:(NSString *)pubkey coinType:(int)coinType addressprefix:(int)addressprefix{
++ (NSString *)getCoinAddressByPub:(NSString *)pubkey coinType:(int)coinType addressPrefix:(int)addressPrefix{
     const char *pConstChar = [pubkey UTF8String];
-    char *addressByPub= GetAddressUsePublicKey(pConstChar,coinType,addressprefix);
+    char *addressByPub= GetAddressUsePublicKey(pConstChar,coinType,addressPrefix);
     
     if(addressByPub){
         return [[NSString alloc] initWithUTF8String:addressByPub];

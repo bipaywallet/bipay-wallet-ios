@@ -150,7 +150,7 @@
             return ;
         }
 
-        NSString *privKey = [BiPayObject getExPrivKey:self.mnemonicView.textView.text coinType:0];
+        NSString *privKey = [BiPayObject getCoinMasterKey:self.mnemonicView.textView.text coinType:0];
         
         if ([privKey isEqualToString:@""])
         {
@@ -338,7 +338,7 @@
         coin.fatherCoin=@"BTC";
     }
 
-    coin.address = [BiPayObject createWalletWithPrivateKey:masterKey coinType:type addressprefix:addressprefix];
+    coin.address = [BiPayObject createWalletWithPrivateKey:masterKey coinType:type addressPrefix:addressprefix];
 
     [coin bg_save];
     
@@ -355,9 +355,9 @@
 -(BOOL)checkBTCIsSame:(BOOL)isMastkey{
     NSString*address;
     if (!isMastkey) {//助记词生成钱包
-       address = [BiPayObject createWalletWithMnemonic:[self.textFieldView checkstring:self.view] coinType:0 addressprefix:0];
+       address = [BiPayObject createWalletWithMnemonic:[self.textFieldView checkstring:self.view] coinType:0 addressPrefix:0];
     }else{ //私钥生成钱包
-       address = [BiPayObject createWalletWithPrivateKey:self.mnemonicView.textView.text coinType:0 addressprefix:0];
+       address = [BiPayObject createWalletWithPrivateKey:self.mnemonicView.textView.text coinType:0 addressPrefix:0];
         
     }
     //检测本地是否有比特币这个地址

@@ -356,7 +356,7 @@
     if ([coin.brand isEqualToString:@"USDT"]) {
         coin.fatherCoin=@"BTC";
     }
-    coin.address=[BiPayObject createWalletWithPrivateKey:MasterKey coinType:type addressprefix:addressprefix];
+    coin.address=[BiPayObject createWalletWithPrivateKey:MasterKey coinType:type addressPrefix:addressprefix];
     NSLog(@"新建的地址--%@--%@----钱包ID-%d",coin.brand,coin.address,addressprefix);
     [coin bg_save];
 }

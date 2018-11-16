@@ -44,10 +44,10 @@
 
  @param mnemonicStr 助记词
  @param coinType 币种类型（根据coins.h中获取）
- @param addressprefix 地址前缀
+ @param addressPrefix 地址前缀
  @return 钱包地址
  */
-+ (NSString *)createWalletWithMnemonic:(NSString *)mnemonicStr coinType:(int)coinType addressprefix:(int)addressprefix;
++ (NSString *)createWalletWithMnemonic:(NSString *)mnemonicStr coinType:(int)coinType addressPrefix:(int)addressPrefix;
 //MARK:--由私钥创建钱包
 
 /**
@@ -55,20 +55,20 @@
 
  @param privateKey 私钥
  @param coinType 币种类型
- @param addressprefix 地址前缀
+ @param addressPrefix 地址前缀
  @return 钱包地址
  */
-+ (NSString *)createWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType addressprefix:(int)addressprefix;
++ (NSString *)createWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType addressPrefix:(int)addressPrefix;
 
 /**
  导出私钥
 
  @param privateKey 私钥
  @param coinType 币种
- @param Priveprefix 私钥前缀
+ @param privePrefix 私钥前缀
  @return 私钥
  */
-+ (NSString *)exportWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType Priveprefix:(int)Priveprefix;
++ (NSString *)exportWalletWithPrivateKey:(NSString *)privateKey coinType:(int)coinType privePrefix:(int)privePrefix;
 #pragma mark -- 以下为专有方法
 
 /**
@@ -100,10 +100,10 @@
  
  @param subPrivKey 币种的子密钥，由getSubPrivKey生成
  @param coinType 币种 0-BTC;60-BTC;206-ETH;
-  @param Priveprefix 私钥前缀
+ @param privePrefix 私钥前缀
  @return 密钥
  */
-+ (NSString *)getSignaturePrivKey:(NSString *)subPrivKey coinType:(int)coinType Priveprefix:(int)Priveprefix;
++ (NSString *)getSignaturePrivKey:(NSString *)subPrivKey coinType:(int)coinType privePrefix:(int)privePrefix;
 
 
 /**
@@ -113,7 +113,7 @@
  @param coinType 币种
  @return 私钥
  */
-+ (NSString *)getExPrivKey:(NSString *)master_key coinType:(int)coinType;
++ (NSString *)getCoinMasterKey:(NSString *)master_key coinType:(int)coinType;
 
 
 /**
@@ -121,10 +121,10 @@
 
  @param privkey 主私钥
  @param coinType 币种
-@param addressprefix 地址前缀
+ @param addressPrefix 地址前缀
  @return 地址
  */
-+ (NSString *)getCoinAddress:(NSString *)privkey coinType:(int)coinType Addressprefix:(int)addressprefix;
++ (NSString *)getCoinAddress:(NSString *)privkey coinType:(int)coinType addressPrefix:(int)addressPrefix;
 
 
 /**
@@ -132,10 +132,10 @@
 
  @param pubkey 公钥
  @param coinType 币种
- @param addressprefix 地址前缀
+ @param addressPrefix 地址前缀
  @return 地址
  */
-+ (NSString *)getCoinAddressByPub:(NSString *)pubkey coinType:(int)coinType addressprefix:(int)addressprefix;
++ (NSString *)getCoinAddressByPub:(NSString *)pubkey coinType:(int)coinType addressPrefix:(int)addressPrefix;
 
 /**
  获取某个币种的主公钥,不同的币种公钥形式可能不同
