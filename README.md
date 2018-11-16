@@ -1,6 +1,6 @@
-#### [币付钱包官方网站](http://app.bipay.io) | [bipaysdk使用文档](https://github.com/iOSSunLiang/BipaySDK_iOS/blob/master/README.md) | 币付钱包QQ交流群：311189009
+#### [币付钱包官方网站](http://app.bipay.io) | [bipaysdk使用文档](https://github.com/iOSSunLiang/BipaySDK_iOS/blob/master/README.md) | 币付钱包QQ交流群：311189009
 ### 1.简介
-币付钱包APP是一款移动端数字资产钱包，专注于多链多币种管理，为用户提供安全、简单、易用的数字资产管理服务。本项目采用MVC模式，第三方库使用cocopods管理，开发者下载之后，pod install即可运行.
+币付钱包APP是一款移动端数字资产钱包，专注于多链多币种管理，为用户提供安全、简单、易用的数字资产管理服务。本项目设计模式采用MVC，第三方库使用cocopods管理，开发者下载之后，pod install即可运行.
 
 ### 2.功能模块
 #### 2.1 钱包管理
