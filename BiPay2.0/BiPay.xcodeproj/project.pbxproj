@@ -99,7 +99,6 @@
 		88D6036F210EEAEA006FD467 /* SelectItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D6036D210EEAEA006FD467 /* SelectItemCell.m */; };
 		88D60370210EEAEA006FD467 /* SelectItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D6036E210EEAEA006FD467 /* SelectItemCell.xib */; };
 		88D6037C210EFEBD006FD467 /* ChangeLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D6037A210EFEBD006FD467 /* ChangeLanguage.m */; };
-		AA6A83917DD61B05ADA973B0 /* libPods-BiPay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B823D15143434B992A6AACDC /* libPods-BiPay.a */; };
 		D2021FC32127F6F70051D25C /* AddContactViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2021FC22127F6F70051D25C /* AddContactViewCell.xib */; };
 		D2021FC72127FBC10051D25C /* OptionalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2021FC52127FBC10051D25C /* OptionalCell.m */; };
 		D2021FC82127FBC10051D25C /* OptionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2021FC62127FBC10051D25C /* OptionalCell.xib */; };
@@ -198,8 +197,6 @@
 		D26E250320DBC07D006A6BDD /* walletDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26E250120DBC07D006A6BDD /* walletDetailController.xib */; };
 		D26E250720DBC58B006A6BDD /* ModifypwController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26E250520DBC58B006A6BDD /* ModifypwController.m */; };
 		D26E250820DBC58B006A6BDD /* ModifypwController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26E250620DBC58B006A6BDD /* ModifypwController.xib */; };
-		D26FB01E21952C1300D66437 /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26FB01D21952C1300D66437 /* libbipay.dylib */; };
-		D26FB01F21952C1F00D66437 /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D26FB01D21952C1300D66437 /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D29874A6213632B100EC0A9B /* webViewprotocolVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29874A3213632B100EC0A9B /* webViewprotocolVC.xib */; };
 		D29874A7213632B100EC0A9B /* webViewprotocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D29874A4213632B100EC0A9B /* webViewprotocolVC.m */; };
 		D2A49BDD213FB68200F5FD51 /* tradeDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A49BDB213FB68200F5FD51 /* tradeDetailCell.m */; };
@@ -215,6 +212,8 @@
 		D2B06BF4218022BF0048F9BA /* confirmExchangeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B06BF2218022BF0048F9BA /* confirmExchangeController.xib */; };
 		D2B06BF7218077FB0048F9BA /* changellyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B06BF6218077FB0048F9BA /* changellyView.m */; };
 		D2B06BF92180780A0048F9BA /* changellyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B06BF82180780A0048F9BA /* changellyView.xib */; };
+		D2B9DFDE21A6C1DD00B07560 /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B9DFDD21A6C1DD00B07560 /* libbipay.dylib */; };
+		D2B9DFDF21A6C1E400B07560 /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D2B9DFDD21A6C1DD00B07560 /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D2CD5E4D215CDC900055709F /* TradeRecordViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CD5E4C215CDC900055709F /* TradeRecordViewCell.xib */; };
 		D2CD5E4F215CE4940055709F /* tradeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CD5E4E215CE4940055709F /* tradeHeaderView.xib */; };
 		D2CD5E52215CE4B00055709F /* tradeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CD5E51215CE4B00055709F /* tradeHeaderView.m */; };
@@ -259,6 +258,7 @@
 		D2F5CA5E211EED1900289CEF /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CA5A211EED1900289CEF /* NSString+Base64.m */; };
 		D2F72E9D212419FE00928EFA /* HomePlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F72E9C212419FE00928EFA /* HomePlaceholderView.m */; };
 		D2F72E9F21241A2500928EFA /* HomePlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F72E9E21241A2500928EFA /* HomePlaceholderView.xib */; };
+		F65FDF4941E32C91993268DE /* libPods-BiPay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B823D15143434B992A6AACDC /* libPods-BiPay.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,13 +279,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6B1ADC7B2159D21F00946FCC /* Embed Libraries */ = {
+		D2B9DFBB21A65CAD00B07560 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2B9DFC021A660C300B07560 /* Embed Libraries */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D26FB01F21952C1F00D66437 /* libbipay.dylib in Embed Libraries */,
+				D2B9DFDF21A6C1E400B07560 /* libbipay.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,7 +639,6 @@
 		D26E250420DBC58B006A6BDD /* ModifypwController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifypwController.h; sourceTree = "<group>"; };
 		D26E250520DBC58B006A6BDD /* ModifypwController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifypwController.m; sourceTree = "<group>"; };
 		D26E250620DBC58B006A6BDD /* ModifypwController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifypwController.xib; sourceTree = "<group>"; };
-		D26FB01D21952C1300D66437 /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
 		D29874A3213632B100EC0A9B /* webViewprotocolVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = webViewprotocolVC.xib; sourceTree = "<group>"; };
 		D29874A4213632B100EC0A9B /* webViewprotocolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewprotocolVC.m; sourceTree = "<group>"; };
 		D29874A5213632B100EC0A9B /* webViewprotocolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewprotocolVC.h; sourceTree = "<group>"; };
@@ -658,6 +666,7 @@
 		D2B0A2382134F1F400964EB5 /* libcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcore.a; sourceTree = "<group>"; };
 		D2B0A23A2134F1F600964EB5 /* libexternal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexternal.a; sourceTree = "<group>"; };
 		D2B0A23C2134F1F600964EB5 /* libmnemonic.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmnemonic.a; sourceTree = "<group>"; };
+		D2B9DFDD21A6C1DD00B07560 /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
 		D2BBD5E92154C1CE00B44640 /* libbipay.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbipay.a; sourceTree = "<group>"; };
 		D2CD5E4C215CDC900055709F /* TradeRecordViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TradeRecordViewCell.xib; sourceTree = "<group>"; };
 		D2CD5E4E215CE4940055709F /* tradeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tradeHeaderView.xib; sourceTree = "<group>"; };
@@ -745,8 +754,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D26FB01E21952C1300D66437 /* libbipay.dylib in Frameworks */,
-				AA6A83917DD61B05ADA973B0 /* libPods-BiPay.a in Frameworks */,
+				D2B9DFDE21A6C1DD00B07560 /* libbipay.dylib in Frameworks */,
+				F65FDF4941E32C91993268DE /* libPods-BiPay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1696,7 +1705,7 @@
 			children = (
 				D2F00F652137FAFE00738C86 /* coins.h */,
 				D2D5AF89217DCBF300354E10 /* bipaydll.h */,
-				D26FB01D21952C1300D66437 /* libbipay.dylib */,
+				D2B9DFDD21A6C1DD00B07560 /* libbipay.dylib */,
 				6B1ADC7D2159D40700946FCC /* BiPayObject.h */,
 				6B1ADC7E2159D40700946FCC /* BiPayObject.mm */,
 			);
@@ -1850,7 +1859,8 @@
 				7019626A20D34CC400A35200 /* Frameworks */,
 				7019626B20D34CC400A35200 /* Resources */,
 				55309ECF376394687CB54819 /* [CP] Copy Pods Resources */,
-				6B1ADC7B2159D21F00946FCC /* Embed Libraries */,
+				D2B9DFBB21A65CAD00B07560 /* CopyFiles */,
+				D2B9DFC021A660C300B07560 /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -2373,7 +2383,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2433,7 +2443,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

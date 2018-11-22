@@ -218,6 +218,7 @@ const static size_t NRG = 204; //Energi
 const static size_t RIN = 205; //Ringo
 const static size_t DVC = 206; //Dev
 const static size_t USDT = 207; //USDT
+const static size_t XNE = 208; //XNE
 const static size_t BIS = 209; //Bismuth
 const static size_t NEET = 210; //NEETCOIN
 const static size_t BOPO = 211; //BopoChain
@@ -310,9 +311,10 @@ const static size_t kUSD = 91927009; //kUSD
  |USDT  |   128    |   0     |
  |XNE   |   176    |   75    |
  |ZEC   |   238    |   128   |
- 
- 
- 
+ |GCA   |   176    |   38    |
+ |GCB   |   176    |   25    |
+ |GCC   |   176    |   26    |
+ |STO   |   176    |   63    |
  */
 #endif // ! COINS_H
 

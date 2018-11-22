@@ -20,7 +20,7 @@ static CGFloat const ButtonHeight = 50;
     [super viewDidLoad];
     self.view.backgroundColor = ViewBackColor;
 //    屏蔽系统的右划返回手势，防止与页面中的左右换切换导入方式发生冲突
-   // self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+   //self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     self.navigationItem.title=LocalizationKey(@"importPacket");
     [self performSelector:@selector(delayMethod) withObject:nil/*可传任意类型参数*/ afterDelay:0.0];
    

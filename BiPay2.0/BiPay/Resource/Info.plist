@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>币付钱包</string>
+	<string>Bipay</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -50,11 +50,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>币付钱包请求访问您的相机</string>
+	<string>Bipay请求访问您的相机</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>币付钱包请求访问您的相册</string>
+	<string>Bipay请求访问您的相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>币付钱包请求访问您的相册</string>
+	<string>Bipay请求访问您的相册</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

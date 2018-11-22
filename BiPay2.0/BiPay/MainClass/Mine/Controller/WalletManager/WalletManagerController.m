@@ -44,7 +44,7 @@
     DNWeak(self);
     [dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         walletModel*wallet=dataArray[idx];
-        NSLog(@"钱包id--%@",wallet.bg_id);
+       // NSLog(@"钱包id--%@",wallet.bg_id);
         if ([wallet.bg_id isEqual:[UserinfoModel shareManage].wallet.bg_id]) {
             [dataArray removeObject:wallet];
             [dataArray insertObject:wallet atIndex:0];

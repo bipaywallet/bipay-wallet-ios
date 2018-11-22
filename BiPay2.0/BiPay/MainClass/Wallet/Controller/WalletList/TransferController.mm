@@ -179,7 +179,7 @@
     }else{//非代币
         if ([self.coin.recordType intValue]==0) {
             //BTC,LTC,DOGE,BCH等
-            if ([self.coin.brand isEqualToString:@"XNE"]) {
+            if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
                   self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@",sender.value,self.coin.brand];
             }else{
                  self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@/KB",sender.value,self.coin.brand];
@@ -216,7 +216,7 @@
                     self.slider.minimumValue=[resPonseObj[@"data"] doubleValue]*1;
                     self.slider.value=[resPonseObj[@"data"] doubleValue]*2;
                    
-                    if ([self.coin.brand isEqualToString:@"XNE"]) {
+                    if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
                         self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@",[resPonseObj[@"data"] doubleValue]*2,self.coin.brand];
                     }else{
                          self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@/KB",[resPonseObj[@"data"] doubleValue]*2,self.coin.brand];
@@ -431,16 +431,23 @@
         if (error) {
             NSLog(@"error: %@",error);
         } else {
-            NSLog(@"扫描结果：%@",result);
+            NSLog(@"111扫描结果：%@",result);
              NSArray *array = [result componentsSeparatedByString:@":"];
-            if ([[array firstObject] isEqualToString:self.coin.brand]&&array.count==3) {
+            if ([[[array firstObject] uppercaseString] isEqualToString:[self.coin.englishName uppercaseString]]&&array.count==3) {
                 self.addresTF.text=[array objectAtIndex:1];
                 if ([[array lastObject] doubleValue]>0) {
                     self.transferAmount.text=[array lastObject];
+                }else{
+                    self.transferAmount.text=@"";
                 }
                 
             }else{
-                 self.addresTF.text=result;
+                if (![[[array firstObject] uppercaseString] isEqualToString:[self.coin.englishName uppercaseString]]) {
+                     [self.view makeToast:LocalizationKey(@"coinErro") duration:1.5 position:CSToastPositionCenter];
+                }else{
+                    self.addresTF.text=result;
+                }
+               
                 
             }
         }
@@ -748,7 +755,7 @@
             }else{
                 outputs_count=2;
                 NSDictionary *outDic1=[NSDictionary dictionaryWithObjectsAndKeys:self.addresTF.text,@"address",self.transferAmount.text,@"value",nil];
-                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.8f",totalAmount-[self.transferAmount.text doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue]],@"value",nil];
+                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.6f",totalAmount-[self.transferAmount.text doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue]],@"value",nil];
                 [outputArray addObject:outDic1];
                 [outputArray addObject:outDic2];
             }
@@ -835,7 +842,7 @@
     }else{
         //非代币
         if ([self.coin.recordType intValue]==0) {//BTC,LTC等
-            if ([self.coin.brand isEqualToString:@"XNE"]) {
+            if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
                 NSString *strUrl = [str stringByReplacingOccurrencesOfString:self.coin.brand withString:@""];
                 return strUrl;
             }else{

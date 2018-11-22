@@ -19,6 +19,7 @@
  */
 @property(nonatomic,strong) NSNumber *coin_id;
 @property(nonatomic,copy)   NSString *brand;//币种名字
+@property(nonatomic,copy)   NSString *englishName;//币种英文名
 @property(nonatomic,assign) int cointype;
 @property(nonatomic,copy)   NSString* address;
 @property(nonatomic,assign) int collect;//是否添加了该币种，0为false，1为true

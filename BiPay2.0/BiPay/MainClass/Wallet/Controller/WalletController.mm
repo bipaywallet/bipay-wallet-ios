@@ -614,7 +614,7 @@ static void extracted(WalletController *object) {
                         __block BOOL _isContinue=NO;
                         [coins enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                             coinModel*coin=coins[idx];
-                            if ([coin.brand isEqualToString:[array firstObject]]) {
+                            if ([[coin.englishName uppercaseString] isEqualToString:[[array firstObject] uppercaseString]]) {
                                 currentcoin=coin;
                                 currentcoin.address=array[1];
                                 _isContinue=YES;
@@ -763,6 +763,26 @@ static void extracted(WalletController *object) {
         XNEmodel.close_rmb=@"0.00";
         XNEmodel.close=@"0.00";
         [self.marketArray addObject:XNEmodel];
+        marketModel*GCAmodel=[[marketModel alloc]init];
+        GCAmodel.name=@"GCA";
+        GCAmodel.close_rmb=@"0.00";
+        GCAmodel.close=@"0.00";
+        [self.marketArray addObject:GCAmodel];
+        marketModel*GCBmodel=[[marketModel alloc]init];
+        GCBmodel.name=@"GCB";
+        GCBmodel.close_rmb=@"0.00";
+        GCBmodel.close=@"0.00";
+        [self.marketArray addObject:GCBmodel];
+        marketModel*GCCmodel=[[marketModel alloc]init];
+        GCCmodel.name=@"GCC";
+        GCCmodel.close_rmb=@"0.00";
+        GCCmodel.close=@"0.00";
+        [self.marketArray addObject:GCCmodel];
+        marketModel*STOmodel=[[marketModel alloc]init];
+        STOmodel.name=@"STO";
+        STOmodel.close_rmb=@"0.00";
+        STOmodel.close=@"0.00";
+        [self.marketArray addObject:STOmodel];
         [self checKMoneyAddress:[UserinfoModel shareManage].wallet];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {

@@ -192,7 +192,7 @@
     TxidCheckViewController*txidVC=[[TxidCheckViewController alloc]init];
     txidVC.txid=self.model.txid;//交易号
     txidVC.coin=self.coin;
-    if ([self.coin.brand isEqualToString:@"XNE"]) {
+    if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
          [self.view makeToast:@"该币种暂不支持查询" duration:1.5 position:CSToastPositionCenter];
     }else{
         [self.navigationController pushViewController:txidVC animated:YES];

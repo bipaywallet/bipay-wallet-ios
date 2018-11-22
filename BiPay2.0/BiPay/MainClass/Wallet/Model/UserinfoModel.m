@@ -19,11 +19,12 @@ static UserinfoModel *_ModelClass;
     dispatch_once(&oneToken, ^{
         
         _ModelClass = [[UserinfoModel alloc]init];
-        _ModelClass.Namearray=[NSArray arrayWithObjects:@"BTC",@"BCH",@"ETH",@"LTC",@"USDT",@"XNE",nil];
-        _ModelClass.coinTypeArray=[NSArray arrayWithObjects:@"0",@"145",@"60",@"2",@"0",@"208", nil];
-        _ModelClass.PriveprefixTypeArray=[NSArray arrayWithObjects:@"128",@"128",@"-1",@"176",@"128", @"176",nil];
-        _ModelClass.AddressprefixTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"-1",@"48",@"0", @"75",nil];
-        _ModelClass.tradeTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"1",@"0",@"2",@"0", nil];
+        _ModelClass.Namearray=[NSArray arrayWithObjects:@"BTC",@"BCH",@"ETH",@"LTC",@"USDT",@"XNE",@"GCA",@"GCB",@"GCC",@"STO",nil];
+        _ModelClass.englishNameArray=[NSArray arrayWithObjects:@"Bitcoin",@"Bitcoincash",@"Ethereum",@"Litecoin",@"USDT",@"XNE",@"GCA",@"GCB",@"GalaxyChain",@"STO",nil];
+        _ModelClass.coinTypeArray=[NSArray arrayWithObjects:@"0",@"145",@"60",@"2",@"0",@"208",@"500",@"501",@"502",@"99", nil];
+        _ModelClass.PriveprefixTypeArray=[NSArray arrayWithObjects:@"128",@"128",@"-1",@"176",@"128", @"176",@"176",@"176",@"176",@"176",nil];
+        _ModelClass.AddressprefixTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"-1",@"48",@"0", @"75",@"38",@"25",@"26",@"63",nil];
+        _ModelClass.tradeTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"1",@"0",@"2",@"0",@"0",@"0",@"0",@"0",nil];
     });
     
     return _ModelClass;
@@ -53,6 +54,26 @@ static UserinfoModel *_ModelClass;
         XNEmodel.close_rmb=@"0.00";
         XNEmodel.close=@"0.00";
         [self.marketArray addObject:XNEmodel];
+        marketModel*GCAmodel=[[marketModel alloc]init];
+        GCAmodel.name=@"GCA";
+        GCAmodel.close_rmb=@"0.00";
+        GCAmodel.close=@"0.00";
+        [self.marketArray addObject:GCAmodel];
+        marketModel*GCBmodel=[[marketModel alloc]init];
+        GCBmodel.name=@"GCB";
+        GCBmodel.close_rmb=@"0.00";
+        GCBmodel.close=@"0.00";
+        [self.marketArray addObject:GCBmodel];
+        marketModel*GCCmodel=[[marketModel alloc]init];
+        GCCmodel.name=@"GCC";
+        GCCmodel.close_rmb=@"0.00";
+        GCCmodel.close=@"0.00";
+        [self.marketArray addObject:GCCmodel];
+        marketModel*STOmodel=[[marketModel alloc]init];
+        STOmodel.name=@"STO";
+        STOmodel.close_rmb=@"0.00";
+        STOmodel.close=@"0.00";
+        [self.marketArray addObject:STOmodel];
         [self checKMoneyAddressWithWallet:walletmodel];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {

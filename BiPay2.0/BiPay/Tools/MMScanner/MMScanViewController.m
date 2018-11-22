@@ -93,7 +93,8 @@
         if ([self.session canAddOutput:self.output]) [self.session addOutput:self.output];
         
         //设置扫码支持的编码格式【默认二维码】
-        self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode];
+         self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode];
+        // self.output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
         //设置扫描聚焦区域
         self.output.rectOfInterest = _scanRect;
         
@@ -163,7 +164,7 @@
     //开始捕获
     if (self.session) [self.session stopRunning];
 }
-
+#warning 识别成功
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     if ( (metadataObjects.count==0) )
@@ -177,16 +178,68 @@
         NSArray *array = [metadataObject.stringValue componentsSeparatedByString:@":"];
         if (self.popType ==1) {
             //不作任何限制
+            [self.session stopRunning];
+            [self renderUrlStr:[self configAddressWithStr:metadataObject.stringValue withtype:self.popType]];
+            return;
             
         }else{
-            if (array.count!=3) {
+            if (array.count!=2) {
                 return;//过滤一些其他的二维码
+            }else{
+               [self.session stopRunning];
+               [self renderUrlStr:[self configAddressWithStr:metadataObject.stringValue withtype:self.popType]];
+                
+                return;
             }
         }
-        [self.session stopRunning];
-        [self renderUrlStr:metadataObject.stringValue];
+//        [self.session stopRunning];
+        //[self renderUrlStr:metadataObject.stringValue];
     }
 }
+
+-(NSString*)configAddressWithStr:(NSString*)stringValue withtype:(int)type{
+    
+    if (type==1) {
+        
+        if (![stringValue containsString:@":"]) {
+            
+            return  stringValue;
+        }
+        else{
+            
+            NSArray *array = [stringValue componentsSeparatedByString:@"?"];
+            NSString*preFix=[array objectAtIndex:0];
+            NSArray*lastArray=[[array lastObject] componentsSeparatedByString:@"&"];
+            for (int i=0; i<lastArray.count; i++) {
+                NSString*result=lastArray[i];
+                if ([result containsString:@"amount"]) {
+                    NSArray*amountArray=[result componentsSeparatedByString:@"="];
+                    NSString*amountStr=[amountArray lastObject];
+                    return  [NSString stringWithFormat:@"%@:%@",preFix,amountStr];
+                }
+            }
+            return  [NSString stringWithFormat:@"%@:%@",preFix,@"0"];
+        }
+       
+        
+    }else{
+        NSArray *array = [stringValue componentsSeparatedByString:@"?"];
+        NSString*preFix=[array objectAtIndex:0];
+        NSArray*lastArray=[[array lastObject] componentsSeparatedByString:@"&"];
+        for (int i=0; i<lastArray.count; i++) {
+            NSString*result=lastArray[i];
+            if ([result containsString:@"amount"]) {
+                NSArray*amountArray=[result componentsSeparatedByString:@"="];
+                NSString*amountStr=[amountArray lastObject];
+                return  [NSString stringWithFormat:@"%@:%@",preFix,amountStr];
+            }
+        }
+        return  [NSString stringWithFormat:@"%@:%@",preFix,@"0"];
+    }
+   
+}
+
+
 
 - (void)renderUrlStr:(NSString *)url {
     
@@ -405,9 +458,32 @@
     }
     
     [self recognizeQrCodeImage:image onFinish:^(NSString *result) {
-        [self renderUrlStr:result];
+        
+        [self renderUrlStr:[self pickerStr:result]];
     }];
 }
+
+-(NSString*)pickerStr:(NSString*)strValue{
+    NSArray *array = [strValue componentsSeparatedByString:@":"];
+    if (self.popType ==1) {
+        [self.session stopRunning];
+        [self renderUrlStr:[self configAddressWithStr:strValue withtype:self.popType]];
+    }else{
+        if (array.count!=2) {
+          
+        }else{
+            
+        return   [self configAddressWithStr:strValue withtype:self.popType];
+            
+       
+        }
+    }
+   
+    return  [self configAddressWithStr:strValue withtype:self.popType];
+    
+}
+
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     NSLog(@"cancel");

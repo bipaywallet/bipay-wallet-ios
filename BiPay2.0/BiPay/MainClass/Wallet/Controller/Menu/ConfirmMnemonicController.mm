@@ -313,8 +313,9 @@
             NSArray *tradeTypeArray=[UserinfoModel shareManage].tradeTypeArray;
             NSArray *AddressprefixArray=[UserinfoModel shareManage].AddressprefixTypeArray;
             NSArray *PriveprefixArray=[UserinfoModel shareManage].PriveprefixTypeArray;
+            NSArray *englishNameArray=[UserinfoModel shareManage].englishNameArray;
             for (int i=0; i<Namearray.count; i++) {
-                [self creatCoins:Namearray[i] withCointype:[typeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue] withPriveprefix:[PriveprefixArray[i] intValue]  withTradetype:tradeTypeArray[i] withID:wallet.bg_id  withMasterKey:MasterKey withWallet:wallet];
+                [self creatCoins:Namearray[i] withEnglishName:englishNameArray[i] withCointype:[typeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue] withPriveprefix:[PriveprefixArray[i] intValue]  withTradetype:tradeTypeArray[i] withID:wallet.bg_id  withMasterKey:MasterKey withWallet:wallet];
             }
             [wallet bg_updateWhere:[NSString stringWithFormat:@"where %@=%@" ,[NSObject bg_sqlKey:@"bg_id"],[NSObject bg_sqlValue:wallet.bg_id]]];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -335,9 +336,10 @@
 /**
  往钱包内添加币种
  */
--(void)creatCoins:(NSString*)coinName withCointype:(int)type withAddressprefix:(int)addressprefix withPriveprefix:(int)priveprefix withTradetype:(NSString*)tradeType withID:(NSNumber*)ID withMasterKey:(NSString*)MasterKey withWallet:(walletModel*)wallet{
+-(void)creatCoins:(NSString*)coinName withEnglishName:(NSString*)englishName withCointype:(int)type withAddressprefix:(int)addressprefix withPriveprefix:(int)priveprefix withTradetype:(NSString*)tradeType withID:(NSNumber*)ID withMasterKey:(NSString*)MasterKey withWallet:(walletModel*)wallet{
     coinModel*coin=[[coinModel  alloc]init];
     coin.brand=coinName;
+    coin.englishName=englishName;
     coin.own_id=ID;
     coin.cointype=type;
     coin.Addressprefix=addressprefix;
@@ -357,7 +359,7 @@
         coin.fatherCoin=@"BTC";
     }
     coin.address=[BiPayObject createWalletWithPrivateKey:MasterKey coinType:type addressPrefix:addressprefix];
-    NSLog(@"新建的地址--%@--%@----钱包ID-%d",coin.brand,coin.address,addressprefix);
+    //NSLog(@"新建的地址--%@--%@----钱包ID-%d",coin.brand,coin.address,addressprefix);
     [coin bg_save];
 }
 

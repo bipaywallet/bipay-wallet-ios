@@ -93,9 +93,9 @@
  初始化语言，币种配置
  */
 -(void)initDefalutConfig{
-//    if (![NSUserDefaultUtil GetDefaults:LanguageChange]) {
-//        [NSUserDefaultUtil PutDefaults:LanguageChange Value:@"简体中文"];
-//    }
+    if (![NSUserDefaultUtil GetDefaults:LanguageChange]) {
+        [NSUserDefaultUtil PutDefaults:LanguageChange Value:@"简体中文"];
+    }
     if (![NSUserDefaultUtil  GetDefaults:MoneyChange]) {
         [NSUserDefaultUtil PutDefaults:MoneyChange Value:@"CNY"];
     }

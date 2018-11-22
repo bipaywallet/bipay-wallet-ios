@@ -33,7 +33,7 @@
     self.extendedLayoutIncludesOpaqueBars = YES;
     self.coinNameLabel.text=self.coin.brand;
     self.amountLabel.text=LocalizationKey(@"TransferAmount");
-    CIImage *codeCIImage = [self createQRForString:[NSString stringWithFormat:@"%@:%@:%@",self.coin.brand,self.coin.address,@"0"]];
+    CIImage *codeCIImage = [self createQRForString:[NSString stringWithFormat:@"%@:%@?amount=%@",self.coin.englishName,self.coin.address,@"0"]];
     self.ercodeImageV.image = [self createNonInterpolatedUIImageFormCIImage:codeCIImage withSize:200];
     [self.inputTF addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     self.inputTF.delegate=self;
@@ -41,7 +41,7 @@
     [SVProgressHUD dismiss];
 }
 -(void)delayMethod{
-    CIImage *codeCIImage = [self createQRForString:[NSString stringWithFormat:@"%@:%@:%@",self.coin.brand,self.coin.address,@"0"]];
+    CIImage *codeCIImage = [self createQRForString:[NSString stringWithFormat:@"%@:%@?amount=%@",self.coin.englishName,self.coin.address,@"0"]];
     self.shareview=[shareView instancesViewWithFrame:CGRectMake(self.backView.x+10, self.backView.y, self.backView.width-20, self.backView.height-50)];
     self.shareview.ercodeImageV.image=[self createNonInterpolatedUIImageFormCIImage:codeCIImage withSize:200];
     self.shareview.addressLabel.text=[NSString stringWithFormat:@"%@\n\n%@",LocalizationKey(@"inAddress"),self.coin.address];
@@ -53,7 +53,7 @@
  */
 - (void)textFieldChanged:(UITextField*)textField{
     
-    CIImage *codeCIImage = [self createQRForString:[NSString stringWithFormat:@"%@:%@:%@",self.coin.brand,self.coin.address,self.inputTF.text]];
+    CIImage *codeCIImage = [self createQRForString:[NSString stringWithFormat:@"%@:%@?amount=%@",self.coin.englishName,self.coin.address,self.inputTF.text]];
     self.ercodeImageV.image = [self createNonInterpolatedUIImageFormCIImage:codeCIImage withSize:200];
     self.shareview.ercodeImageV.image=[self createNonInterpolatedUIImageFormCIImage:codeCIImage withSize:200];
     

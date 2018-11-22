@@ -313,7 +313,7 @@ static NSString * identifier = @"cell";
             NSLog(@"扫描结果：%@",result);
             NSArray *array = [result componentsSeparatedByString:@":"];
             nameModel*coin=[[nameModel alloc]init];
-            coin.btnTitle=[array firstObject];
+            coin.btnTitle=[self configStr:[array firstObject]];
             coin.content=[array objectAtIndex:1];
             coin.placeholder=LocalizationKey(@"receivedWalletAddress");
             NSMutableArray*modelArray=[self.modelArray firstObject];
@@ -343,6 +343,24 @@ static NSString * identifier = @"cell";
     scanVC.hidesBottomBarWhenPushed=YES;
     [self.navigationController pushViewController:scanVC animated:YES];
 }
+
+-(NSString*)configStr:(NSString*)str{
+    
+    __block NSString*shortName;
+    NSArray*nameArray=[UserinfoModel shareManage].englishNameArray;
+    [nameArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString*name=nameArray[idx];
+        if ([name isEqualToString:str]) {
+            shortName=[[UserinfoModel shareManage].Namearray objectAtIndex:idx];
+         
+        }
+      
+    }];
+    return shortName;
+}
+
+
+
 // 添加,删除收款人的钱包地址响应事件
 - (void)addContactClick:(UIButton*)sender
 {

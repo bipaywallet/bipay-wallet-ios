@@ -7,9 +7,9 @@
 */
 
 /*权限声明*/
-NSPhotoLibraryUsageDescription = "币付钱包请求访问您的相册";
-NSPhotoLibraryAddUsageDescription = "币付钱包请求访问您的相册";
-NSCameraUsageDescription = "币付钱包请求访问您的相机";
+NSPhotoLibraryUsageDescription = "Bipay请求访问您的相册";
+NSPhotoLibraryAddUsageDescription = "Bipay请求访问您的相册";
+NSCameraUsageDescription = "Bipay请求访问您的相机";
 
 
 
