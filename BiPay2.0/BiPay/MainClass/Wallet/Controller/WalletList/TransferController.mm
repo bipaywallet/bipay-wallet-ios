@@ -717,7 +717,7 @@
         
     }else{//非代币
         
-        if ([self.coin.recordType intValue]==0) {//BTC,LTC,BCH等
+        if ([self.coin.recordType intValue]==0) {//BTC,LTC,BCH，GCA，GCB等
             __block double allAmount=0;
             [self.contentArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 TransferModel*model=self.contentArray [idx];
@@ -755,7 +755,7 @@
             }else{
                 outputs_count=2;
                 NSDictionary *outDic1=[NSDictionary dictionaryWithObjectsAndKeys:self.addresTF.text,@"address",self.transferAmount.text,@"value",nil];
-                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.6f",totalAmount-[self.transferAmount.text doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue]],@"value",nil];
+                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.8f",totalAmount-[self.transferAmount.text doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue]],@"value",nil];
                 [outputArray addObject:outDic1];
                 [outputArray addObject:outDic2];
             }
