@@ -93,8 +93,8 @@
         if ([self.session canAddOutput:self.output]) [self.session addOutput:self.output];
         
         //设置扫码支持的编码格式【默认二维码】
-         self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode];
-        // self.output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
+        // self.output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeInterleaved2of5Code,AVMetadataObjectTypeCode93Code,AVMetadataObjectTypeCode39Code,AVMetadataObjectTypeCode39Mod43Code,AVMetadataObjectTypeUPCECode,AVMetadataObjectTypePDF417Code,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeITF14Code,AVMetadataObjectTypeDataMatrixCode];
+        self.output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];
         //设置扫描聚焦区域
         self.output.rectOfInterest = _scanRect;
         
@@ -124,7 +124,6 @@
                                             AVMetadataObjectTypeEAN8Code,
                                             AVMetadataObjectTypeCode128Code];
         self.title = @"条码";
-        
         _scanRect = CGRectFromString([self scanRectWithScale:3][0]);
         self.output.rectOfInterest = _scanRect;
         [self.scanRectView setScanType: MMScanTypeBarCode];

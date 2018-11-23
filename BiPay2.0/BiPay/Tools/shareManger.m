@@ -90,10 +90,10 @@ static shareManger *_engine;
     //1、创建分享参数
     UIImage *shareImage = [dic objectForKey:@"Screenshot"];//截屏图片
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    [shareParams SSDKSetupShareParamsByText:@"Bipay"
+    [shareParams SSDKSetupShareParamsByText:@"BiPay"
                                      images:shareImage
                                         url:nil
-                                      title:@"Bipay"
+                                      title:@"BiPay"
                                        type:SSDKContentTypeAuto];
     return shareParams;
 }

@@ -190,8 +190,8 @@
 		D26E250320DBC07D006A6BDD /* walletDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26E250120DBC07D006A6BDD /* walletDetailController.xib */; };
 		D26E250720DBC58B006A6BDD /* ModifypwController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26E250520DBC58B006A6BDD /* ModifypwController.m */; };
 		D26E250820DBC58B006A6BDD /* ModifypwController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26E250620DBC58B006A6BDD /* ModifypwController.xib */; };
-		D289B55A21A7CF4700B04046 /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D289B55921A7CF4700B04046 /* libbipay.dylib */; };
-		D289B55B21A7CF4E00B04046 /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D289B55921A7CF4700B04046 /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D289B55D21A7E5D200B04046 /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D289B55C21A7E5D200B04046 /* libbipay.dylib */; };
+		D289B55E21A7E5D700B04046 /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D289B55C21A7E5D200B04046 /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D29874A6213632B100EC0A9B /* webViewprotocolVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29874A3213632B100EC0A9B /* webViewprotocolVC.xib */; };
 		D29874A7213632B100EC0A9B /* webViewprotocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D29874A4213632B100EC0A9B /* webViewprotocolVC.m */; };
 		D2A49BDD213FB68200F5FD51 /* tradeDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A49BDB213FB68200F5FD51 /* tradeDetailCell.m */; };
@@ -286,7 +286,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D289B55B21A7CF4E00B04046 /* libbipay.dylib in Embed Libraries */,
+				D289B55E21A7E5D700B04046 /* libbipay.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,7 +620,7 @@
 		D26E250420DBC58B006A6BDD /* ModifypwController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifypwController.h; sourceTree = "<group>"; };
 		D26E250520DBC58B006A6BDD /* ModifypwController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifypwController.m; sourceTree = "<group>"; };
 		D26E250620DBC58B006A6BDD /* ModifypwController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifypwController.xib; sourceTree = "<group>"; };
-		D289B55921A7CF4700B04046 /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
+		D289B55C21A7E5D200B04046 /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
 		D29874A3213632B100EC0A9B /* webViewprotocolVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = webViewprotocolVC.xib; sourceTree = "<group>"; };
 		D29874A4213632B100EC0A9B /* webViewprotocolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewprotocolVC.m; sourceTree = "<group>"; };
 		D29874A5213632B100EC0A9B /* webViewprotocolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewprotocolVC.h; sourceTree = "<group>"; };
@@ -733,7 +733,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D289B55A21A7CF4700B04046 /* libbipay.dylib in Frameworks */,
+				D289B55D21A7E5D200B04046 /* libbipay.dylib in Frameworks */,
 				F65FDF4941E32C91993268DE /* libPods-BiPay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1632,7 +1632,7 @@
 			children = (
 				D2F00F652137FAFE00738C86 /* coins.h */,
 				D2D5AF89217DCBF300354E10 /* bipaydll.h */,
-				D289B55921A7CF4700B04046 /* libbipay.dylib */,
+				D289B55C21A7E5D200B04046 /* libbipay.dylib */,
 				6B1ADC7D2159D40700946FCC /* BiPayObject.h */,
 				6B1ADC7E2159D40700946FCC /* BiPayObject.mm */,
 			);

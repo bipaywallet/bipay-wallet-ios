@@ -318,6 +318,7 @@
                 if ([coin.brand isEqualToString:@""]) {
                     coin.brand=@"---";
                 }
+                coin.englishName=coin.brand;
                 coin.address=coinmodel.address;
                 coin.contractAddress=resPonseObj[@"data"][@"address"];
                 coin.collect=1;
@@ -364,6 +365,7 @@
                 if ([coin.brand isEqualToString:@""]) {
                     coin.brand=@"---";
                 }
+                coin.englishName=coin.brand;
                 coin.address=coinmodel.address;
                 coin.contractAddress=resPonseObj[@"data"][@"contractAddress"];
                 coin.collect=1;

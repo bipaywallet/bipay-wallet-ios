@@ -431,7 +431,7 @@
         if (error) {
             NSLog(@"error: %@",error);
         } else {
-            NSLog(@"111扫描结果：%@",result);
+            NSLog(@"扫描结果：%@",result);
              NSArray *array = [result componentsSeparatedByString:@":"];
             if ([[[array firstObject] uppercaseString] isEqualToString:[self.coin.englishName uppercaseString]]&&array.count==3) {
                 self.addresTF.text=[array objectAtIndex:1];
@@ -442,7 +442,8 @@
                 }
                 
             }else{
-                if (![[[array firstObject] uppercaseString] isEqualToString:[self.coin.englishName uppercaseString]]) {
+                
+                if (![[[array firstObject] uppercaseString] isEqualToString:[self.coin.englishName uppercaseString]]&&array.count==3) {
                      [self.view makeToast:LocalizationKey(@"coinErro") duration:1.5 position:CSToastPositionCenter];
                 }else{
                     self.addresTF.text=result;
