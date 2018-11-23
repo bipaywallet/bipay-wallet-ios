@@ -9,8 +9,6 @@
 #import "TabBarController.h"
 #import "NavigationController.h"
 #import "WalletController.h"
-//#import "MarketPriceController.h"
-#import "FastNewsController.h"
 #import "MineController.h"
 #import "marketViewController.h"
 @interface TabBarController ()
@@ -48,11 +46,7 @@
                                                                                   normalImage:@"行情灰色"
                                                                                   selectImage:@"行情_07"];
     
-    FastNewsController * fastNews = [[FastNewsController alloc]init];
-    NavigationController * fastNewsVc = [[NavigationController alloc]initWithRootViewController:fastNews
-                                                                                          title:LocalizationKey(@"fastNews")
-                                                                                  normalImage:@"资讯灰色"
-                                                                                  selectImage:@"资讯_03"];
+   
     
     MineController * mine = [[MineController alloc]init];
     NavigationController * mineVc = [[NavigationController alloc]initWithRootViewController:mine
@@ -60,7 +54,7 @@
                                                                                   normalImage:@"设置灰色"
                                                                                   selectImage:@"设置_31"];
     
-    self.viewControllers = @[walletVc,marketVc,fastNewsVc,mineVc];
+    self.viewControllers = @[walletVc,marketVc,mineVc];
 }
 
 #pragma mark -- addConstrainsForSuper

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6B070D92216B399F00D049B9 /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B070D91216B399F00D049B9 /* NullSafe.m */; };
-		6B15D77021411AA30087089C /* FastNewsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B15D76F21411AA30087089C /* FastNewsController.xib */; };
 		6B199649215E393E0099000A /* RightSubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B199647215E393E0099000A /* RightSubCell.m */; };
 		6B19964A215E393E0099000A /* RightSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B199648215E393E0099000A /* RightSubCell.xib */; };
 		6B1ADC7F2159D40700946FCC /* BiPayObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6B1ADC7E2159D40700946FCC /* BiPayObject.mm */; };
@@ -36,8 +35,6 @@
 		701962F820D3533400A35200 /* MarketPriceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701962F720D3533400A35200 /* MarketPriceController.m */; };
 		701962FB20D3534700A35200 /* WalletController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 701962FA20D3534700A35200 /* WalletController.mm */; };
 		7019630120D3537900A35200 /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7019630020D3537900A35200 /* MineController.m */; };
-		702ABC2420D396BF0094C980 /* FastNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 702ABC2320D396BF0094C980 /* FastNewsController.m */; };
-		702ABC2720D397BA0094C980 /* FastNewsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 702ABC2620D397BA0094C980 /* FastNewsViewCell.m */; };
 		702ABC2A20D399140094C980 /* BIPayTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 702ABC2920D399140094C980 /* BIPayTools.m */; };
 		702ABC2D20D3A5CE0094C980 /* WalletAlertPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 702ABC2C20D3A5CE0094C980 /* WalletAlertPickerView.m */; };
 		7031D45A20D9DEC30090E8E1 /* TradeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7031D45920D9DEC30090E8E1 /* TradeDetailController.m */; };
@@ -76,8 +73,6 @@
 		8863622F20EB234C00863694 /* keychianTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863622C20EB234B00863694 /* keychianTool.m */; };
 		8863623020EB234C00863694 /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863622E20EB234C00863694 /* MD5.m */; };
 		8863623820EB249600863694 /* ToolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863623620EB249500863694 /* ToolUtil.m */; };
-		8863624020EB486C00863694 /* NewsContentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863623E20EB486C00863694 /* NewsContentController.m */; };
-		8863624120EB486C00863694 /* NewsContentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8863623F20EB486C00863694 /* NewsContentController.xib */; };
 		8863624F20EB59B700863694 /* WYWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863624720EB59B400863694 /* WYWebProgressLayer.m */; };
 		8863625020EB59B700863694 /* NSTimer+addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863624920EB59B500863694 /* NSTimer+addition.m */; };
 		8863625120EB59B700863694 /* WLWebProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863624B20EB59B600863694 /* WLWebProgressLayer.m */; };
@@ -107,8 +102,6 @@
 		D2021FD4212807AA0051D25C /* ContactsDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D2021FD3212807AA0051D25C /* ContactsDataBase.m */; };
 		D2021FD7212808380051D25C /* contactsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2021FD6212808380051D25C /* contactsModel.m */; };
 		D2021FDB21281C510051D25C /* ContactViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2021FDA21281C510051D25C /* ContactViewCell.xib */; };
-		D2021FDF212821B70051D25C /* FastNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2021FDD212821B70051D25C /* FastNewsCell.m */; };
-		D2021FE0212821B70051D25C /* FastNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2021FDE212821B70051D25C /* FastNewsCell.xib */; };
 		D2060896212BBFE3004E9746 /* ChooseContactsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2060894212BBFE3004E9746 /* ChooseContactsController.m */; };
 		D2060897212BBFE3004E9746 /* ChooseContactsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2060895212BBFE3004E9746 /* ChooseContactsController.xib */; };
 		D206089B212BE0A7004E9746 /* selectedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2060899212BE0A7004E9746 /* selectedCell.m */; };
@@ -230,7 +223,6 @@
 		D2E4DDA5212D44A6001AE806 /* nameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E4DDA4212D44A6001AE806 /* nameModel.m */; };
 		D2E919652125631E0040005B /* FastNewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E919642125631E0040005B /* FastNewsManager.m */; };
 		D2E91968212566950040005B /* UIViewController+navStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E91966212566940040005B /* UIViewController+navStyle.m */; };
-		D2E9196C212568420040005B /* FastNewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E9196B212568420040005B /* FastNewModel.m */; };
 		D2EBC57F2181541400D1B27F /* changeHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EBC57D2181541400D1B27F /* changeHistoryController.m */; };
 		D2EBC5802181541400D1B27F /* changeHistoryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EBC57E2181541400D1B27F /* changeHistoryController.xib */; };
 		D2EBC5842181553900D1B27F /* changeHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EBC5822181553900D1B27F /* changeHistoryCell.m */; };
@@ -304,7 +296,6 @@
 /* Begin PBXFileReference section */
 		4CBD0D97058F3710245EC68E /* Pods-BiPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BiPay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BiPay/Pods-BiPay.debug.xcconfig"; sourceTree = "<group>"; };
 		6B070D91216B399F00D049B9 /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
-		6B15D76F21411AA30087089C /* FastNewsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FastNewsController.xib; sourceTree = "<group>"; };
 		6B199646215E393E0099000A /* RightSubCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RightSubCell.h; sourceTree = "<group>"; };
 		6B199647215E393E0099000A /* RightSubCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightSubCell.m; sourceTree = "<group>"; };
 		6B199648215E393E0099000A /* RightSubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightSubCell.xib; sourceTree = "<group>"; };
@@ -361,10 +352,6 @@
 		701962FA20D3534700A35200 /* WalletController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = WalletController.mm; sourceTree = "<group>"; };
 		701962FF20D3537900A35200 /* MineController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
 		7019630020D3537900A35200 /* MineController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
-		702ABC2220D396BF0094C980 /* FastNewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastNewsController.h; sourceTree = "<group>"; };
-		702ABC2320D396BF0094C980 /* FastNewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNewsController.m; sourceTree = "<group>"; };
-		702ABC2520D397BA0094C980 /* FastNewsViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastNewsViewCell.h; sourceTree = "<group>"; };
-		702ABC2620D397BA0094C980 /* FastNewsViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNewsViewCell.m; sourceTree = "<group>"; };
 		702ABC2820D399140094C980 /* BIPayTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BIPayTools.h; sourceTree = "<group>"; };
 		702ABC2920D399140094C980 /* BIPayTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BIPayTools.m; sourceTree = "<group>"; };
 		702ABC2B20D3A5CE0094C980 /* WalletAlertPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletAlertPickerView.h; sourceTree = "<group>"; };
@@ -438,9 +425,6 @@
 		8863623220EB245000863694 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		8863623620EB249500863694 /* ToolUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolUtil.m; sourceTree = "<group>"; };
 		8863623720EB249500863694 /* ToolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolUtil.h; sourceTree = "<group>"; };
-		8863623D20EB486B00863694 /* NewsContentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsContentController.h; sourceTree = "<group>"; };
-		8863623E20EB486C00863694 /* NewsContentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsContentController.m; sourceTree = "<group>"; };
-		8863623F20EB486C00863694 /* NewsContentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsContentController.xib; sourceTree = "<group>"; };
 		8863624420EB59B400863694 /* WLWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLWebProgressLayer.h; sourceTree = "<group>"; };
 		8863624520EB59B400863694 /* WYWebProgressLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYWebProgressLayer.h; sourceTree = "<group>"; };
 		8863624720EB59B400863694 /* WYWebProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYWebProgressLayer.m; sourceTree = "<group>"; };
@@ -492,9 +476,6 @@
 		D2021FD5212808380051D25C /* contactsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = contactsModel.h; sourceTree = "<group>"; };
 		D2021FD6212808380051D25C /* contactsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = contactsModel.m; sourceTree = "<group>"; };
 		D2021FDA21281C510051D25C /* ContactViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewCell.xib; sourceTree = "<group>"; };
-		D2021FDC212821B70051D25C /* FastNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastNewsCell.h; sourceTree = "<group>"; };
-		D2021FDD212821B70051D25C /* FastNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNewsCell.m; sourceTree = "<group>"; };
-		D2021FDE212821B70051D25C /* FastNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FastNewsCell.xib; sourceTree = "<group>"; };
 		D2060893212BBFE3004E9746 /* ChooseContactsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseContactsController.h; sourceTree = "<group>"; };
 		D2060894212BBFE3004E9746 /* ChooseContactsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseContactsController.m; sourceTree = "<group>"; };
 		D2060895212BBFE3004E9746 /* ChooseContactsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseContactsController.xib; sourceTree = "<group>"; };
@@ -697,8 +678,6 @@
 		D2E919642125631E0040005B /* FastNewsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNewsManager.m; sourceTree = "<group>"; };
 		D2E91966212566940040005B /* UIViewController+navStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+navStyle.m"; sourceTree = "<group>"; };
 		D2E91967212566950040005B /* UIViewController+navStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+navStyle.h"; sourceTree = "<group>"; };
-		D2E9196A212568420040005B /* FastNewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FastNewModel.h; sourceTree = "<group>"; };
-		D2E9196B212568420040005B /* FastNewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FastNewModel.m; sourceTree = "<group>"; };
 		D2EBC57C2181541400D1B27F /* changeHistoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = changeHistoryController.h; sourceTree = "<group>"; };
 		D2EBC57D2181541400D1B27F /* changeHistoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = changeHistoryController.m; sourceTree = "<group>"; };
 		D2EBC57E2181541400D1B27F /* changeHistoryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = changeHistoryController.xib; sourceTree = "<group>"; };
@@ -869,7 +848,6 @@
 				D29874A2213632B100EC0A9B /* 协议 */,
 				701962A720D34E0400A35200 /* Wallet */,
 				701962A320D34E0400A35200 /* MarketPrice */,
-				701962AB20D34E0400A35200 /* FastNews */,
 				701962AF20D34E0400A35200 /* Mine */,
 			);
 			path = MainClass;
@@ -939,24 +917,6 @@
 				8863625C20EB6B9A00863694 /* WalletList */,
 				8863625B20EB6B8800863694 /* Menu */,
 				8863625D20EB6BCD00863694 /* BroadCast */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		701962AB20D34E0400A35200 /* FastNews */ = {
-			isa = PBXGroup;
-			children = (
-				8863623C20EB481500863694 /* Controller */,
-				D2E919692125682C0040005B /* Model */,
-				701962AE20D34E0400A35200 /* View */,
-			);
-			path = FastNews;
-			sourceTree = "<group>";
-		};
-		701962AE20D34E0400A35200 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8863626320EB70F200863694 /* NewsList */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1148,17 +1108,6 @@
 				D2364CC5214797AD00FE1E63 /* Language.strings */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		8863623C20EB481500863694 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				8863626220EB70C500863694 /* NewsList */,
-				702ABC2220D396BF0094C980 /* FastNewsController.h */,
-				702ABC2320D396BF0094C980 /* FastNewsController.m */,
-				6B15D76F21411AA30087089C /* FastNewsController.xib */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		8863624320EB599700863694 /* WebProgress */ = {
@@ -1437,28 +1386,6 @@
 				D2CFFF20213E9D6F0088A4A1 /* headerView.xib */,
 			);
 			path = MarketList;
-			sourceTree = "<group>";
-		};
-		8863626220EB70C500863694 /* NewsList */ = {
-			isa = PBXGroup;
-			children = (
-				8863623D20EB486B00863694 /* NewsContentController.h */,
-				8863623E20EB486C00863694 /* NewsContentController.m */,
-				8863623F20EB486C00863694 /* NewsContentController.xib */,
-			);
-			path = NewsList;
-			sourceTree = "<group>";
-		};
-		8863626320EB70F200863694 /* NewsList */ = {
-			isa = PBXGroup;
-			children = (
-				702ABC2520D397BA0094C980 /* FastNewsViewCell.h */,
-				702ABC2620D397BA0094C980 /* FastNewsViewCell.m */,
-				D2021FDC212821B70051D25C /* FastNewsCell.h */,
-				D2021FDD212821B70051D25C /* FastNewsCell.m */,
-				D2021FDE212821B70051D25C /* FastNewsCell.xib */,
-			);
-			path = NewsList;
 			sourceTree = "<group>";
 		};
 		8863626420EB728300863694 /* Contacts */ = {
@@ -1822,15 +1749,6 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		D2E919692125682C0040005B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				D2E9196A212568420040005B /* FastNewModel.h */,
-				D2E9196B212568420040005B /* FastNewModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D2ED18C22122C6650014E822 /* LYEmptyView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2014,10 +1932,8 @@
 				D26E24FE20DBBC3D006A6BDD /* 嘀嗒.mp3 in Resources */,
 				D22125A420F60CDC00942308 /* marketCell.xib in Resources */,
 				D21596AE20DCA10800D61191 /* backupsWalletController.xib in Resources */,
-				6B15D77021411AA30087089C /* FastNewsController.xib in Resources */,
 				D256CD1A215E18CF00C77117 /* HomeHeaderView.xib in Resources */,
 				D21596C720DCD5C600D61191 /* ReceivablesController.xib in Resources */,
-				8863624120EB486C00863694 /* NewsContentController.xib in Resources */,
 				8809288621182B1B00DE4FB7 /* ConfirmMnemonicController.xib in Resources */,
 				D2EBC5852181553900D1B27F /* changeHistoryCell.xib in Resources */,
 				D26E24F020DBB0B4006A6BDD /* LeftMenuViewController.xib in Resources */,
@@ -2029,7 +1945,6 @@
 				88D60360210EA1B0006FD467 /* MessageDetailCell.xib in Resources */,
 				D2A49BDE213FB68200F5FD51 /* tradeDetailCell.xib in Resources */,
 				88CAA6AF20ECC5E600B5DF38 /* KchatViewController.xib in Resources */,
-				D2021FE0212821B70051D25C /* FastNewsCell.xib in Resources */,
 				D2021FDB21281C510051D25C /* ContactViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2122,7 +2037,6 @@
 				701962F520D3530100A35200 /* BaseController.m in Sources */,
 				701962E420D3508000A35200 /* UIView+DNFrame.m in Sources */,
 				D21596B720DCA98900D61191 /* AddAssetsController.m in Sources */,
-				D2021FDF212821B70051D25C /* FastNewsCell.m in Sources */,
 				D2EF446B216F2C0D004D4C46 /* TxidCheckViewController.m in Sources */,
 				D21596A420DC91B100D61191 /* NoPasteTextField.m in Sources */,
 				D2021FD7212808380051D25C /* contactsModel.m in Sources */,
@@ -2189,9 +2103,7 @@
 				D24C90EB21183BF0007513DD /* UserinfoModel.m in Sources */,
 				887FF538210C59E600749B3E /* MessageTitleCell.m in Sources */,
 				701962E820D3508000A35200 /* UIImageView+Extension.m in Sources */,
-				702ABC2720D397BA0094C980 /* FastNewsViewCell.m in Sources */,
 				882473582113EA990025A336 /* BackupMnemonicController.mm in Sources */,
-				8863624020EB486C00863694 /* NewsContentController.m in Sources */,
 				704A9A0420D8D6A30038F70C /* MessageViewCell.m in Sources */,
 				D21596AD20DCA10800D61191 /* backupsWalletController.m in Sources */,
 				D2F00F622137D2DB00738C86 /* PlatformMessageDetailViewController.m in Sources */,
@@ -2232,7 +2144,6 @@
 				88D6035F210EA1B0006FD467 /* MessageDetailCell.m in Sources */,
 				D26E24FA20DBB7FB006A6BDD /* MMScanViewController.m in Sources */,
 				D26E24EF20DBB0B4006A6BDD /* LeftMenuViewController.m in Sources */,
-				D2E9196C212568420040005B /* FastNewModel.m in Sources */,
 				70B14F0A20D8A00D00E1E20D /* AddContactViewCell.m in Sources */,
 				D2E91968212566950040005B /* UIViewController+navStyle.m in Sources */,
 				D21596D920DCFC8C00D61191 /* privatekeyView.m in Sources */,
@@ -2258,7 +2169,6 @@
 				702ABC2D20D3A5CE0094C980 /* WalletAlertPickerView.m in Sources */,
 				7019630120D3537900A35200 /* MineController.m in Sources */,
 				D21596A820DC9CFA00D61191 /* CreatWalletController.m in Sources */,
-				702ABC2420D396BF0094C980 /* FastNewsController.m in Sources */,
 				88CAA6AE20ECC5E600B5DF38 /* KchatViewController.m in Sources */,
 				D2CFFF17213E1B0E0088A4A1 /* NSUserDefaultUtil.m in Sources */,
 				70B14F1020D8B16500E1E20D /* MessageCenterController.m in Sources */,
