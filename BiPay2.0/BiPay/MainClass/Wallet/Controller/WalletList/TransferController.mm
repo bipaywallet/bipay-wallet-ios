@@ -25,6 +25,7 @@
     double _totalAmount;//总余额
     double _totalTokenAmount;//代币总余额
     confirmTransferView*_boardView;
+    NSString*_currentFee;//实际手续费
 }
 @property (weak, nonatomic) IBOutlet UIView *topBackView;
 @property (weak, nonatomic) IBOutlet UIView *bottomBackView;
@@ -459,6 +460,72 @@
     
 }
 
+-(BOOL)judegeAddressWith:(NSString*)addresText{
+    //首字母
+      NSString *firstStr = [addresText substringToIndex:1];
+    
+    if ([self.coin.brand isEqualToString:@"BTC"]||[self.coin.brand isEqualToString:@"BCH"]||[self.coin.brand isEqualToString:@"USDT"]) {
+        if (![[firstStr uppercaseString] isEqualToString:@"1"]) {
+            
+            return NO;
+        }
+        
+    }else if ([self.coin.brand isEqualToString:@"LTC"]){
+        if (![[firstStr uppercaseString] isEqualToString:@"L"]) {
+          
+            return NO;
+        }
+    }
+    else if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"DSH"]){
+        if (![[firstStr uppercaseString] isEqualToString:@"X"]) {
+           
+            return NO;
+        }
+    }else if ([self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCC"]){
+        if (![[firstStr uppercaseString] isEqualToString:@"G"]) {
+           
+            return NO;
+        }
+    }else if ([self.coin.brand isEqualToString:@"GCB"]){
+        if (![[firstStr uppercaseString] isEqualToString:@"B"]) {
+          
+            return NO;
+        }
+    }
+    else if ([self.coin.brand isEqualToString:@"STO"]){
+        if (![[firstStr uppercaseString] isEqualToString:@"S"]) {
+          
+            return NO;
+        }
+    }
+    else if ([self.coin.brand isEqualToString:@"QTUM"]){
+        if (![[firstStr uppercaseString] isEqualToString:@"Q"]) {
+           
+            return NO;
+        }
+    }
+    else if ([self.coin.brand isEqualToString:@"DOGE"]||[self.coin.brand isEqualToString:@"DVC"]){
+        if (![[firstStr uppercaseString] isEqualToString:@"D"]) {
+           
+            return NO;
+        }
+    }
+    else if ([self.coin.brand isEqualToString:@"ETH"]){
+         NSString *fontStr = [addresText substringToIndex:2];
+        
+        if (![[fontStr uppercaseString] isEqualToString:@"0X"]) {
+            
+            return NO;
+        }
+    }
+    else{
+        
+        
+    }
+   
+    return YES;
+}
+
 /**
  确定转账
  */
@@ -470,6 +537,12 @@
         [self.view makeToast:LocalizationKey(@"pleaseInputTransferAddress") duration:1.5 position:CSToastPositionCenter];
         return ;
     }
+  
+    if (![self judegeAddressWith:self.addresTF.text]) {
+         [self.view makeToast:LocalizationKey(@"addressErro") duration:1.5 position:CSToastPositionCenter];
+        return;
+    }
+   
     //用于验证某个币种的地址是否合法
     BOOL verrify= [BiPayObject verifyCoinAddress:self.addresTF.text  coinType:self.coin.cointype];
     if (!verrify) {
@@ -651,6 +724,7 @@
             [self postTrade: lastString];//发送交易
             
         }else if ([self.coin.fatherCoin isEqualToString:@"BTC"]){
+#warning
             //发送USDT
             NSArray*modelArray=[self USDTcofigModel:self.contentArray withAmount:@"0.00000546"];
             if (modelArray.count==0) {
@@ -670,7 +744,7 @@
                 
             }];
             NSString* inputAmount=@"0.00000546";
-            double restAmount=totalAmount-[inputAmount doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue];
+            double restAmount=totalAmount-[inputAmount doubleValue]-[self configfeeWithUserFee:[[self deleteStringWithStr:self.feeLabel.text] doubleValue] withintputCount:(int)inputArray.count withoutPutCount:2];
             if (restAmount<0) {
                 [self.view makeToast:LocalizationKey(@"computationalanomaly") duration:1.5 position:CSToastPositionCenter];
                 return ;
@@ -682,7 +756,7 @@
             }else{
                 outputs_count=2;
                 NSDictionary *outDic1=[NSDictionary dictionaryWithObjectsAndKeys:self.addresTF.text,@"address",@"0.00000546",@"value",nil];
-                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.8f",totalAmount-[@"0.00000546" doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue]],@"value",nil];
+                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.8f",totalAmount-[@"0.00000546" doubleValue]-[self configfeeWithUserFee:[[self deleteStringWithStr:self.feeLabel.text] doubleValue] withintputCount:(int)modelArray.count withoutPutCount:2]],@"value",nil];
                 [outputArray addObject:outDic1];
                 [outputArray addObject:outDic2];
             }
@@ -723,6 +797,7 @@
             [self.contentArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 TransferModel*model=self.contentArray [idx];
                 allAmount+=[model.amount doubleValue];
+                
             }];
             
             if (allAmount<[self.transferAmount.text doubleValue]+[[self deleteStringWithStr:self.feeLabel.text] doubleValue]) {
@@ -744,7 +819,8 @@
                 
             }];
             NSString* inputAmount=self.transferAmount.text;
-            double restAmount=totalAmount-[inputAmount doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue];
+            double restAmount=totalAmount-[inputAmount doubleValue]-[self configfeeWithUserFee:[[self deleteStringWithStr:self.feeLabel.text] doubleValue] withintputCount:(int)inputArray.count withoutPutCount:2];
+
             if (restAmount<0) {
                 [self.view makeToast:LocalizationKey(@"computationalanomaly") duration:1.5 position:CSToastPositionCenter];
                 return ;
@@ -756,7 +832,7 @@
             }else{
                 outputs_count=2;
                 NSDictionary *outDic1=[NSDictionary dictionaryWithObjectsAndKeys:self.addresTF.text,@"address",self.transferAmount.text,@"value",nil];
-                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.8f",totalAmount-[self.transferAmount.text doubleValue]-[[self deleteStringWithStr:self.feeLabel.text] doubleValue]],@"value",nil];
+                NSDictionary *outDic2=[NSDictionary dictionaryWithObjectsAndKeys:self.coin.address,@"address",[NSString stringWithFormat:@"%.8f",totalAmount-[self.transferAmount.text doubleValue]-[self configfeeWithUserFee:[[self deleteStringWithStr:self.feeLabel.text] doubleValue] withintputCount:(int)modelArray.count withoutPutCount:2]],@"value",nil];
                 [outputArray addObject:outDic1];
                 [outputArray addObject:outDic2];
             }
@@ -765,6 +841,7 @@
             NSString*jsonStr=[self convertToJsonData:dic];
             NSLog(@"-构建的字典-%@",dic);
             const char *Constjson = [jsonStr UTF8String];
+            
             char *Transaction= NewTransaction(Constjson, self.coin.cointype);
             const  char*privKey=GetCoinMasterKey([decryptStr UTF8String], self.coin.cointype);
             const  char*getSubKey=GetSubPrivKey(privKey, 2^31);
@@ -830,13 +907,16 @@
     if (self.coin.fatherCoin) {//代币
         if ([self.coin.fatherCoin isEqualToString:@"ETH"]) {
             NSString *strUrl = [str stringByReplacingOccurrencesOfString:@" BTC/KB" withString:@""];
+            _currentFee=strUrl;
             return strUrl;
         }
        else if ([self.coin.fatherCoin isEqualToString:@"BTC"]) {
            NSString *strUrl = [str stringByReplacingOccurrencesOfString:@" BTC/KB" withString:@""];
+           _currentFee=strUrl;
            return strUrl;
         }
         else{
+            _currentFee=@"";
             return @"";
         }
         
@@ -845,14 +925,17 @@
         if ([self.coin.recordType intValue]==0) {//BTC,LTC等
             if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
                 NSString *strUrl = [str stringByReplacingOccurrencesOfString:self.coin.brand withString:@""];
+                _currentFee=strUrl;
                 return strUrl;
             }else{
                 NSString *strUrl = [str stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" %@/KB",self.coin.brand] withString:@""];
+                _currentFee=strUrl;
                 return strUrl;
             }
           
         }else{
             NSString *strUrl = [str stringByReplacingOccurrencesOfString:self.coin.brand withString:@""];
+            _currentFee=strUrl;
             return strUrl;
         }
     }
@@ -869,12 +952,21 @@
         TransferModel*model=modelArray[idx];
         transferNum =[model.amount doubleValue]+transferNum;
         [modelArr addObject:model];
-        if (transferNum>=[amount doubleValue]+[[self deleteStringWithStr:self.feeLabel.text] doubleValue]) {
+        if (transferNum>=[amount doubleValue]+[self configfeeWithUserFee:[[self deleteStringWithStr:self.feeLabel.text] doubleValue] withintputCount:(int)modelArr.count withoutPutCount:2]) {
             *stop=YES;
         }
     }];
     
     return modelArr;
+}
+//计算实际手续费
+-(double)configfeeWithUserFee:(double)fee withintputCount:(int)inputCount  withoutPutCount:(int)outPutCount{
+   
+   int baseFee= (5 + 2 + 2 *inputCount + 50 * inputCount + 2 *outPutCount + 50 * outPutCount + 2 * (inputCount + outPutCount) + 5) / 1024 + 1;
+   double total=baseFee*fee;
+    _currentFee=[NSString stringWithFormat:@"%.8f",total];
+    return total;
+    
 }
 
 //USDT的
@@ -886,7 +978,7 @@
         TransferModel*model=modelArray[idx];
         transferNum =[model.amount doubleValue]+transferNum;
         [modelArr addObject:model];
-        if (transferNum>=[amount doubleValue]+[[self deleteStringWithStr:self.feeLabel.text] doubleValue]+0.00000546) {
+        if (transferNum>=[amount doubleValue]+[self configfeeWithUserFee:[[self deleteStringWithStr:self.feeLabel.text] doubleValue] withintputCount:(int)modelArr.count withoutPutCount:2]+0.00000546) {
             _isContinue=YES;
             *stop=YES;
         }
@@ -990,7 +1082,8 @@
     model.txid=txid;
     model.time=[NSString getCurrentTimes];
     model.amount=[NSString stringWithFormat:@"- %.8f",[self.transferAmount.text doubleValue]];
-    model.fee=[self deleteStringWithStr:self.feeLabel.text];
+    //model.fee=[self deleteStringWithStr:self.feeLabel.text];
+    model.fee=_currentFee;
     model.blockHeight=@"--";
     model.remark=self.remarkTF.text;
     if ([self.coin.recordType intValue]==0) {//BTC等

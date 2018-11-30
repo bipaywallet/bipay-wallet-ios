@@ -190,8 +190,8 @@
 		D26E250320DBC07D006A6BDD /* walletDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26E250120DBC07D006A6BDD /* walletDetailController.xib */; };
 		D26E250720DBC58B006A6BDD /* ModifypwController.m in Sources */ = {isa = PBXBuildFile; fileRef = D26E250520DBC58B006A6BDD /* ModifypwController.m */; };
 		D26E250820DBC58B006A6BDD /* ModifypwController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26E250620DBC58B006A6BDD /* ModifypwController.xib */; };
-		D289B55D21A7E5D200B04046 /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D289B55C21A7E5D200B04046 /* libbipay.dylib */; };
-		D289B55E21A7E5D700B04046 /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D289B55C21A7E5D200B04046 /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D273516221AFDBF700CF2B8F /* 750.gif in Resources */ = {isa = PBXBuildFile; fileRef = D273516121AFDBF700CF2B8F /* 750.gif */; };
+		D273516421AFDBFC00CF2B8F /* 1125.gif in Resources */ = {isa = PBXBuildFile; fileRef = D273516321AFDBFC00CF2B8F /* 1125.gif */; };
 		D29874A6213632B100EC0A9B /* webViewprotocolVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29874A3213632B100EC0A9B /* webViewprotocolVC.xib */; };
 		D29874A7213632B100EC0A9B /* webViewprotocolVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D29874A4213632B100EC0A9B /* webViewprotocolVC.m */; };
 		D2A49BDD213FB68200F5FD51 /* tradeDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A49BDB213FB68200F5FD51 /* tradeDetailCell.m */; };
@@ -218,6 +218,8 @@
 		D2CFFF1C213E8A820088A4A1 /* marketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CFFF1A213E8A820088A4A1 /* marketViewController.xib */; };
 		D2CFFF1F213E9D620088A4A1 /* headerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CFFF1E213E9D620088A4A1 /* headerView.m */; };
 		D2CFFF21213E9D6F0088A4A1 /* headerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CFFF20213E9D6F0088A4A1 /* headerView.xib */; };
+		D2D27C7221B12765002B0567 /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D27C7121B12765002B0567 /* libbipay.dylib */; };
+		D2D27C7321B1276D002B0567 /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D2D27C7121B12765002B0567 /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D2E3324921537B7B001F6795 /* NSDictionary+SetNilStr.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E3324821537B7B001F6795 /* NSDictionary+SetNilStr.m */; };
 		D2E4DD2A212CF8DF001AE806 /* shareManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E4DD29212CF8DE001AE806 /* shareManger.m */; };
 		D2E4DDA5212D44A6001AE806 /* nameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E4DDA4212D44A6001AE806 /* nameModel.m */; };
@@ -250,6 +252,8 @@
 		D2F5CA5E211EED1900289CEF /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CA5A211EED1900289CEF /* NSString+Base64.m */; };
 		D2F72E9D212419FE00928EFA /* HomePlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2F72E9C212419FE00928EFA /* HomePlaceholderView.m */; };
 		D2F72E9F21241A2500928EFA /* HomePlaceholderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F72E9E21241A2500928EFA /* HomePlaceholderView.xib */; };
+		D2FFD77F21AE778F00AD6BC3 /* gifPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2FFD77D21AE778F00AD6BC3 /* gifPlayViewController.m */; };
+		D2FFD78021AE778F00AD6BC3 /* gifPlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FFD77E21AE778F00AD6BC3 /* gifPlayViewController.xib */; };
 		F65FDF4941E32C91993268DE /* libPods-BiPay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B823D15143434B992A6AACDC /* libPods-BiPay.a */; };
 /* End PBXBuildFile section */
 
@@ -286,7 +290,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D289B55E21A7E5D700B04046 /* libbipay.dylib in Embed Libraries */,
+				D2D27C7321B1276D002B0567 /* libbipay.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,7 +624,8 @@
 		D26E250420DBC58B006A6BDD /* ModifypwController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifypwController.h; sourceTree = "<group>"; };
 		D26E250520DBC58B006A6BDD /* ModifypwController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifypwController.m; sourceTree = "<group>"; };
 		D26E250620DBC58B006A6BDD /* ModifypwController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifypwController.xib; sourceTree = "<group>"; };
-		D289B55C21A7E5D200B04046 /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
+		D273516121AFDBF700CF2B8F /* 750.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 750.gif; sourceTree = "<group>"; };
+		D273516321AFDBFC00CF2B8F /* 1125.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1125.gif; sourceTree = "<group>"; };
 		D29874A3213632B100EC0A9B /* webViewprotocolVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = webViewprotocolVC.xib; sourceTree = "<group>"; };
 		D29874A4213632B100EC0A9B /* webViewprotocolVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = webViewprotocolVC.m; sourceTree = "<group>"; };
 		D29874A5213632B100EC0A9B /* webViewprotocolVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewprotocolVC.h; sourceTree = "<group>"; };
@@ -667,6 +672,7 @@
 		D2CFFF1D213E9D620088A4A1 /* headerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = headerView.h; sourceTree = "<group>"; };
 		D2CFFF1E213E9D620088A4A1 /* headerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = headerView.m; sourceTree = "<group>"; };
 		D2CFFF20213E9D6F0088A4A1 /* headerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = headerView.xib; sourceTree = "<group>"; };
+		D2D27C7121B12765002B0567 /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
 		D2D5AF89217DCBF300354E10 /* bipaydll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bipaydll.h; sourceTree = "<group>"; };
 		D2E3324721537B7B001F6795 /* NSDictionary+SetNilStr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SetNilStr.h"; sourceTree = "<group>"; };
 		D2E3324821537B7B001F6795 /* NSDictionary+SetNilStr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SetNilStr.m"; sourceTree = "<group>"; };
@@ -726,6 +732,9 @@
 		D2F72E9B212419FE00928EFA /* HomePlaceholderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePlaceholderView.h; sourceTree = "<group>"; };
 		D2F72E9C212419FE00928EFA /* HomePlaceholderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePlaceholderView.m; sourceTree = "<group>"; };
 		D2F72E9E21241A2500928EFA /* HomePlaceholderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePlaceholderView.xib; sourceTree = "<group>"; };
+		D2FFD77C21AE778F00AD6BC3 /* gifPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gifPlayViewController.h; sourceTree = "<group>"; };
+		D2FFD77D21AE778F00AD6BC3 /* gifPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gifPlayViewController.m; sourceTree = "<group>"; };
+		D2FFD77E21AE778F00AD6BC3 /* gifPlayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = gifPlayViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -733,7 +742,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D289B55D21A7E5D200B04046 /* libbipay.dylib in Frameworks */,
+				D2D27C7221B12765002B0567 /* libbipay.dylib in Frameworks */,
 				F65FDF4941E32C91993268DE /* libPods-BiPay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1005,6 +1014,8 @@
 			isa = PBXGroup;
 			children = (
 				701962B920D34E0400A35200 /* Assets.xcassets */,
+				D273516121AFDBF700CF2B8F /* 750.gif */,
+				D273516321AFDBFC00CF2B8F /* 1125.gif */,
 				D26E24FD20DBBC3D006A6BDD /* 嘀嗒.mp3 */,
 				701962BB20D34E0400A35200 /* LaunchScreen.storyboard */,
 				701962BD20D34E0400A35200 /* Main.storyboard */,
@@ -1632,9 +1643,9 @@
 			children = (
 				D2F00F652137FAFE00738C86 /* coins.h */,
 				D2D5AF89217DCBF300354E10 /* bipaydll.h */,
-				D289B55C21A7E5D200B04046 /* libbipay.dylib */,
 				6B1ADC7D2159D40700946FCC /* BiPayObject.h */,
 				6B1ADC7E2159D40700946FCC /* BiPayObject.mm */,
+				D2D27C7121B12765002B0567 /* libbipay.dylib */,
 			);
 			path = bipaySDK;
 			sourceTree = "<group>";
@@ -1698,6 +1709,9 @@
 				D29874A5213632B100EC0A9B /* webViewprotocolVC.h */,
 				D29874A4213632B100EC0A9B /* webViewprotocolVC.m */,
 				D29874A3213632B100EC0A9B /* webViewprotocolVC.xib */,
+				D2FFD77C21AE778F00AD6BC3 /* gifPlayViewController.h */,
+				D2FFD77D21AE778F00AD6BC3 /* gifPlayViewController.m */,
+				D2FFD77E21AE778F00AD6BC3 /* gifPlayViewController.xib */,
 			);
 			path = "协议";
 			sourceTree = "<group>";
@@ -1888,6 +1902,7 @@
 				6BB6F72B2151F0A2009E5247 /* InfoPlist.strings in Resources */,
 				D2AD146C211C363300CDAEE2 /* walletCell.xib in Resources */,
 				D206089C212BE0A7004E9746 /* selectedCell.xib in Resources */,
+				D2FFD78021AE778F00AD6BC3 /* gifPlayViewController.xib in Resources */,
 				D22B5E0D216DFA1400A43E39 /* confirmTransferView.xib in Resources */,
 				D21596B320DCA86300D61191 /* ImportWalletController.xib in Resources */,
 				D2021FC32127F6F70051D25C /* AddContactViewCell.xib in Resources */,
@@ -1896,6 +1911,7 @@
 				D2B06BF92180780A0048F9BA /* changellyView.xib in Resources */,
 				D226E9AD214530CD005B8879 /* NoBalanceView.xib in Resources */,
 				88D6035B210EA0BF006FD467 /* MessageTimeCell.xib in Resources */,
+				D273516221AFDBF700CF2B8F /* 750.gif in Resources */,
 				701962C720D34E0500A35200 /* Main.storyboard in Resources */,
 				D21596A920DC9CFA00D61191 /* CreatWalletController.xib in Resources */,
 				D2364CC3214797AD00FE1E63 /* Language.strings in Resources */,
@@ -1928,6 +1944,7 @@
 				D261C0B0211D7B8200B989AE /* TransferSuccessController.xib in Resources */,
 				701962C620D34E0500A35200 /* LaunchScreen.storyboard in Resources */,
 				8863627620EB793200863694 /* MarketSearchController.xib in Resources */,
+				D273516421AFDBFC00CF2B8F /* 1125.gif in Resources */,
 				D22F21B32190186100EC61C6 /* shareView.xib in Resources */,
 				D26E24FE20DBBC3D006A6BDD /* 嘀嗒.mp3 in Resources */,
 				D22125A420F60CDC00942308 /* marketCell.xib in Resources */,
@@ -2144,6 +2161,7 @@
 				88D6035F210EA1B0006FD467 /* MessageDetailCell.m in Sources */,
 				D26E24FA20DBB7FB006A6BDD /* MMScanViewController.m in Sources */,
 				D26E24EF20DBB0B4006A6BDD /* LeftMenuViewController.m in Sources */,
+				D2FFD77F21AE778F00AD6BC3 /* gifPlayViewController.m in Sources */,
 				70B14F0A20D8A00D00E1E20D /* AddContactViewCell.m in Sources */,
 				D2E91968212566950040005B /* UIViewController+navStyle.m in Sources */,
 				D21596D920DCFC8C00D61191 /* privatekeyView.m in Sources */,

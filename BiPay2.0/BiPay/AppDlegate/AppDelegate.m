@@ -11,9 +11,8 @@
 #import "NavigationController.h"
 #import "shareManger.h"
 #import "UMMobClick/MobClick.h"
-#import "KSGuaidViewManager.h"
-#import "UIImage+GIF.h"
 #import "WalletController.h"
+#import "gifPlayViewController.h"
 @interface AppDelegate ()<UIWebViewDelegate>
 
 @end
@@ -23,17 +22,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Override point for customization after application launch.
-     [NSThread sleepForTimeInterval:2.0];//延长启动页
+   //[NSThread sleepForTimeInterval:1.0];//延长启动页
      [ChangeLanguage initUserLanguage];//初始化应用语言
      [self initSVProgressHUD];
-     [self initKSGuaidManager];
      [self initKeyboardManager];
      [self initWindowManager];
      [self initUMConfigInstance];
      [self initDefalutConfig];
      [[shareManger defaultShareManger] registerClients];//初始化分享
      [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-  
+
      return YES;
 }
 
@@ -46,10 +44,11 @@
 - (void)initWindowManager
 {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    NavigationController * walletNav = [[NavigationController alloc]initWithRootViewController:[[WalletController alloc]init]];
-      self.window.rootViewController = walletNav;
+    gifPlayViewController * walletNav = [[gifPlayViewController alloc]init];
+    self.window.rootViewController = walletNav;
     [self.window makeKeyAndVisible];
 }
+
 
 -(void)initKeyboardManager
 {
@@ -74,21 +73,6 @@
     [MobClick setLogEnabled:YES];
 }
 
--(void)initKSGuaidManager{
-    
-    KSGuaidManager.images = @[[UIImage imageNamed:@"guid01"],
-                              [UIImage imageNamed:@"guid02"],
-                              [UIImage imageNamed:@"guid03"]
-                             ];
-    KSGuaidManager.shouldDismissWhenDragging =NO ;
-    KSGuaidManager.dismissButtonImage=UIIMAGE(@"tiyan");
-    KSGuaidManager.dismissButtonCenter=CGPointMake(kWindowW/2.0, kWindowH-150);
-    KSGuaidManager.pageIndicatorTintColor=barColor;
-    KSGuaidManager.currentPageIndicatorTintColor=barTitle;
-    [KSGuaidManager begin];
-    
-}
-
 /**
  初始化语言，币种配置
  */
@@ -110,6 +94,10 @@
         
         return UIInterfaceOrientationMaskPortrait;
     }
+}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    ///这里设置白色
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

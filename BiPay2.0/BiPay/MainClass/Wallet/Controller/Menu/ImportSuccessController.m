@@ -9,7 +9,7 @@
 #import "ImportSuccessController.h"
 #import "TabBarController.h"
 #import "AppDelegate.h"
-@interface ImportSuccessController ()
+@interface ImportSuccessController ()<UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *successLab;
 @property (weak, nonatomic) IBOutlet UIButton *useBtn;
 
@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ViewBackColor;
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     //隐藏导航栏左侧返回按钮
     UIBarButtonItem *barBtn = [[UIBarButtonItem alloc]init];
     barBtn.title=@"";
@@ -43,6 +45,10 @@
 {
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.barTintColor = NavColor;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;      // 手势有效设置为YES  无效为NO
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;    // 手势的代理设置为self
+    }
 }
 - (void)viewWillAppear:(BOOL)animated
 {
