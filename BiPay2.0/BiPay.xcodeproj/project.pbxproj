@@ -175,6 +175,8 @@
 		D261C0AB211D278600B989AE /* TransferModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D261C0AA211D278600B989AE /* TransferModel.m */; };
 		D261C0AF211D7B8200B989AE /* TransferSuccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = D261C0AD211D7B8200B989AE /* TransferSuccessController.m */; };
 		D261C0B0211D7B8200B989AE /* TransferSuccessController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D261C0AE211D7B8200B989AE /* TransferSuccessController.xib */; };
+		D26C7BB821B4D90A004AA23A /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D26C7BB721B4D90A004AA23A /* libbipay.dylib */; };
+		D26C7BB921B4D910004AA23A /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D26C7BB721B4D90A004AA23A /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D26E24DF20DB82BE006A6BDD /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D26E24DD20DB82BE006A6BDD /* HomeViewCell.m */; };
 		D26E24E020DB82BE006A6BDD /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D26E24DE20DB82BE006A6BDD /* HomeViewCell.xib */; };
 		D26E24E320DB937E006A6BDD /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D26E24E220DB937E006A6BDD /* UIView+Extension.m */; };
@@ -218,8 +220,6 @@
 		D2CFFF1C213E8A820088A4A1 /* marketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CFFF1A213E8A820088A4A1 /* marketViewController.xib */; };
 		D2CFFF1F213E9D620088A4A1 /* headerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CFFF1E213E9D620088A4A1 /* headerView.m */; };
 		D2CFFF21213E9D6F0088A4A1 /* headerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CFFF20213E9D6F0088A4A1 /* headerView.xib */; };
-		D2D27C7221B12765002B0567 /* libbipay.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D27C7121B12765002B0567 /* libbipay.dylib */; };
-		D2D27C7321B1276D002B0567 /* libbipay.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = D2D27C7121B12765002B0567 /* libbipay.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D2E3324921537B7B001F6795 /* NSDictionary+SetNilStr.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E3324821537B7B001F6795 /* NSDictionary+SetNilStr.m */; };
 		D2E4DD2A212CF8DF001AE806 /* shareManger.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E4DD29212CF8DE001AE806 /* shareManger.m */; };
 		D2E4DDA5212D44A6001AE806 /* nameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D2E4DDA4212D44A6001AE806 /* nameModel.m */; };
@@ -290,7 +290,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D2D27C7321B1276D002B0567 /* libbipay.dylib in Embed Libraries */,
+				D26C7BB921B4D910004AA23A /* libbipay.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +600,7 @@
 		D261C0AC211D7B8200B989AE /* TransferSuccessController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferSuccessController.h; sourceTree = "<group>"; };
 		D261C0AD211D7B8200B989AE /* TransferSuccessController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransferSuccessController.m; sourceTree = "<group>"; };
 		D261C0AE211D7B8200B989AE /* TransferSuccessController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransferSuccessController.xib; sourceTree = "<group>"; };
+		D26C7BB721B4D90A004AA23A /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
 		D26E24DC20DB82BE006A6BDD /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		D26E24DD20DB82BE006A6BDD /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
 		D26E24DE20DB82BE006A6BDD /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
@@ -672,7 +673,6 @@
 		D2CFFF1D213E9D620088A4A1 /* headerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = headerView.h; sourceTree = "<group>"; };
 		D2CFFF1E213E9D620088A4A1 /* headerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = headerView.m; sourceTree = "<group>"; };
 		D2CFFF20213E9D6F0088A4A1 /* headerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = headerView.xib; sourceTree = "<group>"; };
-		D2D27C7121B12765002B0567 /* libbipay.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libbipay.dylib; sourceTree = "<group>"; };
 		D2D5AF89217DCBF300354E10 /* bipaydll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bipaydll.h; sourceTree = "<group>"; };
 		D2E3324721537B7B001F6795 /* NSDictionary+SetNilStr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SetNilStr.h"; sourceTree = "<group>"; };
 		D2E3324821537B7B001F6795 /* NSDictionary+SetNilStr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SetNilStr.m"; sourceTree = "<group>"; };
@@ -742,7 +742,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2D27C7221B12765002B0567 /* libbipay.dylib in Frameworks */,
+				D26C7BB821B4D90A004AA23A /* libbipay.dylib in Frameworks */,
 				F65FDF4941E32C91993268DE /* libPods-BiPay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1645,7 +1645,7 @@
 				D2D5AF89217DCBF300354E10 /* bipaydll.h */,
 				6B1ADC7D2159D40700946FCC /* BiPayObject.h */,
 				6B1ADC7E2159D40700946FCC /* BiPayObject.mm */,
-				D2D27C7121B12765002B0567 /* libbipay.dylib */,
+				D26C7BB721B4D90A004AA23A /* libbipay.dylib */,
 			);
 			path = bipaySDK;
 			sourceTree = "<group>";
@@ -2413,7 +2413,7 @@
 					"$(PROJECT_DIR)/BiPay/bipaySDK",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = XinHuoKJ.BiPayTest;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bipaywallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
@@ -2443,7 +2443,7 @@
 					"$(PROJECT_DIR)/BiPay/bipaySDK",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = XinHuoKJ.BiPayTest;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bipaywallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";

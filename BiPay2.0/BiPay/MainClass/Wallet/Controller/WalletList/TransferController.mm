@@ -180,7 +180,7 @@
     }else{//非代币
         if ([self.coin.recordType intValue]==0) {
             //BTC,LTC,DOGE,BCH等
-            if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
+            if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]||[self.coin.brand isEqualToString:@"QTUM"]||[self.coin.brand isEqualToString:@"DASH"]) {
                   self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@",sender.value,self.coin.brand];
             }else{
                  self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@/KB",sender.value,self.coin.brand];
@@ -217,7 +217,7 @@
                     self.slider.minimumValue=[resPonseObj[@"data"] doubleValue]*1;
                     self.slider.value=[resPonseObj[@"data"] doubleValue]*2;
                    
-                    if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
+                    if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]||[self.coin.brand isEqualToString:@"QTUM"]||[self.coin.brand isEqualToString:@"DASH"]) {
                         self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@",[resPonseObj[@"data"] doubleValue]*2,self.coin.brand];
                     }else{
                          self.feeLabel.text=[NSString stringWithFormat:@"%.8f %@/KB",[resPonseObj[@"data"] doubleValue]*2,self.coin.brand];
@@ -476,7 +476,7 @@
             return NO;
         }
     }
-    else if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"DSH"]){
+    else if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"DASH"]){
         if (![[firstStr uppercaseString] isEqualToString:@"X"]) {
            
             return NO;
@@ -538,10 +538,10 @@
         return ;
     }
   
-    if (![self judegeAddressWith:self.addresTF.text]) {
-         [self.view makeToast:LocalizationKey(@"addressErro") duration:1.5 position:CSToastPositionCenter];
-        return;
-    }
+//    if (![self judegeAddressWith:self.addresTF.text]) {
+//         [self.view makeToast:LocalizationKey(@"addressErro") duration:1.5 position:CSToastPositionCenter];
+//        return;
+//    }
    
     //用于验证某个币种的地址是否合法
     BOOL verrify= [BiPayObject verifyCoinAddress:self.addresTF.text  coinType:self.coin.cointype];
@@ -923,7 +923,7 @@
     }else{
         //非代币
         if ([self.coin.recordType intValue]==0) {//BTC,LTC等
-            if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]) {
+            if ([self.coin.brand isEqualToString:@"XNE"]||[self.coin.brand isEqualToString:@"GCA"]||[self.coin.brand isEqualToString:@"GCB"]||[self.coin.brand isEqualToString:@"GCC"]||[self.coin.brand isEqualToString:@"STO"]||[self.coin.brand isEqualToString:@"QTUM"]||[self.coin.brand isEqualToString:@"DASH"]) {
                 NSString *strUrl = [str stringByReplacingOccurrencesOfString:self.coin.brand withString:@""];
                 _currentFee=strUrl;
                 return strUrl;

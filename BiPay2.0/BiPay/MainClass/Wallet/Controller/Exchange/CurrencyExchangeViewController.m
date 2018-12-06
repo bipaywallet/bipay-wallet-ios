@@ -193,8 +193,6 @@
 
 }
 
-
-
 #pragma mark--确定兑换按钮
 - (IBAction)exchangeClick:(id)sender {
     

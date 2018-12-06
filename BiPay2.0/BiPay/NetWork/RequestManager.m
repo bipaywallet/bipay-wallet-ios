@@ -63,6 +63,7 @@
         
         //2.将NSData解析为NSDictionary
         NSDictionary *resultDic = [NSJSONSerialization JSONObjectWithData:resData options:kNilOptions error:nil];
+        
             completionHandler(resultDic);
  
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

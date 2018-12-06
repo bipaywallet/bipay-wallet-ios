@@ -19,12 +19,12 @@ static UserinfoModel *_ModelClass;
     dispatch_once(&oneToken, ^{
         
         _ModelClass = [[UserinfoModel alloc]init];
-        _ModelClass.Namearray=[NSArray arrayWithObjects:@"BTC",@"BCH",@"ETH",@"LTC",@"USDT",@"XNE",@"GCA",@"GCB",@"GCC",@"STO",nil];
-        _ModelClass.englishNameArray=[NSArray arrayWithObjects:@"Bitcoin",@"Bitcoincash",@"Ethereum",@"Litecoin",@"USDT",@"XNE",@"GCA",@"GCB",@"GalaxyChain",@"STO",nil];
-        _ModelClass.coinTypeArray=[NSArray arrayWithObjects:@"0",@"145",@"60",@"2",@"0",@"208",@"500",@"501",@"502",@"99", nil];
-        _ModelClass.PriveprefixTypeArray=[NSArray arrayWithObjects:@"128",@"128",@"-1",@"176",@"128", @"176",@"176",@"176",@"176",@"176",nil];
-        _ModelClass.AddressprefixTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"-1",@"48",@"0", @"75",@"38",@"25",@"26",@"63",nil];
-        _ModelClass.tradeTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"1",@"0",@"2",@"0",@"0",@"0",@"0",@"0",nil];
+        _ModelClass.Namearray=[NSArray arrayWithObjects:@"BTC",@"BCH",@"ETH",@"LTC",@"USDT",@"XNE",@"GCA",@"GCB",@"GCC",@"STO",@"QTUM",@"DASH",nil];
+        _ModelClass.englishNameArray=[NSArray arrayWithObjects:@"Bitcoin",@"Bitcoincash",@"Ethereum",@"Litecoin",@"USDT",@"XNE",@"GCA",@"GCB",@"GalaxyChain",@"STO",@"QTUM",@"DASH",nil];
+        _ModelClass.coinTypeArray=[NSArray arrayWithObjects:@"0",@"145",@"60",@"2",@"0",@"208",@"500",@"501",@"502",@"99",@"2301",@"5", nil];
+        _ModelClass.PriveprefixTypeArray=[NSArray arrayWithObjects:@"128",@"128",@"-1",@"176",@"128", @"176",@"176",@"176",@"176",@"176",@"128",@"204",nil];
+        _ModelClass.AddressprefixTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"-1",@"48",@"0", @"75",@"38",@"25",@"26",@"63",@"58",@"76",nil];
+        _ModelClass.tradeTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"1",@"0",@"2",@"0",@"0",@"0",@"0",@"0",@"0",@"0",nil];
     });
     
     return _ModelClass;
@@ -74,6 +74,16 @@ static UserinfoModel *_ModelClass;
         STOmodel.close_rmb=@"0.00";
         STOmodel.close=@"0.00";
         [self.marketArray addObject:STOmodel];
+        marketModel*QTUMmodel=[[marketModel alloc]init];
+        QTUMmodel.name=@"QTUM";
+        QTUMmodel.close_rmb=@"0.00";
+        QTUMmodel.close=@"0.00";
+        [self.marketArray addObject:QTUMmodel];
+        marketModel*DASHmodel=[[marketModel alloc]init];
+        DASHmodel.name=@"DASH";
+        DASHmodel.close_rmb=@"0.00";
+        DASHmodel.close=@"0.00";
+        [self.marketArray addObject:DASHmodel];
         [self checKMoneyAddressWithWallet:walletmodel];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {

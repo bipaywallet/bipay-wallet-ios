@@ -31,6 +31,7 @@
 #import "HomeHeaderView.h"
 #import "CurrencyExchangeViewController.h"
 #import "SettingDetailController.h"
+
 @interface WalletController ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 {
     
@@ -785,6 +786,16 @@ static void extracted(WalletController *object) {
         STOmodel.close_rmb=@"0.00";
         STOmodel.close=@"0.00";
         [self.marketArray addObject:STOmodel];
+        marketModel*QTUMmodel=[[marketModel alloc]init];
+        QTUMmodel.name=@"QTUM";
+        QTUMmodel.close_rmb=@"0.00";
+        QTUMmodel.close=@"0.00";
+        [self.marketArray addObject:QTUMmodel];
+        marketModel*DASHmodel=[[marketModel alloc]init];
+        DASHmodel.name=@"DASH";
+        DASHmodel.close_rmb=@"0.00";
+        DASHmodel.close=@"0.00";
+        [self.marketArray addObject:DASHmodel];
         [self checKMoneyAddress:[UserinfoModel shareManage].wallet];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {

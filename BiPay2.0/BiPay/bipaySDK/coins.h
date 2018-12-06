@@ -304,7 +304,7 @@ const static size_t kUSD = 91927009; //kUSD
  |BTC   |   128    |   0     |
  |BCH   |   128    |   0     |
  |DVC   |   176    |   30    |
- |DSH   |   207    |   75    |
+ |DSH   |   204    |   76    |
  |DOGE  |   176    |   30    |
  |LTC   |   176    |   48    |
  |QTUM  |   128    |   58    |
