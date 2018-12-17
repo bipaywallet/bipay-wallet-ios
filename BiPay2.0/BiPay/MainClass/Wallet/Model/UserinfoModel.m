@@ -79,11 +79,6 @@ static UserinfoModel *_ModelClass;
         QTUMmodel.close_rmb=@"0.00";
         QTUMmodel.close=@"0.00";
         [self.marketArray addObject:QTUMmodel];
-        marketModel*DASHmodel=[[marketModel alloc]init];
-        DASHmodel.name=@"DASH";
-        DASHmodel.close_rmb=@"0.00";
-        DASHmodel.close=@"0.00";
-        [self.marketArray addObject:DASHmodel];
         [self checKMoneyAddressWithWallet:walletmodel];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {

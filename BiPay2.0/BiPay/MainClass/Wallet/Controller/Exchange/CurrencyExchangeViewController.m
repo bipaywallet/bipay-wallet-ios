@@ -200,7 +200,10 @@
         [self.view endEditing:YES];
         return;
     }
-   
+    if ([self.outputTF.text doubleValue]<=0||[self.inputTF.text doubleValue]<=0) {
+        [self.view makeToast:LocalizationKey(@"amountError") duration:1.5 position:CSToastPositionCenter];
+        return;
+    }
     if ([self.fromLabel.text isEqualToString:self.toLabel.text]) {
         [self.view makeToast:LocalizationKey(@"between") duration:1.5 position:CSToastPositionCenter];
         return;
@@ -401,6 +404,10 @@
     [params setValue:@{@"from":from,@"to":to} forKey:@"params"];
     [RequestManager postRequestWithURLPath:ChangellyHOST withParamer:params completionHandler:^(id responseObject) {
         [SVProgressHUD dismiss];
+        if (responseObject[@"error"]) {
+             [self.view makeToast:responseObject[@"error"][@"message"] duration:1.5 position:CSToastPositionCenter];
+            return;
+        }
         self.minNumLabel.text=[NSString stringWithFormat:@"%@%@：%@",self.fromLabel.text,LocalizationKey(@"minimum"),responseObject[@"result"]];
         self->_minAmount=responseObject[@"result"];
         if ([from isEqualToString:to]) {//同币种

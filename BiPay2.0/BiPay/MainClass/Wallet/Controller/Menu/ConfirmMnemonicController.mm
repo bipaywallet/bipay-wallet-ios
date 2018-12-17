@@ -74,8 +74,8 @@
     self.tipsTitle.textColor = barTitle;
     [self setLeftButtonItem];
     [self loadMnemonicView];
-   // self.confirmView.mnemonicWord = [self gibberishArray:self.mnemonicWord];//打乱助记词
-    self.confirmView.mnemonicWord = self.mnemonicWord;
+    self.confirmView.mnemonicWord = [self gibberishArray:self.mnemonicWord];//打乱助记词
+   // self.confirmView.mnemonicWord = self.mnemonicWord;
     [self.confirmView.mnemonicWord  enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         selectedModel*model=[[selectedModel alloc]init];
         model.name=self.confirmView.mnemonicWord[idx];

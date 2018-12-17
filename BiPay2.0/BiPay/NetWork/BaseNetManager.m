@@ -210,7 +210,7 @@
     //NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
        // [BaseNetManager showResponseCode:response];
-        //DLog(@"错误信息:%@",error);
+       // DLog(@"错误信息:%@",error.description);
         if (data && [BaseNetManager showResponseCode:response] == 200) {
             id result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
             

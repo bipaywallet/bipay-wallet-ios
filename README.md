@@ -18,7 +18,7 @@
 * 兑换币种（通过changelly平台兑换）
 
 ### 3.币种说明
-币付钱包暂时支持币种：BTC、BCH、ETH、LTC、USDT、XNE、GCA、GCB、GCC、STO
+币付钱包暂时支持币种：BTC、BCH、ETH、LTC、USDT、XNE、GCA、GCB、GCC、STO、QTUM、DASH
 ##### 附图
 <img src="https://spark-docs.oss-cn-hangzhou.aliyuncs.com/docs/0B8E18A329D1B83A6FBB25EDD8A344FC.png" width=207 height=448 /><br/>
 

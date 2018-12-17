@@ -101,7 +101,7 @@
     [self.view addSubview:_balanceView];
     //MARK:--注册国际化通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(languageChangeNotificaiton:) name:LanguageChange object:nil];
-    
+   
 }
 
 - (void)languageChangeNotificaiton:(NSNotification *)notification{
@@ -664,7 +664,8 @@ static void extracted(WalletController *object) {
 -(void)shareForSystem{
     
     UIImage *shareImage = UIIMAGE(@"BipayIcon");
-    NSURL *url = [NSURL URLWithString:@"http://app.bipay.io/appDownload.html"];
+   // NSURL *url = [NSURL URLWithString:@"http://app.bipay.io/appDownload.html"];
+    NSURL *url = [NSURL URLWithString:@"https://www.bipay.io/appDownload.html"];
     NSArray *activityItems = [[NSArray alloc] initWithObjects:url,shareImage, nil];
     UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     
@@ -791,11 +792,6 @@ static void extracted(WalletController *object) {
         QTUMmodel.close_rmb=@"0.00";
         QTUMmodel.close=@"0.00";
         [self.marketArray addObject:QTUMmodel];
-        marketModel*DASHmodel=[[marketModel alloc]init];
-        DASHmodel.name=@"DASH";
-        DASHmodel.close_rmb=@"0.00";
-        DASHmodel.close=@"0.00";
-        [self.marketArray addObject:DASHmodel];
         [self checKMoneyAddress:[UserinfoModel shareManage].wallet];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {

@@ -256,6 +256,7 @@
 "minimumselling" = "The number of sales should not be less than the minimum selling volume";
 "Currencyquery" = "Currency query...";
 "search" = "search";
+"amountError" = "The number is wrong";
 "changeinfo" = "Exchange services are supported by Changelly Platform. Real-time exchange rates depend on the relative prices of major transactions at home and abroad. The amount of money earned in exchange service will fluctuate according to the real time price. Changelly charges a 0.5% fee for each exchange, and once the transaction is launched, it will need to support the miner's fee, whichever amount you receive is final.";
 "history" = "Exchange history";
 "Sendaddress" = "Send address";

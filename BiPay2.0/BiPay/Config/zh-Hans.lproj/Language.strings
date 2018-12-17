@@ -197,7 +197,7 @@
 "walletGenerationFail" = "钱包创建失败";
 "walletGenerationFailimport" = "导入钱包失败";
 "pleaseInputMemoryWord" = "请输入助记词,并使用空格分隔";
-"pleasePrivateKey" = "Bipay当前仅支持从BiPay导出的钱包私钥，其它系统钱包私钥暂不支持，请谨慎导入";
+"pleasePrivateKey" = "BiPay当前仅支持从BiPay导出的钱包私钥，其它系统钱包私钥暂不支持，请谨慎导入";
 "pleaseEnterPrivateKey" = "请输入私钥";
 "illegalPrivateKey" = "非法的私钥";
 "illegalMnemonicWords" = "非法的助记词";
@@ -258,6 +258,7 @@
 "minimumselling" = "卖出数量不能小于最小卖出量";
 "Currencyquery" = "币种查询中...";
 "search" = "搜索";
+"amountError" = "数量错误";
 "changeinfo" = "兑换服务由Changelly平台提供支持，实时兑换汇率取决于国内外各大交易多的相对价格。兑换服务所得币数量会根据实时价格而有所波动。每笔兑换Changelly会收取0.5%的手续费，且交易一旦上链后还需支持矿工费，请以最终收到的数额为准。";
 "history" = "兑换历史";
 "Sendaddress" = "发送地址";

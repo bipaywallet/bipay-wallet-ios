@@ -69,6 +69,16 @@
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://live.blockcypher.com/ltc/tx/%@",self.txid]]]];
             
         }
+        else if ([self.coin.brand isEqualToString:@"QTUM"])
+        {
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://qtumexplorer.io/tx/%@",self.txid]]]];
+            
+        }
+        else if ([self.coin.brand isEqualToString:@"DASH"])
+        {
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://chainz.cryptoid.info/dash/tx.dws?%@.htm",self.txid]]]];
+            
+        }
         else{
             
             
