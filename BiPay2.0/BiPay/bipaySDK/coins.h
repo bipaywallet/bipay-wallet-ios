@@ -311,7 +311,7 @@ const static size_t kUSD = 91927009; //kUSD
  |QTUM  |   128    |   58    |
  |USDT  |   128    |   0     |
  |XNE   |   176    |   75    |
- |ZEC   |   128    |   35   |
+ |ZEC   |   128    |   35    |
  |GCA   |   176    |   38    |
  |GCB   |   176    |   25    |
  |GCC   |   176    |   26    |
