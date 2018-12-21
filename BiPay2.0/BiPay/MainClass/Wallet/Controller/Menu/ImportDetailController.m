@@ -228,12 +228,12 @@
                 coinaNames = [coinaNames stringByReplacingOccurrencesOfString:@"\"" withString:@""];
                 NSArray *Namearray=[UserinfoModel shareManage].Namearray;
                 NSArray *coinTypeArray=[UserinfoModel shareManage].coinTypeArray;
-                NSArray *tradeTypeArray=[UserinfoModel shareManage].tradeTypeArray;
+                NSArray *recordTypeArray=[UserinfoModel shareManage].recordTypeArray;
                 NSArray *AddressprefixArray=[UserinfoModel shareManage].AddressprefixTypeArray;
                 NSArray *PriveprefixArray=[UserinfoModel shareManage].PriveprefixTypeArray;
                 NSArray *englishNameArray=[UserinfoModel shareManage].englishNameArray;
                 for (int i=0; i<Namearray.count; i++) {
-                    [self creatCoins:Namearray[i] withEnglishName:englishNameArray[i] withCointype:[coinTypeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue]  withPriveprefix:[PriveprefixArray[i] intValue]  withTradetype:tradeTypeArray[i] withID:walletCoin.bg_id withMasterKey:masterKey withWallet:walletCoin];
+                    [self creatCoins:Namearray[i] withEnglishName:englishNameArray[i] withCointype:[coinTypeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue]  withPriveprefix:[PriveprefixArray[i] intValue]  withRecordtype:recordTypeArray[i] withID:walletCoin.bg_id withMasterKey:masterKey withWallet:walletCoin];
                 }
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -286,12 +286,12 @@
                 coinaNames = [coinaNames stringByReplacingOccurrencesOfString:@"\"" withString:@""];
                 NSArray *Namearray=[UserinfoModel shareManage].Namearray;
                 NSArray *typeArray=[UserinfoModel shareManage].coinTypeArray;
-                NSArray *tradeTypeArray=[UserinfoModel shareManage].tradeTypeArray;
+                NSArray *recordTypeArray=[UserinfoModel shareManage].recordTypeArray;
                 NSArray *AddressprefixArray=[UserinfoModel shareManage].AddressprefixTypeArray;
                 NSArray *PriveprefixArray=[UserinfoModel shareManage].PriveprefixTypeArray;
                 NSArray *englishNameArray=[UserinfoModel shareManage].englishNameArray;
                 for (int i=0; i<Namearray.count; i++) {
-                    [self creatCoins:Namearray[i] withEnglishName:englishNameArray[i] withCointype:[typeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue] withPriveprefix:[PriveprefixArray[i] intValue]   withTradetype:tradeTypeArray[i]  withID:walletCoin.bg_id withMasterKey:self.mnemonicView.textView.text withWallet:walletCoin];
+                    [self creatCoins:Namearray[i] withEnglishName:englishNameArray[i] withCointype:[typeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue] withPriveprefix:[PriveprefixArray[i] intValue]   withRecordtype:recordTypeArray[i]  withID:walletCoin.bg_id withMasterKey:self.mnemonicView.textView.text withWallet:walletCoin];
                 }
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [SVProgressHUD dismiss];
@@ -318,7 +318,7 @@
 
 }
 //往钱包内添加币种
--(void)creatCoins:(NSString*)coinName withEnglishName:(NSString*)englishName withCointype:(int)type withAddressprefix:(int)addressprefix withPriveprefix:(int)priveprefix withTradetype:(NSString*)tradeType withID:(NSNumber*)ID withMasterKey:(NSString*)masterKey withWallet:(walletModel*)wallet{
+-(void)creatCoins:(NSString*)coinName withEnglishName:(NSString*)englishName withCointype:(int)type withAddressprefix:(int)addressprefix withPriveprefix:(int)priveprefix withRecordtype:(NSString*)recordType withID:(NSNumber*)ID withMasterKey:(NSString*)masterKey withWallet:(walletModel*)wallet{
     coinModel*coin=[[coinModel  alloc]init];
     coin.brand=coinName;
     coin.englishName=englishName;
@@ -330,10 +330,10 @@
     coin.usdPrice=@"0";
     coin.closePrice=@"0";
     coin.totalAmount=@"0";
-    coin.recordType=tradeType;
+    coin.recordType=recordType;
     coin.addtime=[self getNowTimeTimestamp];
     if ([coin.brand isEqualToString:@"BTC"]||[coin.brand isEqualToString:@"ETH"]) {
-        coin.collect=1;
+        coin.collect=1;//首页默认添加BTC，ETH
     }else{
         coin.collect=0;
     }

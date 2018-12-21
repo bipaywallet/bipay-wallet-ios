@@ -19,12 +19,13 @@ static UserinfoModel *_ModelClass;
     dispatch_once(&oneToken, ^{
         
         _ModelClass = [[UserinfoModel alloc]init];
-        _ModelClass.Namearray=[NSArray arrayWithObjects:@"BTC",@"BCH",@"ETH",@"LTC",@"USDT",@"XNE",@"GCA",@"GCB",@"GCC",@"STO",@"QTUM",@"DASH",nil];
-        _ModelClass.englishNameArray=[NSArray arrayWithObjects:@"Bitcoin",@"Bitcoincash",@"Ethereum",@"Litecoin",@"USDT",@"XNE",@"GCA",@"GCB",@"GalaxyChain",@"STO",@"QTUM",@"DASH",nil];
-        _ModelClass.coinTypeArray=[NSArray arrayWithObjects:@"0",@"145",@"60",@"2",@"0",@"208",@"500",@"501",@"502",@"99",@"2301",@"5", nil];
-        _ModelClass.PriveprefixTypeArray=[NSArray arrayWithObjects:@"128",@"128",@"-1",@"176",@"128", @"176",@"176",@"176",@"176",@"176",@"128",@"204",nil];
-        _ModelClass.AddressprefixTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"-1",@"48",@"0", @"75",@"38",@"25",@"26",@"63",@"58",@"76",nil];
-        _ModelClass.tradeTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"1",@"0",@"2",@"0",@"0",@"0",@"0",@"0",@"0",@"0",nil];
+        _ModelClass.Namearray=[NSArray arrayWithObjects:@"BTC",@"BCH",@"ETH",@"LTC",@"USDT",@"XNE",@"GCA",@"GCB",@"GCC",@"STO",@"QTUM",@"DASH",@"ZEC",@"ETC",nil];
+        _ModelClass.englishNameArray=[NSArray arrayWithObjects:@"Bitcoin",@"Bitcoincash",@"Ethereum",@"Litecoin",@"USDT",@"XNE",@"GCA",@"GCB",@"GalaxyChain",@"STO",@"QTUM",@"DASH",@"Zcash",@"EthereumClassic",nil];
+        _ModelClass.coinTypeArray=[NSArray arrayWithObjects:@"0",@"145",@"60",@"2",@"0",@"208",@"500",@"501",@"502",@"99",@"2301",@"5",@"133",@"61", nil];
+        _ModelClass.PriveprefixTypeArray=[NSArray arrayWithObjects:@"128",@"128",@"-1",@"176",@"128", @"176",@"176",@"176",@"176",@"176",@"128",@"204",@"128",@"-1",nil];
+        _ModelClass.AddressprefixTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"-1",@"48",@"0", @"75",@"38",@"25",@"26",@"63",@"58",@"76",@"35",@"-1",nil];
+        _ModelClass.recordTypeArray=[NSArray arrayWithObjects:@"0",@"0",@"1",@"0",@"2",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"0",@"1",nil];
+
     });
     
     return _ModelClass;
@@ -41,44 +42,30 @@ static UserinfoModel *_ModelClass;
     
     [RequestManager postRequestWithURLPath:@"http://www.qkljw.com/app/Kline/get_currency_data" withParamer:[[NSMutableDictionary alloc]init] completionHandler:^(id responseObject) {
         self.marketArray = [marketModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        marketModel*USDTmodel=[[marketModel alloc]init];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",@"ETH"];
-        NSArray *filteredArray = [self.marketArray  filteredArrayUsingPredicate:predicate];
-        marketModel*ethcoin=[filteredArray firstObject];
-        USDTmodel.name=@"USDT";
-        USDTmodel.close_rmb=[NSString stringWithFormat:@"%.2f",[ethcoin.close_rmb doubleValue]/[ethcoin.close doubleValue]];
-        USDTmodel.close=@"1.00";
-        [self.marketArray addObject:USDTmodel];
-        marketModel*XNEmodel=[[marketModel alloc]init];
-        XNEmodel.name=@"XNE";
-        XNEmodel.close_rmb=@"0.00";
-        XNEmodel.close=@"0.00";
-        [self.marketArray addObject:XNEmodel];
-        marketModel*GCAmodel=[[marketModel alloc]init];
-        GCAmodel.name=@"GCA";
-        GCAmodel.close_rmb=@"0.00";
-        GCAmodel.close=@"0.00";
-        [self.marketArray addObject:GCAmodel];
-        marketModel*GCBmodel=[[marketModel alloc]init];
-        GCBmodel.name=@"GCB";
-        GCBmodel.close_rmb=@"0.00";
-        GCBmodel.close=@"0.00";
-        [self.marketArray addObject:GCBmodel];
-        marketModel*GCCmodel=[[marketModel alloc]init];
-        GCCmodel.name=@"GCC";
-        GCCmodel.close_rmb=@"0.00";
-        GCCmodel.close=@"0.00";
-        [self.marketArray addObject:GCCmodel];
-        marketModel*STOmodel=[[marketModel alloc]init];
-        STOmodel.name=@"STO";
-        STOmodel.close_rmb=@"0.00";
-        STOmodel.close=@"0.00";
-        [self.marketArray addObject:STOmodel];
-        marketModel*QTUMmodel=[[marketModel alloc]init];
-        QTUMmodel.name=@"QTUM";
-        QTUMmodel.close_rmb=@"0.00";
-        QTUMmodel.close=@"0.00";
-        [self.marketArray addObject:QTUMmodel];
+        NSArray *Namearray=[UserinfoModel shareManage].Namearray;
+        [Namearray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString*coinName=Namearray[idx];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",coinName];
+            NSArray*filteredArray = [self.marketArray  filteredArrayUsingPredicate:predicate];
+            if (filteredArray.count==0) {
+                if ([coinName isEqualToString:@"USDT"]) {
+                    marketModel*USDTmodel=[[marketModel alloc]init];
+                    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",@"ETH"];
+                    NSArray *filteredArray = [self.marketArray  filteredArrayUsingPredicate:predicate];
+                    marketModel*ethcoin=[filteredArray firstObject];
+                    USDTmodel.name=@"USDT";
+                    USDTmodel.close_rmb=[NSString stringWithFormat:@"%.2f",[ethcoin.close_rmb doubleValue]/[ethcoin.close doubleValue]];
+                    USDTmodel.close=@"1.00";
+                    [self.marketArray addObject:USDTmodel];
+                }else{
+                    marketModel*otherModel=[[marketModel alloc]init];
+                    otherModel.name=coinName;
+                    otherModel.close_rmb=@"0.00";
+                    otherModel.close=@"0.00";
+                    [self.marketArray addObject:otherModel];
+                }
+            }
+        }];
         [self checKMoneyAddressWithWallet:walletmodel];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {

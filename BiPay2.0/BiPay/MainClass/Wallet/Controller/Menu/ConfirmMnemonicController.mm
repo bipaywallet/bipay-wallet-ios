@@ -74,8 +74,8 @@
     self.tipsTitle.textColor = barTitle;
     [self setLeftButtonItem];
     [self loadMnemonicView];
-    self.confirmView.mnemonicWord = [self gibberishArray:self.mnemonicWord];//打乱助记词
-   // self.confirmView.mnemonicWord = self.mnemonicWord;
+    //self.confirmView.mnemonicWord = [self gibberishArray:self.mnemonicWord];//打乱助记词
+    self.confirmView.mnemonicWord = self.mnemonicWord;
     [self.confirmView.mnemonicWord  enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         selectedModel*model=[[selectedModel alloc]init];
         model.name=self.confirmView.mnemonicWord[idx];
@@ -89,7 +89,7 @@
     self.bgView.frame = rect;
     [self.bg_scrollView addSubview:self.bgView];
     self.bg_scrollView.contentSize = self.bgView.frame.size;
-    DLog(@"%@",NSStringFromCGRect(rect));
+   // DLog(@"%@",NSStringFromCGRect(rect));
     
 }
 - (void)viewWillDisappear:(BOOL)animated
@@ -310,12 +310,12 @@
             coinNames = [coinNames stringByReplacingOccurrencesOfString:@"\"" withString:@""];
             NSArray *Namearray=[UserinfoModel shareManage].Namearray;
             NSArray *typeArray=[UserinfoModel shareManage].coinTypeArray;
-            NSArray *tradeTypeArray=[UserinfoModel shareManage].tradeTypeArray;
+            NSArray *recordTypeArray=[UserinfoModel shareManage].recordTypeArray;
             NSArray *AddressprefixArray=[UserinfoModel shareManage].AddressprefixTypeArray;
             NSArray *PriveprefixArray=[UserinfoModel shareManage].PriveprefixTypeArray;
             NSArray *englishNameArray=[UserinfoModel shareManage].englishNameArray;
             for (int i=0; i<Namearray.count; i++) {
-                [self creatCoins:Namearray[i] withEnglishName:englishNameArray[i] withCointype:[typeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue] withPriveprefix:[PriveprefixArray[i] intValue]  withTradetype:tradeTypeArray[i] withID:wallet.bg_id  withMasterKey:MasterKey withWallet:wallet];
+                [self creatCoins:Namearray[i] withEnglishName:englishNameArray[i] withCointype:[typeArray[i] intValue] withAddressprefix:[AddressprefixArray[i] intValue] withPriveprefix:[PriveprefixArray[i] intValue]  withRecordtype:recordTypeArray[i] withID:wallet.bg_id  withMasterKey:MasterKey withWallet:wallet];
             }
             [wallet bg_updateWhere:[NSString stringWithFormat:@"where %@=%@" ,[NSObject bg_sqlKey:@"bg_id"],[NSObject bg_sqlValue:wallet.bg_id]]];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -336,7 +336,7 @@
 /**
  往钱包内添加币种
  */
--(void)creatCoins:(NSString*)coinName withEnglishName:(NSString*)englishName withCointype:(int)type withAddressprefix:(int)addressprefix withPriveprefix:(int)priveprefix withTradetype:(NSString*)tradeType withID:(NSNumber*)ID withMasterKey:(NSString*)MasterKey withWallet:(walletModel*)wallet{
+-(void)creatCoins:(NSString*)coinName withEnglishName:(NSString*)englishName withCointype:(int)type withAddressprefix:(int)addressprefix withPriveprefix:(int)priveprefix withRecordtype:(NSString*)recordType withID:(NSNumber*)ID withMasterKey:(NSString*)MasterKey withWallet:(walletModel*)wallet{
     coinModel*coin=[[coinModel  alloc]init];
     coin.brand=coinName;
     coin.englishName=englishName;
@@ -344,14 +344,14 @@
     coin.cointype=type;
     coin.Addressprefix=addressprefix;
     coin.Priveprefix=priveprefix;
-    coin.recordType=tradeType;
+    coin.recordType=recordType;
     coin.blockHeight=0;
     coin.usdPrice=@"0";
     coin.closePrice=@"0";
     coin.addtime=[self getNowTimeTimestamp];
     coin.totalAmount=@"0";
     if ([coin.brand isEqualToString:@"BTC"]||[coin.brand isEqualToString:@"ETH"]) {
-        coin.collect=1;
+        coin.collect=1;//首页默认添加BTC，ETH
     }else{
         coin.collect=0;
     }
@@ -359,7 +359,7 @@
         coin.fatherCoin=@"BTC";
     }
     coin.address=[BiPayObject createWalletWithPrivateKey:MasterKey coinType:type addressPrefix:addressprefix];
-    //NSLog(@"新建的地址--%@--%@----钱包ID-%d",coin.brand,coin.address,addressprefix);
+    NSLog(@"新建的地址--%@--%@--",coin.brand,coin.address);
     [coin bg_save];
 }
 

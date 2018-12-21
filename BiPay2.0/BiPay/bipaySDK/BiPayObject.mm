@@ -130,7 +130,6 @@
 + (NSString *)getCoinAddress:(NSString *)privkey coinType:(int)coinType addressPrefix:(int)addressPrefix{
     const char *pConstChar = [privkey UTF8String];
     char *address= GetAddressUsePrivkey(pConstChar,coinType,addressPrefix);
-    
     if(address){
         return [[NSString alloc] initWithUTF8String:address];
         

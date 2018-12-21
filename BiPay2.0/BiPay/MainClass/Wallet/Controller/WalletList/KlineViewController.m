@@ -86,7 +86,7 @@
     self.transferLab.text = LocalizationKey(@"transfer");
     self.collectTitleLab.text = LocalizationKey(@"collection");
     [self reloadAllLocalData];
-    [self checkBlockHeight];
+    [self.tableView.mj_header beginRefreshing];//立刻进入刷新状态
 }
 #pragma mark-查看最新区块高度
 - (void)extracted {

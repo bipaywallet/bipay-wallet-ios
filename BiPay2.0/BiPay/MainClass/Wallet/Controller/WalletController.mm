@@ -65,6 +65,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = HomeViewBackColor;
     [self setTableViewHeader];
+    
 }
 
 -(void)setTableViewHeader{
@@ -104,8 +105,10 @@
    
 }
 
+/**
+ 收到切换语言通知
+ */
 - (void)languageChangeNotificaiton:(NSNotification *)notification{
-    DLog(@"收到语言变化通知");
     [self headRefreshWithScrollerView:_mainTableView];
     [_placeView.creatBtn setTitle:LocalizationKey(@"creatWallet") forState:UIControlStateNormal];
     [_placeView.importBtn setTitle:LocalizationKey(@"leadinWallet") forState:UIControlStateNormal];
@@ -427,8 +430,8 @@
 #pragma mark--根据币地址查询余额
 -(void)checKMoneyAddress:(walletModel*)wallet{
      DNWeak(self);
-     NSMutableArray*dataArray=(NSMutableArray*) [coinModel bg_find:nil where:[NSString stringWithFormat:@"where %@=%@ and %@=%@",[NSObject bg_sqlKey:@"own_id"],[NSObject bg_sqlValue:wallet.bg_id],[NSObject bg_sqlKey:@"collect"],[NSObject bg_sqlValue:@(1)]]];
-    self.dataArray=[self sortwithArray:dataArray];
+     self.dataArray=(NSMutableArray*) [coinModel bg_find:nil where:[NSString stringWithFormat:@"where %@=%@ and %@=%@",[NSObject bg_sqlKey:@"own_id"],[NSObject bg_sqlValue:wallet.bg_id],[NSObject bg_sqlKey:@"collect"],[NSObject bg_sqlValue:@(1)]]];
+    
     //遍历数组
     [self.dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         coinModel*coinmodel=self.dataArray[idx];
@@ -611,7 +614,7 @@ static void extracted(WalletController *object) {
                 MMScanViewController *scanVC = [[MMScanViewController alloc] initWithQrType:MMScanTypeQrCode onFinish:^(NSString *result, NSError *error) {
                     if (error) {
                     } else {
-                        // NSLog(@"扫描结果：%@",result);
+                       
                         NSArray *array = [result componentsSeparatedByString:@":"];
                         NSArray*coins=(NSMutableArray*) [coinModel bg_find:nil where:[NSString stringWithFormat:@"where %@=%@ and %@=%@",[NSObject bg_sqlKey:@"own_id"],[NSObject bg_sqlValue:[UserinfoModel shareManage].wallet.bg_id],[NSObject bg_sqlKey:@"collect"],[NSObject bg_sqlValue:@(1)]]];
                         __block BOOL _isContinue=NO;
@@ -664,7 +667,6 @@ static void extracted(WalletController *object) {
 -(void)shareForSystem{
     
     UIImage *shareImage = UIIMAGE(@"BipayIcon");
-   // NSURL *url = [NSURL URLWithString:@"http://app.bipay.io/appDownload.html"];
     NSURL *url = [NSURL URLWithString:@"https://www.bipay.io/appDownload.html"];
     NSArray *activityItems = [[NSArray alloc] initWithObjects:url,shareImage, nil];
     UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
@@ -752,46 +754,33 @@ static void extracted(WalletController *object) {
 -(void)getMarketPrice{
     
     [RequestManager postRequestWithURLPath:@"http://www.qkljw.com/app/Kline/get_currency_data" withParamer:[[NSMutableDictionary alloc]init] completionHandler:^(id responseObject) {
-       
         self.marketArray = [marketModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        marketModel*USDTmodel=[[marketModel alloc]init];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",@"ETH"];
-        NSArray *filteredArray = [self.marketArray  filteredArrayUsingPredicate:predicate];
-        marketModel*ethcoin=[filteredArray firstObject];
-        USDTmodel.name=@"USDT";
-        USDTmodel.close_rmb=[NSString stringWithFormat:@"%.2f",[ethcoin.close_rmb doubleValue]/[ethcoin.close doubleValue]];
-        USDTmodel.close=@"1.00";
-        [self.marketArray addObject:USDTmodel];
-        marketModel*XNEmodel=[[marketModel alloc]init];
-        XNEmodel.name=@"XNE";
-        XNEmodel.close_rmb=@"0.00";
-        XNEmodel.close=@"0.00";
-        [self.marketArray addObject:XNEmodel];
-        marketModel*GCAmodel=[[marketModel alloc]init];
-        GCAmodel.name=@"GCA";
-        GCAmodel.close_rmb=@"0.00";
-        GCAmodel.close=@"0.00";
-        [self.marketArray addObject:GCAmodel];
-        marketModel*GCBmodel=[[marketModel alloc]init];
-        GCBmodel.name=@"GCB";
-        GCBmodel.close_rmb=@"0.00";
-        GCBmodel.close=@"0.00";
-        [self.marketArray addObject:GCBmodel];
-        marketModel*GCCmodel=[[marketModel alloc]init];
-        GCCmodel.name=@"GCC";
-        GCCmodel.close_rmb=@"0.00";
-        GCCmodel.close=@"0.00";
-        [self.marketArray addObject:GCCmodel];
-        marketModel*STOmodel=[[marketModel alloc]init];
-        STOmodel.name=@"STO";
-        STOmodel.close_rmb=@"0.00";
-        STOmodel.close=@"0.00";
-        [self.marketArray addObject:STOmodel];
-        marketModel*QTUMmodel=[[marketModel alloc]init];
-        QTUMmodel.name=@"QTUM";
-        QTUMmodel.close_rmb=@"0.00";
-        QTUMmodel.close=@"0.00";
-        [self.marketArray addObject:QTUMmodel];
+        NSArray *Namearray=[UserinfoModel shareManage].Namearray;
+        [Namearray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString*coinName=Namearray[idx];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",coinName];
+            NSArray*filteredArray = [self.marketArray  filteredArrayUsingPredicate:predicate];
+            if (filteredArray.count==0) {
+                NSLog(@"火币钱包不含次币种-%@",coinName);
+                if ([coinName isEqualToString:@"USDT"]) {
+                    marketModel*USDTmodel=[[marketModel alloc]init];
+                    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",@"ETH"];
+                    NSArray *filteredArray = [self.marketArray  filteredArrayUsingPredicate:predicate];
+                    marketModel*ethcoin=[filteredArray firstObject];
+                    USDTmodel.name=@"USDT";
+                    USDTmodel.close_rmb=[NSString stringWithFormat:@"%.2f",[ethcoin.close_rmb doubleValue]/[ethcoin.close doubleValue]];
+                    USDTmodel.close=@"1.00";
+                    [self.marketArray addObject:USDTmodel];
+                }else{
+                    marketModel*otherModel=[[marketModel alloc]init];
+                    otherModel.name=coinName;
+                    otherModel.close_rmb=@"0.00";
+                    otherModel.close=@"0.00";
+                    [self.marketArray addObject:otherModel];
+                }
+            }
+        }];
+       
         [self checKMoneyAddress:[UserinfoModel shareManage].wallet];//查询币种地址余额
         
     } failureHandler:^(NSError *error, NSUInteger statusCode) {
@@ -802,8 +791,7 @@ static void extracted(WalletController *object) {
 #pragma mark--计算总资产
 -(void)TotalassetsCalculatedWithWallet:(walletModel*)wallet withtype:(int)type{
  
-    NSMutableArray*dataArray= (NSMutableArray*)[coinModel bg_find:nil where:[NSString stringWithFormat:@"where %@=%@ and %@=%@",[NSObject bg_sqlKey:@"own_id"],[NSObject bg_sqlValue:wallet.bg_id],[NSObject bg_sqlKey:@"collect"],[NSObject bg_sqlValue:@(1)]]];
-    self.dataArray=[self sortwithArray:dataArray];
+    self.dataArray=(NSMutableArray*)[coinModel bg_find:nil where:[NSString stringWithFormat:@"where %@=%@ and %@=%@",[NSObject bg_sqlKey:@"own_id"],[NSObject bg_sqlValue:wallet.bg_id],[NSObject bg_sqlKey:@"collect"],[NSObject bg_sqlValue:@(1)]]];
     __block  double totalMoney=0;
     [self.dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         coinModel*coin=self.dataArray[idx];
@@ -833,34 +821,32 @@ static void extracted(WalletController *object) {
 }
 
 /**
- 按照时间排列
-
- */
+ 首页币种按照添加时间顺序排列
 -(NSMutableArray*)sortwithArray:(NSMutableArray*)dataArray{
     
-//    NSArray *sortArray = [dataArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
-//                          {
-//                              coinModel *Model1 = obj1;
-//                              coinModel *Model2 = obj2;
-//                              NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//                              [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
-//                              NSDate *date1= [dateFormatter dateFromString:Model1.addtime];
-//                              NSDate *date2= [dateFormatter dateFromString:Model2.addtime];
-//                              if (date1 == [date1 earlierDate: date2]) { //不使用intValue比较无效
-//                                  return NSOrderedAscending;//降序
-//                              }else if (date1 == [date1 laterDate: date2]) {
-//                                  return NSOrderedDescending;//
-//                              }
-//                              else{
-//                                  return NSOrderedSame;//相等
-//                              }
-//                          }];
+    NSArray *sortArray = [dataArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
+                          {
+                              coinModel *Model1 = obj1;
+                              coinModel *Model2 = obj2;
+                              NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                              [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+                              NSDate *date1= [dateFormatter dateFromString:Model1.addtime];
+                              NSDate *date2= [dateFormatter dateFromString:Model2.addtime];
+                              if (date1 == [date1 earlierDate: date2]) { //不使用intValue比较无效
+                                  return NSOrderedAscending;//降序
+                              }else if (date1 == [date1 laterDate: date2]) {
+                                  return NSOrderedDescending;//
+                              }
+                              else{
+                                  return NSOrderedSame;//相等
+                              }
+                          }];
     return [NSMutableArray arrayWithArray:dataArray];
    
 }
-
+ */
 #pragma mark -- NetWork Methods
 
-#pragma mark -- Setter && Getter
+
 
 @end

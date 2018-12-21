@@ -303,6 +303,7 @@ const static size_t kUSD = 91927009; //kUSD
  |  ----| -----  | ------ |
  |BTC   |   128    |   0     |
  |BCH   |   128    |   0     |
+ |ETH   |   -1     |   -1    |
  |DVC   |   176    |   30    |
  |DASH  |   204    |   76    |
  |DOGE  |   176    |   30    |
@@ -310,11 +311,12 @@ const static size_t kUSD = 91927009; //kUSD
  |QTUM  |   128    |   58    |
  |USDT  |   128    |   0     |
  |XNE   |   176    |   75    |
- |ZEC   |   238    |   128   |
+ |ZEC   |   128    |   35   |
  |GCA   |   176    |   38    |
  |GCB   |   176    |   25    |
  |GCC   |   176    |   26    |
  |STO   |   176    |   63    |
+ |ETC   |   -1     |   -1    |
  */
 #endif // ! COINS_H
 

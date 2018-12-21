@@ -79,6 +79,16 @@
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://chainz.cryptoid.info/dash/tx.dws?%@.htm",self.txid]]]];
             
         }
+        else if ([self.coin.brand isEqualToString:@"ZEC"])
+        {
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://explorer.zcha.in/transactions/%@",self.txid]]]];
+            
+        }
+        else if ([self.coin.brand isEqualToString:@"ETC"])
+        {
+            [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://gastracker.io/tx/%@",self.txid]]]];
+            
+        }
         else{
             
             
